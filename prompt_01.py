@@ -96,9 +96,3 @@ Finaliza con este bloque promocional:
     requests.post(url, json=payload)
 """
 
-# Guardar como nuevo archivo para desplegar
-path = "/mnt/data/prompt_01_final_integrado.py"
-with open(path, "w", encoding="utf-8") as f:
-    f.write(codigo_integrado.strip())
-
-path
