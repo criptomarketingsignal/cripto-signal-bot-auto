@@ -22,12 +22,17 @@ def obtener_fecha_en_espanol():
 def send_prompt_01():
     fecha = obtener_fecha_en_espanol()
 
+    # Prompt en español
     prompt_es = f"""
 Actúa como un analista técnico profesional especializado en criptomonedas y genera un mensaje en español perfectamente estructurado para el canal de señales.
 
-➡️ Crea un mensaje con estilo motivador, análisis real y visualmente claro para Telegram. El precio actual de BTC es el que tú puedes analizar en tiempo real.
+➡️ El análisis debe estar enfocado en una operación de tipo LONG, con apalancamiento 3x, y válido solo para el día de hoy.
 
-Usa esta estructura exacta en el mensaje generado:
+➡️ Calcula un rango de operación (entrada) para hoy basado en el precio actual real de BTC (usa el que tú ves). Si no hay condiciones técnicas favorables claras, indica que NO se recomienda operar hoy y no proporciones un rango.
+
+➡️ Usa un tono motivador, con análisis realista, y visualmente claro para Telegram. Formatea con este estilo: negritas en unicode (𝐞𝐬𝐭𝐞 𝐭𝐢𝐩𝐨), emojis, y viñetas ◉.
+
+𝐌𝐨𝐝𝐞𝐥𝐨 𝐝𝐞 𝐦𝐞𝐧𝐬𝐚𝐣𝐞:
 
 Buenos días traders! ¿Están listos para nuestra primera señal del día? Hoy vamos a dejar nuestras huellas en el mundo del Bitcoin. ¡Preparen sus gráficos!
 
@@ -37,7 +42,6 @@ Buenos días traders! ¿Están listos para nuestra primera señal del día? Hoy 
 Somos un equipo comprometido a proporcionarte el análisis técnico y fundamental más reciente, tres veces al día para que siempre estés actualizado y preparado para tomar decisiones precisas.
 
 Herramientas que utilizamos:
-
 - Velas japonesas 📊  
 - Medias Móviles Exp 📈  
 - Fibonacci 🔢  
@@ -53,92 +57,76 @@ Incluye visión del DXY, sentimiento de mercado y Nasdaq/SP500.
 
 ◉ 𝐑𝐚𝐧𝐠𝐨 𝐝𝐞 𝐨𝐩𝐞𝐫𝐚𝐜𝐢𝐨́𝐧 (𝐋𝐨𝐧𝐠 𝟑𝐱):  
 💰 Entrada óptima: Calcula el rango exacto más favorable  
-🎯 Objetivo de ganancia: nivel técnico realista  
 🟢 Probabilidad de éxito: muy precisa, basada en indicadores  
 ⚠️ Cuida tu gestión de riesgo, operación solo para hoy
 
 📊 Señales, gráficos en vivo y análisis en tiempo real completamente GRATIS por 30 días.  
-🔑 𝐎𝐛𝐭𝐞́𝐧 𝐭𝐮 𝐦𝐞𝐬 𝐠𝐫𝐚𝐭𝐢𝐬 𝐚𝐡𝐨𝐫𝐚! 🚀  
+🔑 𝐎𝐛𝐭𝐞́𝐧 𝐭𝐮 𝐦𝐞𝐬 𝐠𝐫𝐚𝐭𝐢𝐬 𝐚𝐡𝐨𝐫𝐚! 🚀
 
 Muchas gracias por confiar en nosotros como tu portal de trading. Juntos haremos crecer tu inversión.  
 ✨ 𝐂𝐫𝐲𝐩𝐭𝐨 𝐒𝐢𝐠𝐧𝐚𝐥 𝐁𝐨𝐭 ✨ Estén atentos para el 2º mensaje (mitad de sesión, Hora de Nueva York). ¡Feliz trading!
 """
 
     prompt_en = f"""
-Act as a professional technical analyst specialized in cryptocurrencies and generate a motivational, real-time, and visually clear message in English for Telegram. Use the real current price of BTC.
+Act as a professional technical analyst specialized in cryptocurrencies and create a well-structured message in English for our signal channel.
 
-Structure it exactly like this message:
+➡️ The analysis must be for a LONG trade, with 3x leverage, valid only for today.
 
-Good morning, traders! Ready for today’s first range of the day? Let's dive into the Bitcoin charts. Get your setups ready!
+➡️ Calculate a realistic and actionable entry range for today using the actual BTC price (the one you see). If there are no favorable conditions, clearly state that no long trade is recommended today.
 
-📅 Date: {fecha}  
-📌 Session: 1 of 3
+➡️ The tone must be clear, motivational and formatted for Telegram: bold in unicode (𝐭𝐡𝐢𝐬 𝐬𝐭𝐲𝐥𝐞), bullet points ◉ and emojis.
 
-We work hard to bring you the most recent technical and fundamental analysis 3 times a day to help you make smart decisions.
-
-We use the most powerful tools:
-
-- Japanese Candles 📊  
-- Exponential Moving Averages 📈  
-- Fibonacci 🔢  
-- RSI (Relative Strength Index) ⚖️  
-- SQZMOM (Squeeze Momentum) ⚡️  
-- Volume (POC) 💼  
-
-◉ 𝐓𝐞𝐜𝐡𝐧𝐢𝐜𝐚𝐥 𝐀𝐧𝐚𝐥𝐲𝐬𝐢𝐬:  
-Include analysis based on RSI, EMA, Fibonacci, SQZMOM, POC and candles.
-
-◉ 𝐅𝐮𝐧𝐝𝐚𝐦𝐞𝐧𝐭𝐚𝐥 𝐀𝐧𝐚𝐥𝐲𝐬𝐢𝐬:  
-Include DXY movement, market sentiment and Nasdaq/SP500 trends.
-
-◉ 𝐓𝐫𝐚𝐝𝐢𝐧𝐠 𝐑𝐚𝐧𝐠𝐞 (𝐋𝐨𝐧𝐠 𝟑𝐱):  
-💰 Entry Zone: Find the best real-time entry range  
-🎯 Target: Choose a realistic take profit level  
-🟢 Success Probability: Be extremely precise  
-⚠️ Risk management is key. This operation is valid only for today.
-
-📊 Enjoy signals, live charts, and real-time analysis absolutely FREE for 30 days.  
-🔑 𝐆𝐞𝐭 𝐲𝐨𝐮𝐫 𝐟𝐫𝐞𝐞 𝐦𝐨𝐧𝐭𝐡 𝐧𝐨𝐰! 🚀  
-
-Thanks for trusting us as your trading partner. Let’s grow together.  
-✨ 𝐂𝐫𝐲𝐩𝐭𝐨 𝐒𝐢𝐠𝐧𝐚𝐥 𝐁𝐨𝐭 ✨ Stay tuned for session #2 (New York time). Happy trading!
+Structure the message similar to the Spanish format.
 """
 
-    # Respuesta español
+    # Solicita a OpenAI el mensaje en español
     response_es = openai.ChatCompletion.create(
         model="gpt-4",
         messages=[{"role": "user", "content": prompt_es}]
     )
     mensaje_es = response_es.choices[0].message["content"]
 
-    # Respuesta inglés
+    # Solicita a OpenAI el mensaje en inglés
     response_en = openai.ChatCompletion.create(
         model="gpt-4",
         messages=[{"role": "user", "content": prompt_en}]
     )
     mensaje_en = response_en.choices[0].message["content"]
 
-    # Enviar a Telegram español
     url = f"https://api.telegram.org/bot{BOT_TOKEN}/sendMessage"
-    requests.post(url, json={
+
+    # Enviar al canal en español
+    payload_es = {
         "chat_id": CHANNEL_CHAT_ID_ES,
         "text": mensaje_es,
         "parse_mode": "HTML",
         "reply_markup": {
             "inline_keyboard": [
-                [{"text": "Señales premium 30 días gratis ✨", "url": "https://t.me/CriptoSignalBotGestion_bot?start=676731307b8344cb070ac996"}]
+                [
+                    {
+                        "text": "Señales premium 30 días gratis ✨",
+                        "url": "https://t.me/CriptoSignalBotGestion_bot?start=676731307b8344cb070ac996"
+                    }
+                ]
             ]
         }
-    })
+    }
+    requests.post(url, json=payload_es)
 
-    # Enviar a Telegram inglés
-    requests.post(url, json={
+    # Enviar al canal en inglés
+    payload_en = {
         "chat_id": CHANNEL_CHAT_ID_EN,
         "text": mensaje_en,
         "parse_mode": "HTML",
         "reply_markup": {
             "inline_keyboard": [
-                [{"text": "Free 30-Day Premium Access ✨", "url": "https://t.me/CriptoSignalBotGestion_bot?start=676731307b8344cb070ac996"}]
+                [
+                    {
+                        "text": "Free 30-Day Premium Access ✨",
+                        "url": "https://t.me/CriptoSignalBotGestion_bot?start=676731307b8344cb070ac996"
+                    }
+                ]
             ]
         }
-    })
+    }
+    requests.post(url, json=payload_en)
