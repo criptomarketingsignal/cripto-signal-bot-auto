@@ -1,5 +1,5 @@
-# Código completo de prompt_01.py con integración de precio real y rango dinámico
-codigo_prompt_01 = """
+# Integrar el prompt dentro del código de generación final en prompt_01.py
+codigo_integrado = """
 import os
 import requests
 import openai
@@ -39,15 +39,36 @@ def send_prompt_01():
 
     rango_min, rango_max, promedio = calcular_rango(precio_btc)
 
-    prompt = (
-        f"Actúa como un analista técnico profesional de criptomonedas. Hoy es {fecha_hoy}. "
-        f"Basándote en el precio actual de Bitcoin ($ {precio_btc}), genera un análisis técnico y fundamental detallado "
-        f"que indique un rango operable para el día en long (apalancamiento 3x), sin usar TP ni SL. "
-        f"El rango sugerido debe estar entre ${rango_min} y ${rango_max}, con un promedio de entrada de ${promedio}. "
-        f"Justifica ese rango con indicadores como velas, EMAs, RSI, Fibonacci, POC, SQZMOM y sentimiento del mercado. "
-        f"Escríbelo con estructura profesional, usando ◉ y negritas en unicode como 𝐄𝐬𝐭𝐞 𝐞𝐣𝐞𝐦𝐩𝐥𝐨. Incluye una nota motivadora final "
-        f"y especifica que es la señal 1 de 3 del día. El estilo debe ser ideal para Telegram, con emoticonos y claridad visual."
-    )
+    prompt = f\"\"\"
+Actúa como un analista técnico profesional especializado en criptomonedas y genera un análisis claro, estructurado y motivador para Bitcoin (BTCUSD) en español.
+
+➡️ Hoy es {fecha_hoy}. Esta es la **Señal 1 de 3 del día**.
+➡️ El análisis debe enfocarse en identificar un **rango operable para el día** (únicamente en long con apalancamiento 3x), basado en el precio actual de BTC, que es de aproximadamente ${precio_btc}.
+
+◉ El rango debe estar entre ${rango_min} – ${rango_max}, con un promedio de entrada de ${promedio}.
+◉ Justifica por qué operar en ese rango con análisis técnico y fundamental.
+◉ No incluyas Take Profit ni Stop Loss, solo el rango ideal para abrir y cerrar operaciones escalonadas durante el día.
+
+Estructura el mensaje con estos elementos:
+- Introducción motivadora
+- 𝐅𝐞𝐜𝐡𝐚 y "Señal 1 de 3"
+- 𝐀𝐧𝐚́𝐥𝐢𝐬𝐢𝐬 𝐓𝐞́𝐜𝐧𝐢𝐜𝐨 (Velas, EMAs, Fibonacci, RSI, SQZMOM, POC)
+- 𝐀𝐧𝐚́𝐥𝐢𝐬𝐢𝐬 𝐅𝐮𝐧𝐝𝐚𝐦𝐞𝐧𝐭𝐚𝐥 (DXY, Nasdaq/SP500, sentimiento)
+- 𝐑𝐚𝐧𝐠𝐨 𝐝𝐞 𝐨𝐩𝐞𝐫𝐚𝐜𝐢𝐨́𝐧 (𝐋𝐨𝐧𝐠 𝟑𝐱) con entrada recomendada y promedio
+- Advertencia sobre gestión de riesgo
+
+Finaliza con este bloque promocional:
+
+📈 𝐓𝐫𝐚𝐝𝐢𝐧𝐠 𝐞𝐧 𝐓𝐢𝐞𝐦𝐩𝐨 𝐑𝐞𝐚𝐥 | 𝐏𝐫𝐞𝐜𝐢𝐬𝐢𝐨́𝐧 𝐌𝐚́𝐱𝐢𝐦𝐚 | 𝐑𝐞𝐬𝐮𝐥𝐭𝐚𝐝𝐨𝐬 𝐂𝐨𝐦𝐩𝐫𝐨𝐛𝐚𝐝𝐨𝐬
+
+𝐒𝐞𝐧̃𝐚𝐥𝐞𝐬 𝐝𝐞 𝐓𝐫𝐚𝐝𝐢𝐧𝐠 𝐜𝐨𝐧 𝐄́𝐱𝐢𝐭𝐨 𝐆𝐚𝐫𝐚𝐧𝐭𝐢𝐳𝐚𝐝𝐨:
+🔥 𝐅𝐈𝐑𝐄 𝐒𝐜𝐚𝐥𝐩𝐢𝐧𝐠 – 🏅 85.64% – 🟢 1,563 ganadoras – 🔴 262 perdedoras
+💎 𝐄𝐋𝐈𝐓𝐄 𝐒𝐜𝐚𝐥𝐩𝐢𝐧𝐠 – 🏅 99.10% – 🟢 552 ganadoras – 🔴 5 perdedoras
+🪙 𝐃𝐄𝐋𝐓𝐀 𝐒𝐰𝐢𝐧𝐠 – 🏅 96.00% – 🟢 48 ganadoras – 🔴 2 perdedoras
+
+📊 Señales, gráficos en vivo y análisis en tiempo real completamente GRATIS por 30 días.  
+🔑 𝐎𝐛𝐭𝐞́𝐧 𝐭𝐮 𝐦𝐞𝐬 𝐠𝐫𝐚𝐭𝐢𝐬 𝐚𝐡𝐨𝐫𝐚! 🚀
+\"\"\"
 
     response = openai.ChatCompletion.create(
         model="gpt-4",
@@ -75,9 +96,9 @@ def send_prompt_01():
     requests.post(url, json=payload)
 """
 
-# Guardar el archivo
-file_path = "/mnt/data/prompt_01_precio_real.py"
-with open(file_path, "w", encoding="utf-8") as f:
-    f.write(codigo_prompt_01.strip())
+# Guardar como nuevo archivo para desplegar
+path = "/mnt/data/prompt_01_final_integrado.py"
+with open(path, "w", encoding="utf-8") as f:
+    f.write(codigo_integrado.strip())
 
-file_path
+path
