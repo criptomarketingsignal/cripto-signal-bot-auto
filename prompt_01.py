@@ -43,22 +43,28 @@ def send_prompt_01():
     Envía dos mensajes a los canales de Telegram:
       1) Análisis en español.
       2) Análisis en inglés.
-    Incluye el precio real de BTC en cada prompt para que GPT-4 genere
-    un rango de operación más preciso y contextualizado al día.
+    Incluye el precio real de BTC y un rango calculado (±2%) en cada prompt para que GPT-4
+    genere un análisis y forzosamente lo incorpore al texto final.
     """
 
     fecha = obtener_fecha_en_espanol()
     precio_btc = obtener_precio_btc()
 
-    # Prompt en español: se incluye el precio actual para el análisis
+    # Calculamos un rango ±2% alrededor del precio actual
+    # Puedes ajustar este porcentaje a tu gusto.
+    rango_bajo = round(precio_btc * 0.98, 2)
+    rango_alto = round(precio_btc * 1.02, 2)
+
+    # Prompt en español: se incluye el precio y el rango calculado para forzarlo en la respuesta
     prompt_es = f"""
 Actúa como un analista técnico profesional especializado en criptomonedas y genera un mensaje en español perfectamente estructurado para el canal de señales de Telegram.
 
 ✅ Debes generar un análisis completo de Bitcoin (BTCUSD) para el día de hoy: {fecha}.
 ✅ El enfoque es para operaciones LONG con apalancamiento 3x y válido solo por el día actual.
 ✅ El precio actual aproximado de BTC es: {precio_btc:.2f} USDT.
-✅ Siempre debes calcular un rango de operación para hoy basado en este precio real de BTC. 
-   Si las condiciones son difíciles, incluye una advertencia, pero el rango siempre debe estar presente.
+✅ El rango de entrada que debes INCLUIR obligatoriamente en el texto es entre {rango_bajo:.2f} USDT y {rango_alto:.2f} USDT.
+✅ Siempre debes calcular o justificar este rango de operación para hoy basado en este precio real de BTC. 
+   Si las condiciones son difíciles, incluye una advertencia, pero el rango siempre debe estar presente en el mensaje final.
 ✅ Usa tono motivador, directo y visualmente claro para Telegram. Usa negritas en unicode (𝐞𝐬𝐭𝐞 𝐭𝐢𝐩𝐨), viñetas ◉ y emoticonos. Nada de formato Markdown.
 
 Estructura del mensaje generado:
@@ -85,7 +91,7 @@ Incluye un análisis basado en RSI, EMA, Fibonacci, SQZMOM, POC y velas.
 Incluye visión del DXY, sentimiento de mercado y Nasdaq/SP500.
 
 ◉ 𝐑𝐚𝐧𝐠𝐨 𝐝𝐞 𝐨𝐩𝐞𝐫𝐚𝐜𝐢𝐨́𝐧 (𝐋𝐨𝐧𝐠 𝟑𝐱):  
-💰 Entrada óptima: Calcula el rango exacto más favorable  
+💰 Entrada óptima: Debes incluir entre {rango_bajo:.2f} USDT y {rango_alto:.2f} USDT (obligatorio)  
 🟢 Probabilidad de éxito: muy precisa, basada en indicadores  
 ⚠️ Cuida tu gestión de riesgo, operación solo para hoy
 
@@ -96,17 +102,17 @@ Muchas gracias por confiar en nosotros como tu portal de trading. Juntos haremos
 ✨ 𝐂𝐫𝐲𝐩𝐭𝐨 𝐒𝐢𝐠𝐧𝐚𝐥 𝐁𝐨𝐭 ✨ Estén atentos para el 2º mensaje (mitad de sesión, Hora de Nueva York). ¡Feliz trading!
 """
 
-    # Prompt en inglés: también incluye el precio actual
+    # Prompt en inglés: de igual modo, forzamos el rango calculado
     prompt_en = f"""
 Act as a professional crypto analyst and generate a perfectly structured message in English for the Telegram signal channel.
 
 ✅ This is a long (3x) operation setup for Bitcoin (BTCUSD), only valid today: {fecha}.
 ✅ The current BTC price is approximately {precio_btc:.2f} USDT.
-✅ Always calculate a realistic entry range for today based on this actual BTC price. 
-   If market conditions are unstable, include a warning, but NEVER skip the range.
+✅ You MUST include the following entry range for today's trade: between {rango_bajo:.2f} USDT and {rango_alto:.2f} USDT.
+✅ If market conditions are unstable, include a warning, but NEVER skip the numeric range.
 ✅ Use a motivational tone, clear formatting, unicode bold (𝐥𝐢𝐤𝐞 𝐭𝐡𝐢𝐬), bullet points ◉ and emojis. No Markdown.
 
-Follow the same structure as the Spanish message. 
+Follow the same structure as the Spanish message, but in English.
 """
 
     # Llamadas a GPT-4 para generar el análisis en español
@@ -157,3 +163,4 @@ Follow the same structure as the Spanish message.
         }
     }
     requests.post(url, json=payload_en)
+
