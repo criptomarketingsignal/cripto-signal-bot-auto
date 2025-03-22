@@ -67,7 +67,7 @@ Muchas gracias por confiar en nosotros como tu portal de trading. Juntos haremos
 """
 
     response = openai.ChatCompletion.create(
-        model="gpt-4",
+        model="gpt-4-1106-preview",
         messages=[{"role": "user", "content": prompt_es}]
     )
     mensaje = response.choices[0].message["content"]
