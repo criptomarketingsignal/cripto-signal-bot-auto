@@ -102,10 +102,3 @@ Gracias por elegirnos como tu portal de trading de confianza. ¡Juntos, haremos 
 
     requests.post(url, json=payload)
 """
-
-# Guardar como archivo .py listo para despliegue
-ruta_archivo = "/mnt/data/prompt_01.py"
-with open(ruta_archivo, "w", encoding="utf-8") as f:
-    f.write(codigo_prompt_final.strip())
-
-ruta_archivo
