@@ -34,6 +34,12 @@ def send_prompt_01():
     rango_min, rango_max, promedio, efectividad = calcular_rango_y_efectividad(precio_btc)
 
     prompt = f"""
+Actúa como un analista técnico profesional especializado en criptomonedas y genera un mensaje en español perfectamente estructurado para el canal de señales.
+
+➡️ Crea un mensaje con estilo motivador, análisis real y visualmente claro para Telegram. El precio actual de BTC es {precio_btc} USD.
+
+Usa esta estructura exacta en el mensaje generado:
+
 Buenos días traders! Qué mejor manera de comenzar el día que con nuestra primera señal del día. Hoy vamos a analizar Bitcoin y darles nuestras recomendaciones. ¡Vamos allá!
 
 𝐅𝐞𝐜𝐡𝐚: {fecha_hoy}  
@@ -56,19 +62,20 @@ Incluye un análisis técnico claro basado en las herramientas anteriores.
 Incluye visión del DXY, sentimiento de mercado, Nasdaq/SP500.
 
 ◉ 𝐑𝐚𝐧𝐠𝐨 𝐝𝐞 𝐨𝐩𝐞𝐫𝐚𝐜𝐢𝐨́𝐧 (𝐋𝐨𝐧𝐠 𝟑𝐱):
-💰 Entrada óptima entre: ${rango_min} y ${rango_max}
-🟢 Probabilidad de éxito: {efectividad}%
-⚠️ Por favor, cuida tu manejo del riesgo. Recuerda que esta es una operación recomendada solo para el día de hoy
+💰 Entrada óptima entre: ${rango_min} y ${rango_max}  
+🎯𝐑𝐚𝐧𝐠𝐨 𝐝𝐞 𝐨𝐩𝐞𝐫𝐚𝐜𝐢𝐨́𝐧: Entre ${rango_min} – ${rango_max}  
+🟢 Porcentaje de efectividad estimado: {efectividad}%  
+Condiciones ideales para una operación intradía de alta probabilidad.  
+⚠️ ¡Cuida tu gestión de riesgo! No te olvides de establecer una estrategia de salida. Este mercado es altamente volátil. Operación recomendada solo para hoy.
 
-📊 Señales, gráficos en vivo y análisis en tiempo real totalmente GRATIS durante 30 días.  
-🔑 𝐎𝐛𝐭𝐞́𝐧 𝐭𝐮 𝐦𝐞𝐬 𝐠𝐫𝐚𝐭𝐢𝐬 𝐚𝐡𝐨𝐫𝐚! 🚀
-
-Gracias por depositar tu confianza en nosotros como tu guía de trading. Juntos haremos crecer tu inversión.  
-✨ 𝐂𝐫𝐲𝐩𝐭𝐨 𝐒𝐢𝐠𝐧𝐚𝐥 𝐁𝐨𝐭 ✨ Mantente atento para nuestra 2ª señal del día (mitad de la sesión, Hora de Nueva York). ¡Feliz trading!
+📊 Señales, gráficos en vivo y análisis en tiempo real completamente GRATIS por 30 días.  
+🔑 𝐎𝐛𝐭𝐞́𝐧 𝐭𝐮 𝐦𝐞𝐬 𝐠𝐫𝐚𝐭𝐢𝐬 𝐚𝐡𝐨𝐫𝐚! 🚀  
+Gracias por elegirnos como tu portal de trading de confianza. ¡Juntos, haremos que tu inversión crezca!  
+✨ 𝐂𝐫𝐲𝐩𝐭𝐨 𝐒𝐢𝐠𝐧𝐚𝐥 𝐁𝐨𝐭 ✨ Mantente pendiente del mensaje de mitad de sesión. ¡Feliz trading!
 """
 
     response = openai.ChatCompletion.create(
-        model="gpt-4",
+        model="gpt-4o",
         messages=[{"role": "user", "content": prompt}]
     )
     message = response.choices[0].message["content"]
