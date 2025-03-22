@@ -1,5 +1,3 @@
-# Integrar el prompt dentro del código de generación final en prompt_01.py
-codigo_integrado = """
 import os
 import requests
 import openai
@@ -39,7 +37,7 @@ def send_prompt_01():
 
     rango_min, rango_max, promedio = calcular_rango(precio_btc)
 
-    prompt = f\"\"\"
+    prompt = f"""
 Actúa como un analista técnico profesional especializado en criptomonedas y genera un análisis claro, estructurado y motivador para Bitcoin (BTCUSD) en español.
 
 ➡️ Hoy es {fecha_hoy}. Esta es la **Señal 1 de 3 del día**.
@@ -68,7 +66,7 @@ Finaliza con este bloque promocional:
 
 📊 Señales, gráficos en vivo y análisis en tiempo real completamente GRATIS por 30 días.  
 🔑 𝐎𝐛𝐭𝐞́𝐧 𝐭𝐮 𝐦𝐞𝐬 𝐠𝐫𝐚𝐭𝐢𝐬 𝐚𝐡𝐨𝐫𝐚! 🚀
-\"\"\"
+"""
 
     response = openai.ChatCompletion.create(
         model="gpt-4",
@@ -94,5 +92,3 @@ Finaliza con este bloque promocional:
     }
 
     requests.post(url, json=payload)
-"""
-
