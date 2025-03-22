@@ -2,6 +2,7 @@ import os
 import requests
 import openai
 from datetime import datetime
+import json
 
 openai.api_key = os.getenv("OPENAI_API_KEY")
 BOT_TOKEN = os.getenv("TELEGRAM_BOT_TOKEN")
@@ -14,7 +15,7 @@ FULL_ANALYSIS_PATH = "btc_full_analysis_es.txt"
 def send_prompt_01():
     fecha_hoy = datetime.now().strftime("%d de %B de %Y")
 
-    # Prompt para mensaje corto (resumen del rango operable)
+    # Prompt para mensaje corto
     prompt_resumen_es = (
         f"Genera una señal operable en long para Bitcoin con apalancamiento 3x para hoy, {fecha_hoy}. "
         "Incluye: rango de compra, promedio de entrada, take profit, stop loss, resumen técnico, resumen fundamental. "
@@ -22,7 +23,7 @@ def send_prompt_01():
         "Al final, agrega: 'Crypto Signal Bot analiza por ti... pendiente del mensaje de mitad de sesión'."
     )
 
-    # Prompt para mensaje largo (análisis técnico + fundamental detallado)
+    # Prompt para mensaje largo
     prompt_detallado_es = (
         f"Realiza un análisis técnico y fundamental completo y detallado del precio de Bitcoin (BTCUSD) para hoy, {fecha_hoy}, "
         "siguiendo este formato: multitemporalidades (1W, 1D, 4H, 1H), velas japonesas, niveles de soporte/resistencia, "
@@ -45,32 +46,33 @@ def send_prompt_01():
     )
     mensaje_largo = response_largo.choices[0].message["content"]
 
-    # Guardar mensaje largo en archivo txt
+    # Guardar análisis completo
     with open(FULL_ANALYSIS_PATH, "w", encoding="utf-8") as f:
         f.write(mensaje_largo)
 
-    # Enviar mensaje corto a Telegram con botones
+    # Enviar mensaje corto con botones a Telegram
     url = f"https://api.telegram.org/bot{BOT_TOKEN}/sendMessage"
     payload = {
         "chat_id": CHANNEL_CHAT_ID_ES,
         "text": mensaje_corto,
         "parse_mode": "HTML",
-        "reply_markup": {
+        "reply_markup": json.dumps({
             "inline_keyboard": [
                 [
                     {
-                        "text": "Señales premium 30 días gratis ✨",
+                        "text": "✨ Señales premium 30 días gratis",
                         "url": "https://t.me/CriptoSignalBotGestion_bot?start=676731307b8344cb070ac996"
                     }
                 ],
                 [
                     {
-                        "text": "Solicitar análisis completo y detallado 🔎",
+                        "text": "🔎 Solicitar análisis completo y detallado",
                         "url": "https://t.me/CriptoSignalBotGestion_bot?start=btccompleto"
                     }
                 ]
             ]
-        }
+        })
     }
 
-    requests.post(url, json=payload)
+    requests.post(url, data=payload)
+
