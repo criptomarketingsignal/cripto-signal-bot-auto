@@ -1,4 +1,12 @@
 from datetime import datetime
+import requests
+import openai
+import os
+
+openai.api_key = os.getenv("OPENAI_API_KEY")
+BOT_TOKEN = os.getenv("TELEGRAM_BOT_TOKEN")
+CHANNEL_CHAT_ID_ES = "-1002440626725"
+CHANNEL_CHAT_ID_EN = "-1002288256984"
 
 def obtener_fecha_en_espanol():
     meses = {
@@ -11,17 +19,20 @@ def obtener_fecha_en_espanol():
     mes = meses[hoy.strftime("%B")]
     return f"{hoy.day} de {mes} de {hoy.year}"
 
-fecha = obtener_fecha_en_espanol()
+def send_prompt_01():
+    fecha = obtener_fecha_en_espanol()
 
-prompt = f"""
-Actúa como un analista técnico profesional especializado en criptomonedas y genera un mensaje REALISTA para hoy con datos actualizados, ideal para enviar por Telegram.
+    prompt_es = f"""
+Actúa como un analista técnico profesional de criptomonedas. Usa el modelo más reciente GPT-4o para generar un mensaje para Telegram, en español, dirigido a traders.
 
-➡️ Tu objetivo es entregar una señal operable en long 3x para Bitcoin (BTCUSD) con datos precisos y actuales. La estructura del mensaje debe ser la siguiente:
+➡️ El mensaje debe contener datos reales y actuales del mercado, con un rango operable de al menos 2% entre entrada baja y alta. NO uses valores genéricos como "te daremos el rango más favorable". Usa precios reales actuales con análisis detallado.
+
+➡️ El resultado debe estar redactado exactamente como este formato:
 
 Buenos días traders! Que mejor manera de comenzar el día que con nuestra primera señal del día. Hoy vamos a analizar Bitcoin y darles nuestras recomendaciones. ¡Vamos allá!
 
-𝐀𝓢𝓱𝓲: {fecha}  
-𝓎𝓮𝓰𝓳: 1 de 3
+𝐅𝐞𝐜𝐡𝐚: {fecha}
+𝐒𝐞𝐧̃𝐚𝐥: 1 de 3
 
 Nuestro equipo trabaja arduamente para ofrecer análisis técnico y fundamental en tiempo real tres veces al día, asegurándonos de mantener a nuestra comunidad completamente informada y preparada.
 
@@ -30,36 +41,60 @@ En nuestro análisis técnico, utilizamos las herramientas más confiables, como
 - Medias Móviles Exp 📈
 - Fibonacci 🔢
 - Fuerza Relativa (RSI) ⚖️
-- (SQZMOM) ⚡️
+- SQZMOM ⚡️
 - Volumen (POC) 💼
 
-◉ 𝐀𝓢𝓷𝓶𝓳𝓸𝓮 𝓣𝓢𝓮𝓲𝓳:
-Escribe aquí un resumen claro y actual del análisis técnico de BTC usando los indicadores mencionados y coloca valores reales. Incluye:
-📊 Velas: ...  
-📈 EMAs: ...  
-🔁 Fibonacci: ...  
-🧱 POC: ...  
-⚡️ RSI: ...  
-🚀 SQZMOM: ...
+◉ 𝐀𝐧𝐚́𝐥𝐢𝐬𝐢𝐬 𝐓𝐞́𝐜𝐧𝐢𝐜𝐨:
+📊 Velas: [describe el patrón actual]
+📈 EMAs: [comenta si hay cruce, soporte o tendencia]
+🔁 Fibonacci: [menciona nivel de rebote o ruptura]
+🧱 POC: [indica si hay acumulación/distribución]
+⚡️ RSI: [nivel exacto + interpretación]
+🚀 SQZMOM: [positivo o negativo, compresión o expansión]
 
-◉ 𝐀𝓢𝓷𝓶𝓲𝓶𝓳𝓲𝓸𝓰 𝓦𝓲𝓵𝓲𝓶𝓳:
-💵 DXY: ...  
-🧠 Sentimiento: ...  
-📈 Nasdaq/SP500: ...
+◉ 𝐀𝐧𝐚́𝐥𝐢𝐬𝐢𝐬 𝐅𝐮𝐧𝐝𝐚𝐦𝐞𝐧𝐭𝐚𝐥:
+💵 DXY: [comenta su tendencia]
+🧠 Sentimiento: [positivo o negativo]
+📈 Nasdaq/SP500: [relevancia en correlación con BTC]
 
-◉ 𝐑𝓦𝓮𝓲 𝓵𝓸 𝓸𝓶𝓳𝓸𝓲𝓰𝓸 (𝐋𝐨𝐧𝐠 𝟑𝐱):
-Escribe un rango real y actual, con precios válidos y realistas, basados en análisis técnico del mercado de hoy:
+◉ 𝐑𝐚𝐧𝐠𝐨 𝐝𝐞 𝐨𝐩𝐞𝐫𝐚𝐜𝐢𝐨́𝐧 (𝐋𝐨𝐧𝐠 𝟑𝐱):
+💰 Entrada óptima entre: $[precio1] y $[precio2]
+🎯𝐑𝐚𝐧𝐠𝐨 𝐝𝐞 𝐨𝐩𝐞𝐫𝐚𝐜𝐢𝐨́𝐧: Entre $[precio1] y $[precio2]
+🟢 Porcentaje de efectividad estimado: [XX%]
+Condiciones ideales para una operación intradía de alta probabilidad.
+⚠️ ¡Cuida tu gestión de riesgo! Este mercado es altamente volátil. Operación válida solo para hoy.
 
-💰 Entrada óptima entre: [precio más bajo] y [precio más alto]  
-🎯 Rango de operación: [mismo rango]  
-🟢 Probabilidad de éxito estimada: [porcentaje técnico justificado]  
+📊 Señales, gráficos en vivo y análisis en tiempo real completamente GRATIS por 30 días.
+🔑 𝐎𝐛𝐭𝐞́𝐧 𝐭𝐮 𝐦𝐞𝐬 𝐠𝐫𝐚𝐭𝐢𝐬 𝐚𝐡𝐨𝐫𝐚! 🚀
 
-⚠️ ¡Cuida tu gestión de riesgo! No te olvides de establecer una estrategia de salida. Este mercado es altamente volátil, operación recomendada solo para hoy.
-
-📊 Señales, gráficos en vivo y análisis en tiempo real completamente GRATIS por 30 días. 
-
-🔑 𝐋𝓇𝓦𝓢𝓡 𝓴𝓲 𝓸𝓻 𝓸𝓲 𝓵𝓲𝓳𝓸! 🚀
 Gracias por elegirnos como tu portal de trading de confianza. ¡Juntos, haremos que tu inversión crezca!
-
-✨ 𝐇𝓲𝓪𝓵𝓲 𝓸𝓲𝓮𝓳 𝐁𝓪 ✨ Mantente pendiente del segundo mensaje (mitad de sesión, hora de Nueva York). ¡Feliz trading!
+✨ 𝐂𝐫𝐲𝐩𝐭𝐨 𝐒𝐢𝐠𝐧𝐚𝐥 𝐁𝐨𝐭 ✨Mantente pendiente del mensaje de mitad de sesión. ¡Feliz trading!
 """
+
+    response = openai.ChatCompletion.create(
+        model="gpt-4o",
+        messages=[{"role": "user", "content": prompt_es}]
+    )
+
+    mensaje_es = response.choices[0].message["content"]
+
+    url = f"https://api.telegram.org/bot{BOT_TOKEN}/sendMessage"
+    payload_es = {
+        "chat_id": CHANNEL_CHAT_ID_ES,
+        "text": mensaje_es,
+        "parse_mode": "HTML",
+        "reply_markup": {
+            "inline_keyboard": [
+                [
+                    {
+                        "text": "Señales premium 30 días gratis ✨",
+                        "url": "https://t.me/CriptoSignalBotGestion_bot?start=676731307b8344cb070ac996"
+                    }
+                ]
+            ]
+        }
+    }
+
+    requests.post(url, json=payload_es)
+
+    # Si deseas activarlo también para el canal en inglés, lo agregamos luego con su propio prompt_en.
