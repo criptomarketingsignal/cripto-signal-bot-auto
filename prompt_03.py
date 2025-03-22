@@ -36,7 +36,7 @@ def calcular_rango_y_efectividad(precio):
     efectividad = round(100 - abs(rango_max - rango_min) / precio * 100, 2)
     return rango_min, rango_max, efectividad
 
-def send_prompt_03():
+def send_prompt_01():
     fecha_hoy = obtener_fecha_en_espanol()
     precio_btc = obtener_precio_btc()
     if not precio_btc:
