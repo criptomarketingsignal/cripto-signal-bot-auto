@@ -1,5 +1,3 @@
-# Crear la nueva versión de prompt_01.py con generación de mensaje corto + largo, y envío solo del corto
-new_prompt_01_code = """
 import os
 import requests
 import openai
@@ -75,13 +73,4 @@ def send_prompt_01():
         }
     }
 
-    # Enviar como JSON
     requests.post(url, json=payload)
-"""
-
-# Guardar el nuevo archivo
-prompt_01_updated_path = "/mnt/data/prompt_01_updated.py"
-with open(prompt_01_updated_path, "w", encoding="utf-8") as f:
-    f.write(new_prompt_01_code.strip())
-
-prompt_01_updated_path
