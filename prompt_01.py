@@ -1,6 +1,3 @@
-# Código final de prompt_01.py corregido con integración del nuevo prompt, sin rutas inválidas y con cálculo realista de efectividad.
-
-codigo_prompt_final = """
 import os
 import requests
 import openai
@@ -18,14 +15,14 @@ def obtener_precio_btc():
         data = response.json()
         return float(data["bitcoin"]["usd"])
     except Exception as e:
-        print("Error al obtener precio BTC:", e)
+        print("❌ Error al obtener precio BTC:", e)
         return None
 
 def calcular_rango_y_efectividad(precio):
     rango_min = round(precio * 0.9925, 2)   # -0.75%
     rango_max = round(precio * 1.0025, 2)   # +0.25%
     promedio = round((rango_min + rango_max) / 2, 2)
-    efectividad = round(99.35 - abs(rango_max - rango_min) / precio * 100, 2)  # Cuanto más estrecho el rango, mayor la precisión
+    efectividad = round(99.35 - abs(rango_max - rango_min) / precio * 100, 2)
     return rango_min, rango_max, promedio, efectividad
 
 def send_prompt_01():
@@ -36,7 +33,7 @@ def send_prompt_01():
 
     rango_min, rango_max, promedio, efectividad = calcular_rango_y_efectividad(precio_btc)
 
-    prompt = f\"\"\"
+    prompt = f"""
 Actúa como un analista técnico profesional especializado en criptomonedas y genera un mensaje en español perfectamente estructurado para el canal de señales.
 
 ➡️ Crea un mensaje con estilo motivador, análisis real y visualmente claro para Telegram. El precio actual de BTC es {precio_btc} USD.
@@ -74,8 +71,8 @@ Condiciones ideales para una operación intradía de alta probabilidad.
 📊 Señales, gráficos en vivo y análisis en tiempo real completamente GRATIS por 30 días.  
 🔑 𝐎𝐛𝐭𝐞́𝐧 𝐭𝐮 𝐦𝐞𝐬 𝐠𝐫𝐚𝐭𝐢𝐬 𝐚𝐡𝐨𝐫𝐚! 🚀  
 Gracias por elegirnos como tu portal de trading de confianza. ¡Juntos, haremos que tu inversión crezca!  
-✨ 𝐂𝐫𝐲𝐩𝐭𝐨 𝐒𝐢𝐠𝐧𝐚𝐥 𝐁𝐨𝐭 ✨Mantente pendiente del mensaje de mitad de sesión. ¡Feliz trading!
-\"\"\"
+✨ 𝐂𝐫𝐲𝐩𝐭𝐨 𝐒𝐢𝐠𝐧𝐚𝐥 𝐁𝐨𝐭 ✨ Mantente pendiente del mensaje de mitad de sesión. ¡Feliz trading!
+"""
 
     response = openai.ChatCompletion.create(
         model="gpt-4",
@@ -101,4 +98,3 @@ Gracias por elegirnos como tu portal de trading de confianza. ¡Juntos, haremos 
     }
 
     requests.post(url, json=payload)
-"""
