@@ -42,116 +42,55 @@ def calcular_rango_y_efectividad(precio):
 
 def send_prompt_01():
     fecha_es = obtener_fecha_en_espanol()
-    fecha_en = obtener_fecha_en_ingles()
     precio_btc = obtener_precio_btc()
     if not precio_btc:
         return
 
     rango_min, rango_max, promedio, efectividad = calcular_rango_y_efectividad(precio_btc)
+    imagen_url = "https://cryptosignalbot.com/wp-content/uploads/2025/03/21.png"
 
-    # Español
-    prompt_es = f"""
-Actúa como un analista técnico profesional especializado en criptomonedas y genera un mensaje en español perfectamente estructurado para el canal de señales.
+    prompt_es = f"""<b>Buenos días traders!</b> Qué mejor manera de comenzar el día que con nuestra primera señal del día. Hoy vamos a analizar Bitcoin y darles nuestras recomendaciones. ¡Vamos allá!
 
-➡️ Crea un mensaje con estilo motivador, análisis real y visualmente claro para Telegram. El precio actual de BTC es {precio_btc} USD.
+<b>𝐅𝐞𝐜𝐡𝐚:</b> {fecha_es}  
+<b>𝐒𝐞𝐧̃𝐚𝐥:</b> 1 de 3
 
-Usa esta estructura exacta en el mensaje generado:
-
-Buenos días traders! Qué mejor manera de comenzar el día que con nuestra primera señal del día. Hoy vamos a analizar Bitcoin y darles nuestras recomendaciones. ¡Vamos allá!
-
-𝐅𝐞𝐜𝐡𝐚: {fecha_es}  
-𝐒𝐞𝐧̃𝐚𝐥: 1 de 3
+<img src='{imagen_url}'/>
 
 Nuestro equipo trabaja arduamente para ofrecer análisis técnico y fundamental en tiempo real tres veces al día, asegurándonos de mantener a nuestra comunidad completamente informada y preparada.
 
-Herramientas utilizadas:
-- Velas japonesas 📊
-- Medias Móviles Exp 📈
-- Fibonacci 🔢
-- Fuerza Relativa (RSI) ⚖️
-- (SQZMOM) ⚡️
-- Volumen (POC) 💼
+<b>Herramientas utilizadas:</b>
+• Velas japonesas 📊
+• Medias Móviles Exp 📈
+• Fibonacci 🔢
+• Fuerza Relativa (RSI) ⚖️
+• SQZMOM ⚡️
+• Volumen (POC) 💼
 
-◉ 𝐀𝐧𝐚́𝐥𝐢𝐬𝐢𝐬 𝐓𝐞́𝐜𝐧𝐢𝐜𝐨:
+<b>◉ 𝐀𝐧𝐚́𝐥𝐢𝐬𝐢𝐬 𝐓𝐞́𝐜𝐧𝐢𝐜𝐨:</b>
 Incluye un análisis técnico claro basado en las herramientas anteriores.
 
-◉ 𝐀𝐧𝐚́𝐥𝐢𝐬𝐢𝐬 𝐅𝐮𝐧𝐝𝐚𝐦𝐞𝐧𝐭𝐚𝐥:
+<b>◉ 𝐀𝐧𝐚́𝐥𝐢𝐬𝐢𝐬 𝐅𝐮𝐧𝐝𝐚𝐦𝐞𝐧𝐭𝐚𝐥:</b>
 Incluye visión del DXY, sentimiento de mercado, Nasdaq/SP500.
 
-◉ 𝐑𝐚𝐧𝐠𝐨 𝐝𝐞 𝐨𝐩𝐞𝐫𝐚𝐜𝐢𝐨́𝐧 (𝐋𝐨𝐧𝐠 𝟑𝐱):
-💰 Entrada óptima entre: ${rango_min} 
-🎯𝐑𝐚𝐧𝐠𝐨 𝐝𝐞 𝐨𝐩𝐞𝐫𝐚𝐜𝐢𝐨́𝐧: Entre ${rango_min} – ${rango_max}  
+<b>◉ 𝐑𝐚𝐧𝐠𝐨 𝐝𝐞 𝐨𝐩𝐞𝐫𝐚𝐜𝐢𝐨́𝐧 (𝐋𝐨𝐧𝐠 𝟑𝐱):</b>
+💰 Entrada óptima entre: ${rango_min}  
+🎯 <b>𝐑𝐚𝐧𝐠𝐨 𝐝𝐞 𝐨𝐩𝐞𝐫𝐚𝐜𝐢𝐨́𝐧:</b> Entre ${rango_min} – ${rango_max}  
 🟢 Porcentaje de efectividad estimado: {efectividad}%  
+
 Condiciones ideales para una operación intradía de alta probabilidad.  
 ⚠️ ¡Cuida tu gestión de riesgo! No te olvides de establecer una estrategia de salida. Este mercado es altamente volátil. Operación recomendada solo para hoy.
 
 📊 Señales, gráficos en vivo y análisis en tiempo real completamente GRATIS por 30 días.  
-🔑 𝐎𝐛𝐭𝐞́𝐧 𝐭𝐮 𝐦𝐞𝐬 𝐠𝐫𝐚𝐭𝐢𝐬 𝐚𝐡𝐨𝐫𝐚! 🚀  
+🔑 <b>𝐎𝐛𝐭𝐞́𝐧 𝐭𝐮 𝐦𝐞𝐬 𝐠𝐫𝐚𝐭𝐢𝐬 𝐚𝐡𝐨𝐫𝐚!</b> 🚀  
 
 Gracias por elegirnos como tu portal de trading de confianza. ¡Juntos, haremos que tu inversión crezca!  
-✨ 𝐂𝐫𝐲𝐩𝐭𝐨 𝐒𝐢𝐠𝐧𝐚𝐥 𝐁𝐨𝐭 ✨ Mantente pendiente del mensaje de mitad de sesión. ¡Feliz trading!
+✨ <b>𝐂𝐫𝐲𝐩𝐭𝐨 𝐒𝐢𝐠𝐧𝐚𝐥 𝐁𝐨𝐭</b> ✨ Mantente pendiente del mensaje de mitad de sesión. ¡Feliz trading!
 """
-
-    response_es = openai.ChatCompletion.create(
-        model="gpt-4o",
-        messages=[{"role": "user", "content": prompt_es}]
-    )
-    message_es = response_es.choices[0].message["content"]
-
-    # Inglés
-    prompt_en = f"""
-Act as a professional crypto technical analyst and generate a perfectly structured message in English for the signals channel.
-
-➡️ Write a motivational message, with real analysis and visually clean for Telegram. The current BTC price is {precio_btc} USD.
-
-Use this exact structure:
-
-Good morning traders! What better way to start the day than with our first signal. Today, we analyze Bitcoin and give you our top recommendations. Let’s go!
-
-📅 Date: {fecha_en}  
-📌 Signal: 1 of 3
-
-Our team works hard to deliver real-time technical and fundamental analysis three times a day to keep you fully informed and ready.
-
-Tools used:
-- Japanese Candlesticks 📊
-- Exponential Moving Averages 📈
-- Fibonacci 🔢
-- RSI ⚖️
-- SQZMOM ⚡️
-- Volume (POC) 💼
-
-◉ 𝐓𝐞𝐜𝐡𝐧𝐢𝐜𝐚𝐥 𝐀𝐧𝐚𝐥𝐲𝐬𝐢𝐬:
-Include real technical analysis using the above tools.
-
-◉ 𝐅𝐮𝐧𝐝𝐚𝐦𝐞𝐧𝐭𝐚𝐥 𝐀𝐧𝐚𝐥𝐲𝐬𝐢𝐬:
-Include insights on DXY, market sentiment, Nasdaq/SP500.
-
-◉ 𝐎𝐩𝐞𝐫𝐚𝐭𝐢𝐧𝐠 𝐑𝐚𝐧𝐠𝐞 (𝐋𝐨𝐧𝐠 𝟑𝐱):
-💰 Optimal entry between: ${rango_min}
-🎯 Trading range: ${rango_min} – ${rango_max}  
-🟢 Estimated success rate: {efectividad}%  
-Ideal setup for an intraday high-probability move.  
-⚠️ Always manage your risk. This market is volatile. Valid only for today.
-
-📊 Real-time signals, live charts and full analysis FREE for 30 days.  
-🔑 𝐂𝐥𝐚𝐢𝐦 𝐲𝐨𝐮𝐫 𝐅𝐑𝐄𝐄 𝐦𝐨𝐧𝐭𝐡 𝐧𝐨𝐰! 🚀  
-
-Thanks for choosing us as your trusted trading hub. Together, we grow your investment!  
-✨ 𝐂𝐫𝐲𝐩𝐭𝐨 𝐒𝐢𝐠𝐧𝐚𝐥 𝐁𝐨𝐭 ✨ Stay tuned for the mid-session update. Happy trading!
-"""
-
-    response_en = openai.ChatCompletion.create(
-        model="gpt-4o",
-        messages=[{"role": "user", "content": prompt_en}]
-    )
-    message_en = response_en.choices[0].message["content"]
 
     url = f"https://api.telegram.org/bot{BOT_TOKEN}/sendMessage"
-
     payload_es = {
         "chat_id": CHANNEL_CHAT_ID_ES,
-        "text": message_es,
+        "text": prompt_es,
         "parse_mode": "HTML",
         "reply_markup": {
             "inline_keyboard": [
@@ -165,24 +104,4 @@ Thanks for choosing us as your trusted trading hub. Together, we grow your inves
         }
     }
 
-    payload_en = {
-        "chat_id": CHANNEL_CHAT_ID_EN,
-        "text": message_en,
-        "parse_mode": "HTML",
-        "reply_markup": {
-            "inline_keyboard": [
-                [
-                    {
-                        "text": "Free Premium Signals 30 Days ✨",
-                        "url": "https://t.me/CriptoSignalBotGestion_bot?start=676731307b8344cb070ac996"
-                    }
-                ]
-            ]
-        }
-    }
-
     requests.post(url, json=payload_es)
-    requests.post(url, json=payload_en)
-
-
-    requests.post(url, json=payload)
