@@ -6,6 +6,7 @@ from datetime import datetime
 openai.api_key = os.getenv("OPENAI_API_KEY")
 BOT_TOKEN = os.getenv("TELEGRAM_BOT_TOKEN")
 CHANNEL_CHAT_ID_ES = "-1002440626725"
+CHANNEL_CHAT_ID_EN = "-1002288256984"
 
 def obtener_fecha_en_espanol():
     meses = {
@@ -33,20 +34,22 @@ def obtener_precio_btc():
         return None
 
 def calcular_rango_y_efectividad(precio):
-    rango_min = round(precio * 0.9925, 2)   # -0.75%
-    rango_max = round(precio * 1.0025, 2)   # +0.25%
+    rango_min = round(precio * 0.9925, 2)
+    rango_max = round(precio * 1.0025, 2)
     promedio = round((rango_min + rango_max) / 2, 2)
     efectividad = round(99.35 - abs(rango_max - rango_min) / precio * 100, 2)
     return rango_min, rango_max, promedio, efectividad
 
 def send_prompt_01():
     fecha_es = obtener_fecha_en_espanol()
+    fecha_en = obtener_fecha_en_ingles()
     precio_btc = obtener_precio_btc()
     if not precio_btc:
         return
 
     rango_min, rango_max, promedio, efectividad = calcular_rango_y_efectividad(precio_btc)
 
+    # Español
     prompt_es = f"""
 Actúa como un analista técnico profesional especializado en criptomonedas y genera un mensaje en español perfectamente estructurado para el canal de señales.
 
@@ -89,36 +92,96 @@ Gracias por elegirnos como tu portal de trading de confianza. ¡Juntos, haremos 
 ✨ 𝐂𝐫𝐲𝐩𝐭𝐨 𝐒𝐢𝐠𝐧𝐚𝐥 𝐁𝐨𝐭 ✨ Mantente pendiente del mensaje de mitad de sesión. ¡Feliz trading!
 """
 
+    # Inglés
+    prompt_en = f"""
+Act as a professional crypto technical analyst and generate a perfectly structured message in English for the signals channel.
+
+Write a motivational message, with real analysis and visually clean for Telegram. The current BTC price is {precio_btc} USD.
+
+Use this exact structure:
+
+Good morning traders! What better way to start the day than with our first signal. Today, we analyze Bitcoin and give you our top recommendations. Let’s go!
+
+📅 Date: {fecha_en}  
+📌 Signal: 1 of 3
+
+Our team works hard to deliver real-time technical and fundamental analysis three times a day to keep you fully informed and ready.
+
+Tools used:
+- Japanese Candlesticks 📊
+- Exponential Moving Averages 📈
+- Fibonacci 🔢
+- RSI ⚖️
+- SQZMOM ⚡️
+- Volume (POC) 💼
+
+◉ 𝐓𝐞𝐜𝐡𝐧𝐢𝐜𝐚𝐥 𝐀𝐧𝐚𝐥𝐲𝐬𝐢𝐬:
+Include real technical analysis using the above tools.
+
+◉ 𝐅𝐮𝐧𝐝𝐚𝐦𝐞𝐧𝐭𝐚𝐥 𝐀𝐧𝐚𝐥𝐲𝐬𝐢𝐬:
+Include insights on DXY, market sentiment, Nasdaq/SP500.
+
+◉ 𝐎𝐩𝐞𝐫𝐚𝐭𝐢𝐧𝐠 𝐑𝐚𝐧𝐠𝐞 (𝐋𝐨𝐧𝐠 𝟑𝐱):
+💰 Optimal entry between: ${rango_min}
+🎯 Trading range: ${rango_min} – ${rango_max}  
+🟢 Estimated success rate: {efectividad}%  
+Ideal setup for an intraday high-probability move.  
+⚠️ Always manage your risk. This market is volatile. Valid only for today.
+
+📊 Real-time signals, live charts and full analysis FREE for 30 days.  
+🔑 𝐂𝐥𝐚𝐢𝐦 𝐲𝐨𝐮𝐫 𝐅𝐑𝐄𝐄 𝐦𝐨𝐧𝐭𝐡 𝐧𝐨𝐰! 🚀  
+
+Thanks for choosing us as your trusted trading hub. Together, we grow your investment!  
+✨ 𝐂𝐫𝐲𝐩𝐭𝐨 𝐒𝐢𝐠𝐧𝐚𝐥 𝐁𝐨𝐭 ✨ Stay tuned for the mid-session update. Happy trading!
+"""
+
     response_es = openai.ChatCompletion.create(
         model="gpt-4o",
         messages=[{"role": "user", "content": prompt_es}]
     )
     message_es = response_es.choices[0].message["content"]
 
-    # Enviar imagen primero
-    url_photo = f"https://api.telegram.org/bot{BOT_TOKEN}/sendPhoto"
-    requests.post(url_photo, data={
-        "chat_id": CHANNEL_CHAT_ID_ES,
-        "photo": "https://cryptosignalbot.com/wp-content/uploads/2025/03/21.png"
-    })
+    response_en = openai.ChatCompletion.create(
+        model="gpt-4o",
+        messages=[{"role": "user", "content": prompt_en}]
+    )
+    message_en = response_en.choices[0].message["content"]
 
-    # Enviar mensaje luego
-    url = f"https://api.telegram.org/bot{BOT_TOKEN}/sendMessage"
+    url_photo = f"https://api.telegram.org/bot{BOT_TOKEN}/sendPhoto"
+    url_text = f"https://api.telegram.org/bot{BOT_TOKEN}/sendMessage"
+
+    # Enviar imagen a ambos canales
+    for chat_id in [CHANNEL_CHAT_ID_ES, CHANNEL_CHAT_ID_EN]:
+        requests.post(url_photo, data={
+            "chat_id": chat_id,
+            "photo": "https://cryptosignalbot.com/wp-content/uploads/2025/03/21.png"
+        })
+
+    # Enviar texto a canal español
     payload_es = {
         "chat_id": CHANNEL_CHAT_ID_ES,
         "text": message_es,
         "parse_mode": "HTML",
         "reply_markup": {
-            "inline_keyboard": [
-                [
-                    {
-                        "text": "Señales premium 30 días gratis ✨",
-                        "url": "https://t.me/CriptoSignalBotGestion_bot?start=676731307b8344cb070ac996"
-                    }
-                ]
-            ]
+            "inline_keyboard": [[{
+                "text": "Señales premium 30 días gratis ✨",
+                "url": "https://t.me/CriptoSignalBotGestion_bot?start=676731307b8344cb070ac996"
+            }]]
         }
     }
 
-    requests.post(url, json=payload_es)
+    # Enviar texto a canal inglés
+    payload_en = {
+        "chat_id": CHANNEL_CHAT_ID_EN,
+        "text": message_en,
+        "parse_mode": "HTML",
+        "reply_markup": {
+            "inline_keyboard": [[{
+                "text": "Free Premium Signals 30 Days ✨",
+                "url": "https://t.me/CriptoSignalBotGestion_bot?start=676731307b8344cb070ac996"
+            }]]
+        }
+    }
 
+    requests.post(url_text, json=payload_es)
+    requests.post(url_text, json=payload_en)
