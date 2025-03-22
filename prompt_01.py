@@ -3,16 +3,11 @@ import requests
 import openai
 import os
 
-# Asigna tus claves de API desde variables de entorno
 openai.api_key = os.getenv("OPENAI_API_KEY")
 BOT_TOKEN = os.getenv("TELEGRAM_BOT_TOKEN")
-
-# IDs de los canales en Telegram
 CHANNEL_CHAT_ID_ES = "-1002440626725"
-CHANNEL_CHAT_ID_EN = "-1002288256984"
 
 def obtener_fecha_en_espanol():
-    """Retorna la fecha actual en español, p. ej.: '23 de marzo de 2025'."""
     meses = {
         "January": "enero", "February": "febrero", "March": "marzo",
         "April": "abril", "May": "mayo", "June": "junio",
@@ -23,55 +18,24 @@ def obtener_fecha_en_espanol():
     mes = meses[hoy.strftime("%B")]
     return f"{hoy.day} de {mes} de {hoy.year}"
 
-def obtener_precio_btc():
-    """
-    Obtiene el precio actual de BTC en USDT desde la API pública de Binance.
-    Devuelve un float con el precio.
-    """
-    try:
-        binance_url = "https://api.binance.com/api/v3/ticker/price?symbol=BTCUSDT"
-        response = requests.get(binance_url)
-        data = response.json()
-        return float(data["price"])
-    except Exception as e:
-        print("Error al obtener el precio de BTC:", e)
-        # En caso de error, puedes devolver un valor por defecto o manejarlo de otra forma
-        return 0.0
-
 def send_prompt_01():
-    """
-    Envía dos mensajes a los canales de Telegram:
-      1) Análisis en español.
-      2) Análisis en inglés.
-    Incluye el precio real de BTC y un rango calculado (±2%) en cada prompt para que GPT-4
-    genere un análisis y forzosamente lo incorpore al texto final.
-    """
-
     fecha = obtener_fecha_en_espanol()
-    precio_btc = obtener_precio_btc()
 
-    # Calculamos un rango ±2% alrededor del precio actual
-    # Puedes ajustar este porcentaje a tu gusto.
-    rango_bajo = round(precio_btc * 0.98, 2)
-    rango_alto = round(precio_btc * 1.02, 2)
-
-    # Prompt en español: se incluye el precio y el rango calculado para forzarlo en la respuesta
     prompt_es = f"""
 Actúa como un analista técnico profesional especializado en criptomonedas y genera un mensaje en español perfectamente estructurado para el canal de señales de Telegram.
 
-✅ Debes generar un análisis completo de Bitcoin (BTCUSD) para el día de hoy: {fecha}.
-✅ El enfoque es para operaciones LONG con apalancamiento 3x y válido solo por el día actual.
-✅ El precio actual aproximado de BTC es: {precio_btc:.2f} USDT.
-✅ El rango de entrada que debes INCLUIR obligatoriamente en el texto es entre {rango_bajo:.2f} USDT y {rango_alto:.2f} USDT.
-✅ Siempre debes calcular o justificar este rango de operación para hoy basado en este precio real de BTC. 
-   Si las condiciones son difíciles, incluye una advertencia, pero el rango siempre debe estar presente en el mensaje final.
-✅ Usa tono motivador, directo y visualmente claro para Telegram. Usa negritas en unicode (𝐞𝐬𝐭𝐞 𝐭𝐢𝐩𝐨), viñetas ◉ y emoticonos. Nada de formato Markdown.
+✅ Este es un análisis real de Bitcoin (BTCUSD) en timeframe intradía, para operaciones en LONG con apalancamiento 3x.  
+✅ El análisis debe incluir SIEMPRE un rango de entrada real y actualizado, con al menos 2% de amplitud entre mínimo y máximo (por ejemplo: $83,200 – $84,900).  
+✅ Usa análisis técnico multitemporal (1W, 1D, 4H, 1H) con RSI, EMAs, Fibonacci, SQZMOM, POC y velas japonesas.  
+✅ Usa también análisis fundamental con DXY, sentimiento de mercado y Nasdaq/SP500.  
+✅ Escribe el mensaje para Telegram, con viñetas ◉, emoticonos, y negritas estilo unicode (𝐞𝐬𝐭𝐞 𝐭𝐢𝐩𝐨). Nunca uses Markdown.  
+✅ No uses frases genéricas como "el rango más favorable". Siempre da precios reales, actuales y confiables.
 
-Estructura del mensaje generado:
+Formato del mensaje:
 
 Buenos días traders! ¿Están listos para nuestra primera señal del día? Hoy vamos a dejar nuestras huellas en el mundo del Bitcoin. ¡Preparen sus gráficos!
 
-𝐅𝐞𝐜𝐡𝐚: {fecha}
+𝐅𝐞𝐜𝐡𝐚: {fecha}  
 𝐒𝐞𝐧̃𝐚𝐥: 1 de 3 
 
 Somos un equipo comprometido a proporcionarte el análisis técnico y fundamental más reciente, tres veces al día para que siempre estés actualizado y preparado para tomar decisiones precisas.
@@ -85,15 +49,15 @@ Herramientas que utilizamos:
 - Volumen (POC) 💼
 
 ◉ 𝐀𝐧𝐚́𝐥𝐢𝐬𝐢𝐬 𝐓𝐞́𝐜𝐧𝐢𝐜𝐨:  
-Incluye un análisis basado en RSI, EMA, Fibonacci, SQZMOM, POC y velas.
+Describe RSI, EMAs, Fibonacci, volumen, SQZMOM y patrones de velas.
 
 ◉ 𝐀𝐧𝐚́𝐥𝐢𝐬𝐢𝐬 𝐅𝐮𝐧𝐝𝐚𝐦𝐞𝐧𝐭𝐚𝐥:  
-Incluye visión del DXY, sentimiento de mercado y Nasdaq/SP500.
+DXY, sentimiento del mercado, SP500/Nasdaq.
 
 ◉ 𝐑𝐚𝐧𝐠𝐨 𝐝𝐞 𝐨𝐩𝐞𝐫𝐚𝐜𝐢𝐨́𝐧 (𝐋𝐨𝐧𝐠 𝟑𝐱):  
-💰 Entrada óptima: Debes incluir entre {rango_bajo:.2f} USDT y {rango_alto:.2f} USDT (obligatorio)  
-🟢 Probabilidad de éxito: muy precisa, basada en indicadores  
-⚠️ Cuida tu gestión de riesgo, operación solo para hoy
+💰 Entrada óptima: Indica precios reales en formato $xx,xxx – $xx,xxx  
+🟢 Probabilidad de éxito: Debe calcularse con base en indicadores  
+⚠️ Gestión de riesgo obligatoria. Rango válido solo para hoy.
 
 📊 Señales, gráficos en vivo y análisis en tiempo real completamente GRATIS por 30 días.  
 🔑 𝐎𝐛𝐭𝐞́𝐧 𝐭𝐮 𝐦𝐞𝐬 𝐠𝐫𝐚𝐭𝐢𝐬 𝐚𝐡𝐨𝐫𝐚! 🚀
@@ -102,65 +66,27 @@ Muchas gracias por confiar en nosotros como tu portal de trading. Juntos haremos
 ✨ 𝐂𝐫𝐲𝐩𝐭𝐨 𝐒𝐢𝐠𝐧𝐚𝐥 𝐁𝐨𝐭 ✨ Estén atentos para el 2º mensaje (mitad de sesión, Hora de Nueva York). ¡Feliz trading!
 """
 
-    # Prompt en inglés: de igual modo, forzamos el rango calculado
-    prompt_en = f"""
-Act as a professional crypto analyst and generate a perfectly structured message in English for the Telegram signal channel.
-
-✅ This is a long (3x) operation setup for Bitcoin (BTCUSD), only valid today: {fecha}.
-✅ The current BTC price is approximately {precio_btc:.2f} USDT.
-✅ You MUST include the following entry range for today's trade: between {rango_bajo:.2f} USDT and {rango_alto:.2f} USDT.
-✅ If market conditions are unstable, include a warning, but NEVER skip the numeric range.
-✅ Use a motivational tone, clear formatting, unicode bold (𝐥𝐢𝐤𝐞 𝐭𝐡𝐢𝐬), bullet points ◉ and emojis. No Markdown.
-
-Follow the same structure as the Spanish message, but in English.
-"""
-
-    # Llamadas a GPT-4 para generar el análisis en español
-    response_es = openai.ChatCompletion.create(
+    response = openai.ChatCompletion.create(
         model="gpt-4",
         messages=[{"role": "user", "content": prompt_es}]
     )
-    mensaje_es = response_es.choices[0].message["content"]
+    mensaje = response.choices[0].message["content"]
 
-    # Llamadas a GPT-4 para generar el análisis en inglés
-    response_en = openai.ChatCompletion.create(
-        model="gpt-4",
-        messages=[{"role": "user", "content": prompt_en}]
-    )
-    mensaje_en = response_en.choices[0].message["content"]
-
-    # URL base para enviar mensajes via bot de Telegram
     url = f"https://api.telegram.org/bot{BOT_TOKEN}/sendMessage"
-
-    # Enviar el mensaje en español
-    payload_es = {
+    payload = {
         "chat_id": CHANNEL_CHAT_ID_ES,
-        "text": mensaje_es,
+        "text": mensaje,
         "parse_mode": "HTML",
         "reply_markup": {
-            "inline_keyboard": [[
-                {
-                    "text": "Señales premium 30 días gratis ✨",
-                    "url": "https://t.me/CriptoSignalBotGestion_bot?start=676731307b8344cb070ac996"
-                }
-            ]]
+            "inline_keyboard": [
+                [
+                    {
+                        "text": "Señales premium 30 días gratis ✨",
+                        "url": "https://t.me/CriptoSignalBotGestion_bot?start=676731307b8344cb070ac996"
+                    }
+                ]
+            ]
         }
     }
-    requests.post(url, json=payload_es)
 
-    # Enviar el mensaje en inglés
-    payload_en = {
-        "chat_id": CHANNEL_CHAT_ID_EN,
-        "text": mensaje_en,
-        "parse_mode": "HTML",
-        "reply_markup": {
-            "inline_keyboard": [[
-                {
-                    "text": "Free 30-Day Premium Access ✨",
-                    "url": "https://t.me/CriptoSignalBotGestion_bot?start=676731307b8344cb070ac996"
-                }
-            ]]
-        }
-    }
-    requests.post(url, json=payload_en)
-
+    requests.post(url, json=payload)
