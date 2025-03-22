@@ -37,7 +37,7 @@ def obtener_fecha_es():
     mes_es = meses[ahora.strftime("%B")]
     return f"{ahora.day} de {mes_es} de {ahora.year}"
 
-def send_prompt_02():
+def send_prompt_01():
     fecha_hoy = obtener_fecha_es()
     precio_btc = obtener_precio_btc()
     if not precio_btc:
