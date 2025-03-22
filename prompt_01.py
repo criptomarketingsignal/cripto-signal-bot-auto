@@ -5,41 +5,35 @@ from datetime import datetime
 
 openai.api_key = os.getenv("OPENAI_API_KEY")
 BOT_TOKEN = os.getenv("TELEGRAM_BOT_TOKEN")
-CHANNEL_CHAT_ID_ES = "-1002440626725"  # Canal en español
+CHANNEL_CHAT_ID_ES = "-1002440626725"
 
 def send_prompt_01():
     fecha_hoy = datetime.now().strftime("%d de %B de %Y")
 
     prompt = (
-        f"Actúa como un analista técnico profesional especializado en criptomonedas, y realiza un análisis completo, "
-        f"detallado y claro del precio de Bitcoin para hoy, {fecha_hoy}. "
-        "El análisis debe incluir multitemporalidades (1W, 1D, 4H, 1H), patrones de velas, niveles de soporte y resistencia, "
-        "EMAs 21/55/100/200, retrocesos de Fibonacci (38.2%, 50%, 61.8%, 78.6%), volumen (POC), RSI, SQZMOM, análisis fundamental "
-        "con eventos macroeconómicos relevantes, DXY, sentimiento del mercado, relación con SP500/Nasdaq, y determinar si es día para operar en long. "
-        "Todo debe escribirse como una señal operativa clara con rango de entrada, TP, SL, efectividad estimada y mensaje motivador. "
-        "Usa viñetas ◉ y negritas en unicode como 𝐞𝐬𝐭𝐞 𝐭𝐢𝐩𝐨. Termina con un llamado a la acción motivador. "
-        "Es la primera señal del día, así que menciónalo al principio."
+        f"Actúa como un analista técnico profesional de criptomonedas. "
+        f"Genera una señal para Bitcoin (BTC) en long con apalancamiento 3x para hoy, {fecha_hoy}. "
+        "Incluye zona de entrada, promedio, TP, SL, análisis técnico (velas, RSI, EMAs, Fibonacci, volumen POC, SQZMOM), "
+        "análisis fundamental (DXY, SP500, sentimiento). Escribe con estilo claro, estructurado, usando emoticonos, viñetas ◉ y negritas en unicode. "
+        "Debe terminar con una nota motivadora y un botón de acceso a señales premium."
     )
 
-    # Solicitar análisis a OpenAI
     response = openai.ChatCompletion.create(
         model="gpt-4",
         messages=[{"role": "user", "content": prompt}]
     )
+    mensaje = response.choices[0].message["content"]
 
-    message = response.choices[0].message["content"]
-
-    # Enviar mensaje a Telegram con botón
     url = f"https://api.telegram.org/bot{BOT_TOKEN}/sendMessage"
     payload = {
         "chat_id": CHANNEL_CHAT_ID_ES,
-        "text": message,
+        "text": mensaje,
         "parse_mode": "HTML",
         "reply_markup": {
             "inline_keyboard": [
                 [
                     {
-                        "text": "Señales premium 30 días gratis ✨",
+                        "text": "✨ Señales Premium 30 días GRATIS",
                         "url": "https://t.me/CriptoSignalBotGestion_bot?start=676731307b8344cb070ac996"
                     }
                 ]
