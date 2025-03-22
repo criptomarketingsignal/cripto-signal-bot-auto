@@ -79,7 +79,7 @@ Incluye un análisis técnico claro basado en las herramientas anteriores.
 Incluye visión del DXY, sentimiento de mercado, Nasdaq/SP500.
 
 ◉ 𝐑𝐚𝐧𝐠𝐨 𝐝𝐞 𝐨𝐩𝐞𝐫𝐚𝐜𝐢𝐨́𝐧 (𝐋𝐨𝐧𝐠 𝟑𝐱):
-💰 Entrada óptima entre: ${rango_min} y ${rango_max}  
+💰 Entrada óptima entre: ${rango_min} 
 🎯𝐑𝐚𝐧𝐠𝐨 𝐝𝐞 𝐨𝐩𝐞𝐫𝐚𝐜𝐢𝐨́𝐧: Entre ${rango_min} – ${rango_max}  
 🟢 Porcentaje de efectividad estimado: {efectividad}%  
 Condiciones ideales para una operación intradía de alta probabilidad.  
@@ -128,7 +128,7 @@ Include real technical analysis using the above tools.
 Include insights on DXY, market sentiment, Nasdaq/SP500.
 
 ◉ 𝐎𝐩𝐞𝐫𝐚𝐭𝐢𝐧𝐠 𝐑𝐚𝐧𝐠𝐞 (𝐋𝐨𝐧𝐠 𝟑𝐱):
-💰 Optimal entry between: ${rango_min} and ${rango_max}  
+💰 Optimal entry between: ${rango_min}
 🎯 Trading range: ${rango_min} – ${rango_max}  
 🟢 Estimated success rate: {efectividad}%  
 Ideal setup for an intraday high-probability move.  
