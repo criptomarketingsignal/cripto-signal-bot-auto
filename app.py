@@ -16,3 +16,8 @@ def home():
 
 if __name__ == "__main__":
     app.run(host="0.0.0.0", port=5000)
+    @app.route("/test")
+def test_signal():
+    from prompts.prompt_01 import send_prompt_01
+    send_prompt_01()
+    return "✅ Señal enviada a ambos canales."
