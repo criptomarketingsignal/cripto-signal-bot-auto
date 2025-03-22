@@ -22,17 +22,19 @@ def obtener_fecha_en_espanol():
 def send_prompt_01():
     fecha = obtener_fecha_en_espanol()
 
-    # Prompt en español
+    # Prompt en español (actualizado para forzar rango)
     prompt_es = f"""
-Actúa como un analista técnico profesional especializado en criptomonedas y genera un mensaje en español perfectamente estructurado para el canal de señales.
+Actúa como un analista técnico profesional especializado en criptomonedas y genera un mensaje en español perfectamente estructurado para el canal de señales de Telegram.
 
-➡️ El análisis debe estar enfocado en una operación de tipo LONG, con apalancamiento 3x, y válido solo para el día de hoy.
+✅ Debes generar un análisis completo de Bitcoin (BTCUSD) para el día de hoy: {fecha}.
 
-➡️ Calcula un rango de operación (entrada) para hoy basado en el precio actual real de BTC (usa el que tú ves). Si no hay condiciones técnicas favorables claras, indica que NO se recomienda operar hoy y no proporciones un rango.
+✅ El enfoque es para operaciones LONG con apalancamiento 3x y válido solo por el día actual.
 
-➡️ Usa un tono motivador, con análisis realista, y visualmente claro para Telegram. Formatea con este estilo: negritas en unicode (𝐞𝐬𝐭𝐞 𝐭𝐢𝐩𝐨), emojis, y viñetas ◉.
+✅ Siempre debes calcular un rango de operación para hoy basado en el precio real actual de BTC. Si las condiciones son difíciles, incluye una advertencia, pero el rango siempre debe estar presente.
 
-𝐌𝐨𝐝𝐞𝐥𝐨 𝐝𝐞 𝐦𝐞𝐧𝐬𝐚𝐣𝐞:
+✅ Usa tono motivador, directo y visualmente claro para Telegram. Usa negritas en unicode (𝐞𝐬𝐭𝐞 𝐭𝐢𝐩𝐨), viñetas ◉ y emoticonos. Nada de formato Markdown.
+
+Estructura del mensaje generado:
 
 Buenos días traders! ¿Están listos para nuestra primera señal del día? Hoy vamos a dejar nuestras huellas en el mundo del Bitcoin. ¡Preparen sus gráficos!
 
@@ -67,26 +69,27 @@ Muchas gracias por confiar en nosotros como tu portal de trading. Juntos haremos
 ✨ 𝐂𝐫𝐲𝐩𝐭𝐨 𝐒𝐢𝐠𝐧𝐚𝐥 𝐁𝐨𝐭 ✨ Estén atentos para el 2º mensaje (mitad de sesión, Hora de Nueva York). ¡Feliz trading!
 """
 
+    # Prompt en inglés (también con rango obligatorio)
     prompt_en = f"""
-Act as a professional technical analyst specialized in cryptocurrencies and create a well-structured message in English for our signal channel.
+Act as a professional crypto analyst and generate a perfectly structured message in English for the Telegram signal channel.
 
-➡️ The analysis must be for a LONG trade, with 3x leverage, valid only for today.
+✅ This is a long (3x) operation setup for Bitcoin (BTCUSD), only valid today: {fecha}.
 
-➡️ Calculate a realistic and actionable entry range for today using the actual BTC price (the one you see). If there are no favorable conditions, clearly state that no long trade is recommended today.
+✅ Always calculate a realistic entry range for today based on the actual BTC price. If market conditions are unstable, include a warning, but NEVER skip the range.
 
-➡️ The tone must be clear, motivational and formatted for Telegram: bold in unicode (𝐭𝐡𝐢𝐬 𝐬𝐭𝐲𝐥𝐞), bullet points ◉ and emojis.
+✅ Use motivational tone, clear formatting, unicode bold (𝐥𝐢𝐤𝐞 𝐭𝐡𝐢𝐬), bullet points ◉ and emojis. No Markdown.
 
-Structure the message similar to the Spanish format.
+The structure should follow the same format as the Spanish message.
 """
 
-    # Solicita a OpenAI el mensaje en español
+    # Generar análisis en español
     response_es = openai.ChatCompletion.create(
         model="gpt-4",
         messages=[{"role": "user", "content": prompt_es}]
     )
     mensaje_es = response_es.choices[0].message["content"]
 
-    # Solicita a OpenAI el mensaje en inglés
+    # Generar análisis en inglés
     response_en = openai.ChatCompletion.create(
         model="gpt-4",
         messages=[{"role": "user", "content": prompt_en}]
@@ -101,14 +104,12 @@ Structure the message similar to the Spanish format.
         "text": mensaje_es,
         "parse_mode": "HTML",
         "reply_markup": {
-            "inline_keyboard": [
-                [
-                    {
-                        "text": "Señales premium 30 días gratis ✨",
-                        "url": "https://t.me/CriptoSignalBotGestion_bot?start=676731307b8344cb070ac996"
-                    }
-                ]
-            ]
+            "inline_keyboard": [[
+                {
+                    "text": "Señales premium 30 días gratis ✨",
+                    "url": "https://t.me/CriptoSignalBotGestion_bot?start=676731307b8344cb070ac996"
+                }
+            ]]
         }
     }
     requests.post(url, json=payload_es)
@@ -119,14 +120,12 @@ Structure the message similar to the Spanish format.
         "text": mensaje_en,
         "parse_mode": "HTML",
         "reply_markup": {
-            "inline_keyboard": [
-                [
-                    {
-                        "text": "Free 30-Day Premium Access ✨",
-                        "url": "https://t.me/CriptoSignalBotGestion_bot?start=676731307b8344cb070ac996"
-                    }
-                ]
-            ]
+            "inline_keyboard": [[
+                {
+                    "text": "Free 30-Day Premium Access ✨",
+                    "url": "https://t.me/CriptoSignalBotGestion_bot?start=676731307b8344cb070ac996"
+                }
+            ]]
         }
     }
     requests.post(url, json=payload_en)
