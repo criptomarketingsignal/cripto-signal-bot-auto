@@ -1,4 +1,4 @@
-import os
+       import os
 import requests
 import openai
 from datetime import datetime
@@ -18,6 +18,9 @@ def obtener_fecha_en_espanol():
     hoy = datetime.now()
     mes = meses[hoy.strftime("%B")]
     return f"{hoy.day} de {mes} de {hoy.year}"
+
+def obtener_fecha_en_ingles():
+    return datetime.now().strftime("%B %d, %Y")
 
 def obtener_precio_btc():
     try:
@@ -39,84 +42,146 @@ def calcular_rango_y_efectividad(precio):
 
 def send_prompt_01():
     fecha_es = obtener_fecha_en_espanol()
+    fecha_en = obtener_fecha_en_ingles()
     precio_btc = obtener_precio_btc()
     if not precio_btc:
         return
 
     rango_min, rango_max, promedio, efectividad = calcular_rango_y_efectividad(precio_btc)
 
-    prompt_resumen = f"""
-Genera un mensaje en español corto (máximo 950 caracteres) para Telegram con estilo motivador y profesional sobre la apertura del día con Bitcoin. Usa solo estas viñetas ◉, esta tipografía 𝐨𝐬𝐜𝐮𝐫𝐚 para negrillas y emoticonos. El precio actual de BTC es {precio_btc} USD. Incluye fecha, título, breve análisis visual de la imagen y llamado a revisar el análisis completo. No des rangos ni porcentajes aquí.
+    # Español
+    prompt_es = f"""
+Actúa como un analista técnico profesional especializado en criptomonedas y genera un mensaje en español perfectamente estructurado para el canal de señales.
+
+Crea un mensaje con estilo motivador, análisis real y visualmente claro para Telegram. El precio actual de BTC es {precio_btc} USD.
+
+Usa esta estructura exacta en el mensaje generado:
+
+Buenos días traders! Qué mejor manera de comenzar el día que con nuestra primera señal del día. Hoy vamos a analizar Bitcoin y darles nuestras recomendaciones. ¡Vamos allá!
+
+𝐅𝐞𝐜𝐡𝐚: {fecha_es}  
+𝐒𝐞𝐧̃𝐚𝐥: 1 de 3
+
+Nuestro equipo trabaja arduamente para ofrecer análisis técnico y fundamental en tiempo real tres veces al día, asegurándonos de mantener a nuestra comunidad completamente informada y preparada.
+
+Herramientas utilizadas:
+- Velas japonesas 📊
+- Medias Móviles Exp 📈
+- Fibonacci 🔢
+- Fuerza Relativa (RSI) ⚖️
+- (SQZMOM) ⚡️
+- Volumen (POC) 💼
+
+◉ 𝐀𝐧𝐚́𝐥𝐢𝐬𝐢𝐬 𝐓𝐞́𝐜𝐧𝐢𝐜𝐨:
+Incluye un análisis técnico claro basado en las herramientas anteriores.
+
+◉ 𝐀𝐧𝐚́𝐥𝐢𝐬𝐢𝐬 𝐅𝐮𝐧𝐝𝐚𝐦𝐞𝐧𝐭𝐚𝐥:
+Incluye visión del DXY, sentimiento de mercado, Nasdaq/SP500.
+
+◉ 𝐑𝐚𝐧𝐠𝐨 𝐝𝐞 𝐨𝐩𝐞𝐫𝐚𝐜𝐢𝐨́𝐧 (𝐋𝐨𝐧𝐠 𝟑𝐱):
+💰 Entrada óptima entre: ${rango_min}  
+🎯𝐑𝐚𝐧𝐠𝐨 𝐝𝐞 𝐨𝐩𝐞𝐫𝐚𝐜𝐢𝐨́𝐧: Entre ${rango_min} – ${rango_max}  
+🟢 Porcentaje de efectividad estimado: {efectividad}%  
+Condiciones ideales para una operación intradía de alta probabilidad.  
+⚠️ ¡Cuida tu gestión de riesgo! No te olvides de establecer una estrategia de salida. Este mercado es altamente volátil. Operación recomendada solo para hoy.
+
+📊 Señales, gráficos en vivo y análisis en tiempo real completamente GRATIS por 30 días.  
+🔑 𝐎𝐛𝐭𝐞́𝐧 𝐭𝐮 𝐦𝐞𝐬 𝐠𝐫𝐚𝐭𝐢𝐬 𝐚𝐡𝐨𝐫𝐚! 🚀  
+
+Gracias por elegirnos como tu portal de trading de confianza. ¡Juntos, haremos que tu inversión crezca!  
+✨ 𝐂𝐫𝐲𝐩𝐭𝐨 𝐒𝐢𝐠𝐧𝐚𝐥 𝐁𝐨𝐭 ✨ Mantente pendiente del mensaje de mitad de sesión. ¡Feliz trading!
 """
 
-    prompt_extenso = f"""
-Actúa como un analista técnico profesional especializado en criptomonedas y genera un análisis completo y detallado para Bitcoin (BTCUSD) hoy, {fecha_es}. Usa el siguiente formato con subtítulos claros:
+    # Inglés
+    prompt_en = f"""
+Act as a professional crypto technical analyst and generate a perfectly structured message in English for the signals channel.
 
-𝐏𝐀𝐒𝐎 𝟏: ¿𝐏𝐚𝐫𝐚 𝐪𝐮𝐞́ 𝐟𝐞𝐜𝐡𝐚 𝐝𝐞𝐬𝐞𝐚𝐬 𝐞𝐥 𝐚𝐧𝐚́𝐥𝐢𝐬𝐢𝐬 𝐝𝐞 𝐁𝐢𝐭𝐜𝐨𝐢𝐧?
-Hoy, {fecha_es}
+Write a motivational message, with real analysis and visually clean for Telegram. The current BTC price is {precio_btc} USD.
 
-𝐏𝐀𝐒𝐎 𝟐: 𝐀𝐧𝐚́𝐥𝐢𝐬𝐢𝐬 𝐓𝐞́𝐜𝐧𝐢𝐜𝐨 𝐌𝐮𝐥𝐭𝐢𝐭𝐞𝐦𝐩𝐨𝐫𝐚𝐥
-◉ Velas japonesas (1W, 1D, 4H, 1H) con patrones y estructuras clave.
-◉ Soportes y resistencias por temporalidad y con EMAs 21, 55, 100, 200.
-◉ Retrocesos de Fibonacci en 4H y 1D (38.2%, 50%, 61.8%, 78.6%).
-◉ Volumen POC: zonas de acumulación/distribución.
-◉ RSI: valores en 1H, 4H y 1D con divergencias si aplica.
-◉ SQZMOM: compresión/expansión y dirección del momentum.
+Use this exact structure:
 
-𝐏𝐀𝐒𝐎 𝟑: 𝐀𝐧𝐚́𝐥𝐢𝐬𝐢𝐬 𝐅𝐮𝐧𝐝𝐚𝐦𝐞𝐧𝐭𝐚𝐥
-◉ Eventos macroeconómicos importantes.
-◉ Movimiento del índice DXY.
-◉ Sentimiento del mercado y redes sociales.
-◉ Correlación con SP500/Nasdaq.
+Good morning traders! What better way to start the day than with our first signal. Today, we analyze Bitcoin and give you our top recommendations. Let’s go!
 
-𝐏𝐀𝐒𝐎 𝟒: 𝐒𝐢𝐧𝐭𝐞𝐬𝐢𝐬 𝐝𝐞 𝐨𝐩𝐨𝐫𝐭𝐮𝐧𝐢𝐝𝐚𝐝
-◉ ¿Es buen día para operar en long con 3x?
-◉ Nivel de entrada ideal y stop técnico con justificación basada en la estructura, momentum y volatilidad.
+📅 Date: {fecha_en}  
+📌 Signal: 1 of 3
 
-Usa un lenguaje visual, con estructura clara y negritas 𝐜𝐨𝐦𝐨 𝐞𝐬𝐭𝐚 para títulos. Incluye emoticonos relevantes. Usa gpt-4o.
+Our team works hard to deliver real-time technical and fundamental analysis three times a day to keep you fully informed and ready.
+
+Tools used:
+- Japanese Candlesticks 📊
+- Exponential Moving Averages 📈
+- Fibonacci 🔢
+- RSI ⚖️
+- SQZMOM ⚡️
+- Volume (POC) 💼
+
+◉ 𝐓𝐞𝐜𝐡𝐧𝐢𝐜𝐚𝐥 𝐀𝐧𝐚𝐥𝐲𝐬𝐢𝐬:
+Include real technical analysis using the above tools.
+
+◉ 𝐅𝐮𝐧𝐝𝐚𝐦𝐞𝐧𝐭𝐚𝐥 𝐀𝐧𝐚𝐥𝐲𝐬𝐢𝐬:
+Include insights on DXY, market sentiment, Nasdaq/SP500.
+
+◉ 𝐎𝐩𝐞𝐫𝐚𝐭𝐢𝐧𝐠 𝐑𝐚𝐧𝐠𝐞 (𝐋𝐨𝐧𝐠 𝟑𝐱):
+💰 Optimal entry between: ${rango_min}
+🎯 Trading range: ${rango_min} – ${rango_max}  
+🟢 Estimated success rate: {efectividad}%  
+Ideal setup for an intraday high-probability move.  
+⚠️ Always manage your risk. This market is volatile. Valid only for today.
+
+📊 Real-time signals, live charts and full analysis FREE for 30 days.  
+🔑 𝐂𝐥𝐚𝐢𝐦 𝐲𝐨𝐮𝐫 𝐅𝐑𝐄𝐄 𝐦𝐨𝐧𝐭𝐡 𝐧𝐨𝐰! 🚀  
+
+Thanks for choosing us as your trusted trading hub. Together, we grow your investment!  
+✨ 𝐂𝐫𝐲𝐩𝐭𝐨 𝐒𝐢𝐠𝐧𝐚𝐥 𝐁𝐨𝐭 ✨ Stay tuned for the mid-session update. Happy trading!
 """
 
-    response_resumen = openai.ChatCompletion.create(
+    response_es = openai.ChatCompletion.create(
         model="gpt-4o",
-        messages=[{"role": "user", "content": prompt_resumen}]
+        messages=[{"role": "user", "content": prompt_es}]
     )
-    message_resumen = response_resumen.choices[0].message["content"]
+    message_es = response_es.choices[0].message["content"]
 
-    response_extenso = openai.ChatCompletion.create(
+    response_en = openai.ChatCompletion.create(
         model="gpt-4o",
-        messages=[{"role": "user", "content": prompt_extenso}]
+        messages=[{"role": "user", "content": prompt_en}]
     )
-    message_extenso = response_extenso.choices[0].message["content"]
+    message_en = response_en.choices[0].message["content"]
 
     url_photo = f"https://api.telegram.org/bot{BOT_TOKEN}/sendPhoto"
     url_text = f"https://api.telegram.org/bot{BOT_TOKEN}/sendMessage"
 
+    # Enviar imagen a ambos canales
     for chat_id in [CHANNEL_CHAT_ID_ES, CHANNEL_CHAT_ID_EN]:
         requests.post(url_photo, data={
             "chat_id": chat_id,
             "photo": "https://cryptosignalbot.com/wp-content/uploads/2025/03/21.png"
         })
 
-    payload_resumen = {
+    # Enviar texto a canal español
+    payload_es = {
         "chat_id": CHANNEL_CHAT_ID_ES,
-        "text": message_resumen,
+        "text": message_es,
         "parse_mode": "HTML",
         "reply_markup": {
             "inline_keyboard": [[{
-                "text": "📖 Ver análisis completo",
-                "callback_data": "ver_extenso"
+                "text": "Señales premium 30 días gratis ✨",
+                "url": "https://t.me/CriptoSignalBotGestion_bot?start=676731307b8344cb070ac996"
             }]]
         }
     }
 
-    payload_extenso = {
-        "chat_id": CHANNEL_CHAT_ID_ES,
-        "text": message_extenso,
-        "parse_mode": "HTML"
+    # Enviar texto a canal inglés
+    payload_en = {
+        "chat_id": CHANNEL_CHAT_ID_EN,
+        "text": message_en,
+        "parse_mode": "HTML",
+        "reply_markup": {
+            "inline_keyboard": [[{
+                "text": "Free Premium Signals 30 Days ✨",
+                "url": "https://t.me/CriptoSignalBotGestion_bot?start=676731307b8344cb070ac996"
+            }]]
+        }
     }
 
-    requests.post(url_text, json=payload_resumen)
-    requests.post(url_text, json=payload_extenso)
-
-# Para que lo ejecutes tú desde Render o local
-# send_prompt_01()
+    requests.post(url_text, json=payload_es)
+    requests.post(url_text, json=payload_en)
