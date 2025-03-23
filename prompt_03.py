@@ -104,8 +104,15 @@ Translate this message into perfect English for a Telegram crypto trading channe
     )
     mensaje_en = response_en.choices[0].message["content"]
 
-    url = f"https://api.telegram.org/bot{BOT_TOKEN}/sendMessage"
+    url_photo = f"https://api.telegram.org/bot{BOT_TOKEN}/sendPhoto"
+    url_msg = f"https://api.telegram.org/bot{BOT_TOKEN}/sendMessage"
+    imagen_url = "https://cryptosignalbot.com/wp-content/uploads/2025/03/23.png"
 
+    # Primero enviamos la imagen a ambos canales
+    for canal in [CHANNEL_CHAT_ID_ES, CHANNEL_CHAT_ID_EN]:
+        requests.post(url_photo, data={"chat_id": canal, "photo": imagen_url})
+
+    # Luego el mensaje con botón
     for canal, mensaje in [(CHANNEL_CHAT_ID_ES, mensaje_es), (CHANNEL_CHAT_ID_EN, mensaje_en)]:
         payload = {
             "chat_id": canal,
@@ -122,5 +129,4 @@ Translate this message into perfect English for a Telegram crypto trading channe
                 ]
             }
         }
-        requests.post(url, json=payload)
-
+        requests.post(url_msg, json=payload)
