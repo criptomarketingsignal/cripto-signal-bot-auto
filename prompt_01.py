@@ -5,13 +5,10 @@ from datetime import datetime
 
 openai.api_key = os.getenv("OPENAI_API_KEY")
 BOT_TOKEN = os.getenv("TELEGRAM_BOT_TOKEN")
-CHANNEL_CHAT_ID_ES = "-1001234567890"  # Reemplaza con el ID/usuario de tu canal ES
-CHANNEL_CHAT_ID_EN = "-1009876543210"  # Reemplaza con el ID/usuario de tu canal EN
+CHANNEL_CHAT_ID_ES = "-1002440626725"
+CHANNEL_CHAT_ID_EN = "-1002288256984"
 
-def obtener_fecha_es():
-    """
-    Devuelve la fecha en español: Ej. '24 de marzo de 2025'
-    """
+def obtener_fecha_en_espanol():
     meses = {
         "January": "enero", "February": "febrero", "March": "marzo",
         "April": "abril", "May": "mayo", "June": "junio",
@@ -19,204 +16,107 @@ def obtener_fecha_es():
         "October": "octubre", "November": "noviembre", "December": "diciembre"
     }
     hoy = datetime.now()
-    mes_es = meses[hoy.strftime("%B")]
-    return f"{hoy.day} de {mes_es} de {hoy.year}"
-
-def obtener_fecha_en():
-    """
-    Devuelve la fecha en inglés: Ej. 'March 24, 2025'
-    """
-    return datetime.now().strftime("%B %d, %Y")
+    mes = meses[hoy.strftime("%B")]
+    return f"{hoy.day} de {mes} de {hoy.year}"
 
 def obtener_precio_btc():
-    """
-    Devuelve el precio de Bitcoin (BTC) en USD consultando CoinGecko.
-    Retorna None si ocurre un error.
-    """
     try:
         url = "https://api.coingecko.com/api/v3/simple/price"
         params = {"ids": "bitcoin", "vs_currencies": "usd"}
-        r = requests.get(url, params=params)
-        data = r.json()
+        response = requests.get(url, params=params)
+        data = response.json()
         return float(data["bitcoin"]["usd"])
     except Exception as e:
-        print("Error al obtener precio de BTC:", e)
+        print("❌ Error al obtener precio BTC:", e)
         return None
 
-def calcular_rangos(precio):
-    """
-    Cálculo simple de rango para ejemplo.
-    Retorna (rango_min, rango_max, efectividad).
-    """
+def calcular_rango_y_efectividad(precio):
     rango_min = round(precio * 0.9925, 2)
     rango_max = round(precio * 1.0025, 2)
-    # Efectividad “ficticia”
-    efectividad = round(98.5, 2)
-    return rango_min, rango_max, efectividad
+    promedio = round((rango_min + rango_max) / 2, 2)
+    efectividad = round(99.35 - abs(rango_max - rango_min) / precio * 100, 2)
+    return rango_min, rango_max, promedio, efectividad
 
 def send_prompt_01():
-    """
-    Envía dos señales:
-    1) Un primer mensaje con imagen + caption (ES e INGLÉS), ~<950 caracteres
-    2) Un segundo mensaje "extenso" (ES e INGLÉS), empezando desde PASO 2
-    """
-    fecha_es = obtener_fecha_es()
-    fecha_en = obtener_fecha_en()
-    precio = obtener_precio_btc()
-    if not precio:
-        print("No se pudo obtener el precio de BTC. Saliendo.")
+    fecha_es = obtener_fecha_en_espanol()
+    precio_btc = obtener_precio_btc()
+    if not precio_btc:
         return
 
-    rango_min, rango_max, efectividad = calcular_rangos(precio)
+    rango_min, rango_max, promedio, efectividad = calcular_rango_y_efectividad(precio_btc)
 
-    # --- PRIMER MENSAJE - ES ---
-    primer_mensaje_es = (
-        f"Buenos días traders ✨!\n"
-        f"Hoy analizamos Bitcoin (BTC). ¡Vamos allá! 🚀\n"
-        f"𝐅𝐞𝐜𝐡𝐚: {fecha_es}\n"
-        f"𝐏𝐫𝐞𝐜𝐢𝐨 𝐁𝐓𝐂: ${precio}\n\n"
-        f"◉ Rango Long 3x:\n"
-        f"Entrada: ${rango_min}\n"
-        f"Hasta: ${rango_max}\n"
-        f"Eficiencia: {efectividad}%\n\n"
-        f"Recomendación intradía (stop 60%).\n"
-        f"🔑 𝐎𝐛𝐭𝐞́𝐧 𝐭𝐮 𝐦𝐞𝐬 𝐠𝐫𝐚𝐭𝐢𝐬 𝐚𝐪𝐮𝐢́ 👇"
-    )
+    prompt_resumen = f"""
+Genera un mensaje en español corto (máximo 950 caracteres) para Telegram con estilo motivador y profesional sobre la apertura del día con Bitcoin. Usa solo estas viñetas ◉, esta tipografía 𝐨𝐬𝐜𝐮𝐫𝐚 para negrillas y emoticonos. El precio actual de BTC es {precio_btc} USD. Incluye fecha, título, breve análisis visual de la imagen y llamado a revisar el análisis completo. No des rangos ni porcentajes aquí.
+"""
 
-    # --- PRIMER MENSAJE - EN ---
-    primer_mensaje_en = (
-        f"Good morning traders ✨!\n"
-        f"Today we analyze Bitcoin (BTC). Let's go! 🚀\n"
-        f"𝐃𝐚𝐭𝐞: {fecha_en}\n"
-        f"𝐁𝐓𝐂 𝐏𝐫𝐢𝐜𝐞: ${precio}\n\n"
-        f"◉ Long 3x Range:\n"
-        f"Entry: ${rango_min}\n"
-        f"Up to: ${rango_max}\n"
-        f"Efficiency: {efectividad}%\n\n"
-        f"Intraday recommendation (60% stop).\n"
-        f"🔑 𝐂𝐥𝐚𝐢𝐦 𝐲𝐨𝐮𝐫 𝐅𝐑𝐄𝐄 𝐦𝐨𝐧𝐭𝐡 👇"
-    )
+    prompt_extenso = f"""
+Actúa como un analista técnico profesional especializado en criptomonedas y genera un análisis completo y detallado para Bitcoin (BTCUSD) hoy, {fecha_es}. Usa el siguiente formato con subtítulos claros:
 
-    # Imagen que se enviará en ambos
-    image_url = "https://cryptosignalbot.com/wp-content/uploads/2025/03/21.png"
+𝐏𝐀𝐒𝐎 𝟏: ¿𝐏𝐚𝐫𝐚 𝐪𝐮𝐞́ 𝐟𝐞𝐜𝐡𝐚 𝐝𝐞𝐬𝐞𝐚𝐬 𝐞𝐥 𝐚𝐧𝐚́𝐥𝐢𝐬𝐢𝐬 𝐝𝐞 𝐁𝐢𝐭𝐜𝐨𝐢𝐧?
+Hoy, {fecha_es}
 
-    # Inline keyboard (botón) - Español
-    keyboard_es = {
-        "inline_keyboard": [[
-            {
-                "text": "Señales premium 30 días gratis ✨",
-                "url": "https://t.me/CriptoSignalBotGestion_bot?start=xxxx"
-            }
-        ]]
-    }
-    # Inline keyboard (botón) - Inglés
-    keyboard_en = {
-        "inline_keyboard": [[
-            {
-                "text": "Free Premium Signals 30 Days ✨",
-                "url": "https://t.me/CriptoSignalBotGestion_bot?start=xxxx"
-            }
-        ]]
-    }
-
-    # Enviar primer mensaje (imagen + caption) ES
-    url_photo = f"https://api.telegram.org/bot{BOT_TOKEN}/sendPhoto"
-    requests.post(
-        url_photo,
-        data={
-            "chat_id": CHANNEL_CHAT_ID_ES,
-            "photo": image_url,
-            "caption": primer_mensaje_es,
-            "parse_mode": "HTML",
-        },
-        json={
-            "reply_markup": keyboard_es
-        }
-    )
-
-    # Enviar primer mensaje (imagen + caption) EN
-    requests.post(
-        url_photo,
-        data={
-            "chat_id": CHANNEL_CHAT_ID_EN,
-            "photo": image_url,
-            "caption": primer_mensaje_en,
-            "parse_mode": "HTML",
-        },
-        json={
-            "reply_markup": keyboard_en
-        }
-    )
-
-    # --- SEGUNDO MENSAJE: Análisis extenso (PASO 2 en adelante) ---
-    analisis_extenso_es = f"""
 𝐏𝐀𝐒𝐎 𝟐: 𝐀𝐧𝐚́𝐥𝐢𝐬𝐢𝐬 𝐓𝐞́𝐜𝐧𝐢𝐜𝐨 𝐌𝐮𝐥𝐭𝐢𝐭𝐞𝐦𝐩𝐨𝐫𝐚𝐥
-◉ Revisar 1W, 1D, 4H, 1H (velas, EMAs, Fibonacci, POC, RSI, SQZMOM)
+◉ Velas japonesas (1W, 1D, 4H, 1H) con patrones y estructuras clave.
+◉ Soportes y resistencias por temporalidad y con EMAs 21, 55, 100, 200.
+◉ Retrocesos de Fibonacci en 4H y 1D (38.2%, 50%, 61.8%, 78.6%).
+◉ Volumen POC: zonas de acumulación/distribución.
+◉ RSI: valores en 1H, 4H y 1D con divergencias si aplica.
+◉ SQZMOM: compresión/expansión y dirección del momentum.
 
 𝐏𝐀𝐒𝐎 𝟑: 𝐀𝐧𝐚́𝐥𝐢𝐬𝐢𝐬 𝐅𝐮𝐧𝐝𝐚𝐦𝐞𝐧𝐭𝐚𝐥
-◉ FED, CPI, DXY, sentimiento de mercado, correlaciones
+◉ Eventos macroeconómicos importantes.
+◉ Movimiento del índice DXY.
+◉ Sentimiento del mercado y redes sociales.
+◉ Correlación con SP500/Nasdaq.
 
-𝐏𝐀𝐒𝐎 𝟒: 𝐒𝐞𝐧̃𝐚𝐥 𝐝𝐞 𝐓𝐫𝐚𝐝𝐢𝐧𝐠
-◉ Determinar si hoy es propicio un Long 3x (stop 60%)
-◉ Precio de entrada y stop dinámicos (soportes/resistencias, momentum)
+𝐏𝐀𝐒𝐎 𝟒: 𝐒𝐢𝐧𝐭𝐞𝐬𝐢𝐬 𝐝𝐞 𝐨𝐩𝐨𝐫𝐭𝐮𝐧𝐢𝐝𝐚𝐝
+◉ ¿Es buen día para operar en long con 3x?
+◉ Nivel de entrada ideal y stop técnico con justificación basada en la estructura, momentum y volatilidad.
 
-¡Lista la estructura de tu operativa BTC! 🎯
+Usa un lenguaje visual, con estructura clara y negritas 𝐜𝐨𝐦𝐨 𝐞𝐬𝐭𝐚 para títulos. Incluye emoticonos relevantes. Usa gpt-4o.
 """
 
-    analisis_extenso_en = f"""
-𝐒𝐓𝐄𝐏 𝟐: 𝐌𝐮𝐥𝐭𝐢-𝐓𝐢𝐦𝐞𝐟𝐫𝐚𝐦𝐞 𝐓𝐞𝐜𝐡𝐧𝐢𝐜𝐚𝐥 𝐀𝐧𝐚𝐥𝐲𝐬𝐢𝐬
-◉ Review 1W, 1D, 4H, 1H (candles, EMAs, Fibonacci, POC, RSI, SQZMOM)
+    response_resumen = openai.ChatCompletion.create(
+        model="gpt-4o",
+        messages=[{"role": "user", "content": prompt_resumen}]
+    )
+    message_resumen = response_resumen.choices[0].message["content"]
 
-𝐒𝐓𝐄𝐏 𝟑: 𝐅𝐮𝐧𝐝𝐚𝐦𝐞𝐧𝐭𝐚𝐥 𝐀𝐧𝐚𝐥𝐲𝐬𝐢𝐬
-◉ FED, CPI, DXY, market sentiment, correlations
+    response_extenso = openai.ChatCompletion.create(
+        model="gpt-4o",
+        messages=[{"role": "user", "content": prompt_extenso}]
+    )
+    message_extenso = response_extenso.choices[0].message["content"]
 
-𝐒𝐓𝐄𝐏 𝟒: 𝐓𝐫𝐚𝐝𝐢𝐧𝐠 𝐒𝐢𝐠𝐧𝐚𝐥
-◉ Decide if a 3x Long is good today (60% stop)
-◉ Dynamic entry & stop (support/resistance, momentum)
-
-Here is your BTC trading framework! 🎯
-"""
-
-    # (Opcional) Embellecer con GPT-4o
-    try:
-        resp_es = openai.ChatCompletion.create(
-            model="gpt-4o",
-            messages=[{"role": "user", "content": analisis_extenso_es}],
-            max_tokens=700,
-            temperature=0.7
-        )
-        analisis_extenso_es = resp_es.choices[0].message["content"]
-    except Exception as e:
-        print("Error GPT-4o en ES:", e)
-
-    try:
-        resp_en = openai.ChatCompletion.create(
-            model="gpt-4o",
-            messages=[{"role": "user", "content": analisis_extenso_en}],
-            max_tokens=700,
-            temperature=0.7
-        )
-        analisis_extenso_en = resp_en.choices[0].message["content"]
-    except Exception as e:
-        print("Error GPT-4o en EN:", e)
-
-    # Enviar segundo mensaje (texto) ES
+    url_photo = f"https://api.telegram.org/bot{BOT_TOKEN}/sendPhoto"
     url_text = f"https://api.telegram.org/bot{BOT_TOKEN}/sendMessage"
-    requests.post(url_text, json={
+
+    for chat_id in [CHANNEL_CHAT_ID_ES, CHANNEL_CHAT_ID_EN]:
+        requests.post(url_photo, data={
+            "chat_id": chat_id,
+            "photo": "https://cryptosignalbot.com/wp-content/uploads/2025/03/21.png"
+        })
+
+    payload_resumen = {
         "chat_id": CHANNEL_CHAT_ID_ES,
-        "text": analisis_extenso_es,
+        "text": message_resumen,
         "parse_mode": "HTML",
-        "reply_markup": keyboard_es
-    })
+        "reply_markup": {
+            "inline_keyboard": [[{
+                "text": "📖 Ver análisis completo",
+                "callback_data": "ver_extenso"
+            }]]
+        }
+    }
 
-    # Enviar segundo mensaje (texto) EN
-    requests.post(url_text, json={
-        "chat_id": CHANNEL_CHAT_ID_EN,
-        "text": analisis_extenso_en,
-        "parse_mode": "HTML",
-        "reply_markup": keyboard_en
-    })
+    payload_extenso = {
+        "chat_id": CHANNEL_CHAT_ID_ES,
+        "text": message_extenso,
+        "parse_mode": "HTML"
+    }
 
-# Si deseas ejecutar directamente en Render o local:
-if __name__ == "__main__":
-    send_prompt_01()
+    requests.post(url_text, json=payload_resumen)
+    requests.post(url_text, json=payload_extenso)
+
+# Para que lo ejecutes tú desde Render o local
+# send_prompt_01()
