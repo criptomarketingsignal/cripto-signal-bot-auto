@@ -5,10 +5,9 @@ from datetime import datetime
 
 openai.api_key = os.getenv("OPENAI_API_KEY")
 BOT_TOKEN = os.getenv("TELEGRAM_BOT_TOKEN")
-CHANNEL_CHAT_ID_ES = "-1001234567890"  # Reemplaza con tu canal/ID en español
-CHANNEL_CHAT_ID_EN = "-1009876543210"  # Reemplaza con tu canal/ID en inglés
+CHANNEL_CHAT_ID_ES = "-1001234567890"  # Reemplaza con el ID/usuario de tu canal ES
+CHANNEL_CHAT_ID_EN = "-1009876543210"  # Reemplaza con el ID/usuario de tu canal EN
 
-# --- Funciones Auxiliares ---
 def obtener_fecha_es():
     """
     Devuelve la fecha en español: Ej. '24 de marzo de 2025'
@@ -55,9 +54,12 @@ def calcular_rangos(precio):
     efectividad = round(98.5, 2)
     return rango_min, rango_max, efectividad
 
-# --- Función Principal ---
-def enviar_senales():
-    # Obtener datos básicos
+def send_prompt_01():
+    """
+    Envía dos señales:
+    1) Un primer mensaje con imagen + caption (ES e INGLÉS), ~<950 caracteres
+    2) Un segundo mensaje "extenso" (ES e INGLÉS), empezando desde PASO 2
+    """
     fecha_es = obtener_fecha_es()
     fecha_en = obtener_fecha_en()
     precio = obtener_precio_btc()
@@ -67,9 +69,7 @@ def enviar_senales():
 
     rango_min, rango_max, efectividad = calcular_rangos(precio)
 
-    # PRIMER MENSAJE (con imagen) - Español
-    # Debe ser <= 950 caracteres
-    # Añadimos inline keyboard en 'sendPhoto' via 'reply_markup'
+    # --- PRIMER MENSAJE - ES ---
     primer_mensaje_es = (
         f"Buenos días traders ✨!\n"
         f"Hoy analizamos Bitcoin (BTC). ¡Vamos allá! 🚀\n"
@@ -83,8 +83,7 @@ def enviar_senales():
         f"🔑 𝐎𝐛𝐭𝐞́𝐧 𝐭𝐮 𝐦𝐞𝐬 𝐠𝐫𝐚𝐭𝐢𝐬 𝐚𝐪𝐮𝐢́ 👇"
     )
 
-    # PRIMER MENSAJE (con imagen) - Inglés
-    # También <= 950 caracteres
+    # --- PRIMER MENSAJE - EN ---
     primer_mensaje_en = (
         f"Good morning traders ✨!\n"
         f"Today we analyze Bitcoin (BTC). Let's go! 🚀\n"
@@ -98,7 +97,7 @@ def enviar_senales():
         f"🔑 𝐂𝐥𝐚𝐢𝐦 𝐲𝐨𝐮𝐫 𝐅𝐑𝐄𝐄 𝐦𝐨𝐧𝐭𝐡 👇"
     )
 
-    # Imagen que se enviará
+    # Imagen que se enviará en ambos
     image_url = "https://cryptosignalbot.com/wp-content/uploads/2025/03/21.png"
 
     # Inline keyboard (botón) - Español
@@ -120,7 +119,7 @@ def enviar_senales():
         ]]
     }
 
-    # 1) Enviar foto+caption a canal ES
+    # Enviar primer mensaje (imagen + caption) ES
     url_photo = f"https://api.telegram.org/bot{BOT_TOKEN}/sendPhoto"
     requests.post(
         url_photo,
@@ -135,7 +134,7 @@ def enviar_senales():
         }
     )
 
-    # 2) Enviar foto+caption a canal EN
+    # Enviar primer mensaje (imagen + caption) EN
     requests.post(
         url_photo,
         data={
@@ -149,84 +148,75 @@ def enviar_senales():
         }
     )
 
-    # SEGUNDO MENSAJE: ANÁLISIS EXTENSO (ya no limitado a 950 chars)
-    # Comienza desde PASO 2 en adelante. Lo generamos en ES y EN.
-
+    # --- SEGUNDO MENSAJE: Análisis extenso (PASO 2 en adelante) ---
     analisis_extenso_es = f"""
 𝐏𝐀𝐒𝐎 𝟐: 𝐀𝐧𝐚́𝐥𝐢𝐬𝐢𝐬 𝐓𝐞́𝐜𝐧𝐢𝐜𝐨 𝐌𝐮𝐥𝐭𝐢𝐭𝐞𝐦𝐩𝐨𝐫𝐚𝐥
-◉ Revisa 1W, 1D, 4H, 1H (velas japonesas, soportes/resistencias con EMAs, retrocesos Fibonacci, volumen POC, RSI, SQZMOM).
+◉ Revisar 1W, 1D, 4H, 1H (velas, EMAs, Fibonacci, POC, RSI, SQZMOM)
 
 𝐏𝐀𝐒𝐎 𝟑: 𝐀𝐧𝐚́𝐥𝐢𝐬𝐢𝐬 𝐅𝐮𝐧𝐝𝐚𝐦𝐞𝐧𝐭𝐚𝐥
-◉ Eventos macro (FED, CPI, DXY).
-◉ Sentimiento de mercado, correlación SP500/Nasdaq.
+◉ FED, CPI, DXY, sentimiento de mercado, correlaciones
 
-𝐏𝐀𝐒𝐎 𝟒: 𝐃𝐞𝐭𝐞𝐫𝐦𝐢𝐧𝐚𝐫 𝐥𝐚 𝐒𝐞𝐧̃𝐚𝐥
-◉ ¿Hoy es propicio un Long 3x? Stop máximo 60%, intradía.
-◉ Define precio de entrada y stop basado en soportes, resistencias y momentum.
+𝐏𝐀𝐒𝐎 𝟒: 𝐒𝐞𝐧̃𝐚𝐥 𝐝𝐞 𝐓𝐫𝐚𝐝𝐢𝐧𝐠
+◉ Determinar si hoy es propicio un Long 3x (stop 60%)
+◉ Precio de entrada y stop dinámicos (soportes/resistencias, momentum)
 
-¡Listo! Con esto tienes la estructura esencial para tu operativa de Bitcoin. 🎯
+¡Lista la estructura de tu operativa BTC! 🎯
 """
 
     analisis_extenso_en = f"""
 𝐒𝐓𝐄𝐏 𝟐: 𝐌𝐮𝐥𝐭𝐢-𝐓𝐢𝐦𝐞𝐟𝐫𝐚𝐦𝐞 𝐓𝐞𝐜𝐡𝐧𝐢𝐜𝐚𝐥 𝐀𝐧𝐚𝐥𝐲𝐬𝐢𝐬
-◉ Review 1W, 1D, 4H, 1H (candlesticks, support/resistance with EMAs, Fibonacci, POC volume, RSI, SQZMOM).
+◉ Review 1W, 1D, 4H, 1H (candles, EMAs, Fibonacci, POC, RSI, SQZMOM)
 
 𝐒𝐓𝐄𝐏 𝟑: 𝐅𝐮𝐧𝐝𝐚𝐦𝐞𝐧𝐭𝐚𝐥 𝐀𝐧𝐚𝐥𝐲𝐬𝐢𝐬
-◉ Macro events (FED, CPI, DXY).
-◉ Market sentiment, SP500/Nasdaq correlation.
+◉ FED, CPI, DXY, market sentiment, correlations
 
 𝐒𝐓𝐄𝐏 𝟒: 𝐓𝐫𝐚𝐝𝐢𝐧𝐠 𝐒𝐢𝐠𝐧𝐚𝐥
-◉ Consider a 3x Long? Max 60% stop, intraday.
-◉ Entry/stop levels based on support, resistance, momentum.
+◉ Decide if a 3x Long is good today (60% stop)
+◉ Dynamic entry & stop (support/resistance, momentum)
 
-That's it! Here you have the essential structure for your Bitcoin strategy. 🎯
+Here is your BTC trading framework! 🎯
 """
 
-    # Embellecer los textos extensos con GPT-4o (opcional)
+    # (Opcional) Embellecer con GPT-4o
     try:
         resp_es = openai.ChatCompletion.create(
             model="gpt-4o",
             messages=[{"role": "user", "content": analisis_extenso_es}],
-            temperature=0.7,
-            max_tokens=700
+            max_tokens=700,
+            temperature=0.7
         )
         analisis_extenso_es = resp_es.choices[0].message["content"]
     except Exception as e:
-        print("Error GPT-4o ES:", e)
+        print("Error GPT-4o en ES:", e)
 
     try:
         resp_en = openai.ChatCompletion.create(
             model="gpt-4o",
             messages=[{"role": "user", "content": analisis_extenso_en}],
-            temperature=0.7,
-            max_tokens=700
+            max_tokens=700,
+            temperature=0.7
         )
         analisis_extenso_en = resp_en.choices[0].message["content"]
     except Exception as e:
-        print("Error GPT-4o EN:", e)
+        print("Error GPT-4o en EN:", e)
 
-    # Enviar segundo mensaje (texto) en ambos canales
+    # Enviar segundo mensaje (texto) ES
     url_text = f"https://api.telegram.org/bot{BOT_TOKEN}/sendMessage"
-
-    # Español
-    payload_es = {
+    requests.post(url_text, json={
         "chat_id": CHANNEL_CHAT_ID_ES,
         "text": analisis_extenso_es,
         "parse_mode": "HTML",
         "reply_markup": keyboard_es
-    }
-    requests.post(url_text, json=payload_es)
+    })
 
-    # Inglés
-    payload_en = {
+    # Enviar segundo mensaje (texto) EN
+    requests.post(url_text, json={
         "chat_id": CHANNEL_CHAT_ID_EN,
         "text": analisis_extenso_en,
         "parse_mode": "HTML",
         "reply_markup": keyboard_en
-    }
-    requests.post(url_text, json=payload_en)
+    })
 
-
-# Si deseas ejecutarlo directamente:
+# Si deseas ejecutar directamente en Render o local:
 if __name__ == "__main__":
-    enviar_senales()
+    send_prompt_01()
