@@ -129,7 +129,6 @@ Thanks for choosing us as your trusted trading partner. Let’s grow together!
 ✨ 𝐂𝐫𝐲𝐩𝐭𝐨 𝐒𝐢𝐠𝐧𝐚𝐥 𝐁𝐨𝐭 ✨ Stay tuned for the closing signal later today!
 """
 
-    # Obtener respuestas
     response_es = openai.ChatCompletion.create(
         model="gpt-4o",
         messages=[{"role": "user", "content": prompt_es}]
@@ -142,7 +141,15 @@ Thanks for choosing us as your trusted trading partner. Let’s grow together!
     )
     message_en = response_en.choices[0].message["content"]
 
-    url = f"https://api.telegram.org/bot{BOT_TOKEN}/sendMessage"
+    url_text = f"https://api.telegram.org/bot{BOT_TOKEN}/sendMessage"
+    url_img = f"https://api.telegram.org/bot{BOT_TOKEN}/sendPhoto"
+
+    # Enviar imagen a ambos canales
+    for chat_id in [CHANNEL_CHAT_ID_ES, CHANNEL_CHAT_ID_EN]:
+        requests.post(url_img, data={
+            "chat_id": chat_id,
+            "photo": "https://cryptosignalbot.com/wp-content/uploads/2025/03/22.png"
+        })
 
     payload_es = {
         "chat_id": CHANNEL_CHAT_ID_ES,
@@ -172,5 +179,5 @@ Thanks for choosing us as your trusted trading partner. Let’s grow together!
         }
     }
 
-    requests.post(url, json=payload_es)
-    requests.post(url, json=payload_en)
+    requests.post(url_text, json=payload_es)
+    requests.post(url_text, json=payload_en)
