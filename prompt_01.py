@@ -154,7 +154,7 @@ Thanks for choosing us as your trusted trading hub. Together, we grow your inves
     for chat_id in [CHANNEL_CHAT_ID_ES, CHANNEL_CHAT_ID_EN]:
         requests.post(url_photo, data={
             "chat_id": chat_id,
-            "photo": "https://cryptosignalbot.com/wp-content/uploads/2025/03/21.png"
+            "photo": "https://cryptosignalbot.com/wp-content/uploads/2025/03/21-1.png"
         })
 
     # Enviar texto a canal español
