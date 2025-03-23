@@ -106,7 +106,7 @@ Translate this message into perfect English for a Telegram crypto trading channe
 
     url_photo = f"https://api.telegram.org/bot{BOT_TOKEN}/sendPhoto"
     url_msg = f"https://api.telegram.org/bot{BOT_TOKEN}/sendMessage"
-    imagen_url = "https://cryptosignalbot.com/wp-content/uploads/2025/03/23.png"
+    imagen_url = "https://cryptosignalbot.com/wp-content/uploads/2025/03/fin.png"
 
     # Primero enviamos la imagen a ambos canales
     for canal in [CHANNEL_CHAT_ID_ES, CHANNEL_CHAT_ID_EN]:
