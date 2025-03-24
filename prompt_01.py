@@ -2,6 +2,7 @@ import os
 import requests
 import openai
 from datetime import datetime
+import json
 
 openai.api_key = os.getenv("OPENAI_API_KEY")
 BOT_TOKEN = os.getenv("TELEGRAM_BOT_TOKEN")
@@ -45,18 +46,13 @@ def send_prompt_01():
     fecha_en = obtener_fecha_en_ingles()
     precio_btc = obtener_precio_btc()
     if not precio_btc:
+        print("No se pudo obtener el precio de BTC. Abortando...")
         return
 
     rango_min, rango_max, promedio, efectividad = calcular_rango_y_efectividad(precio_btc)
 
-    # Español
+    # Texto en ESPAÑOL
     prompt_es = f"""
-Actúa como un analista técnico profesional especializado en criptomonedas y genera un mensaje en español perfectamente estructurado para el canal de señales.
-
-Crea un mensaje con estilo motivador, análisis real y visualmente claro para Telegram. El precio actual de BTC es {precio_btc} USD.
-
-Usa esta estructura exacta en el mensaje generado:
-
 Buenos días traders! Qué mejor manera de comenzar el día que con nuestra primera señal del día. Hoy vamos a analizar Bitcoin y darles nuestras recomendaciones. ¡Vamos allá!
 
 𝐅𝐞𝐜𝐡𝐚: {fecha_es}  
@@ -90,16 +86,10 @@ Condiciones ideales para una operación intradía de alta probabilidad.
 
 Gracias por elegirnos como tu portal de trading de confianza. ¡Juntos, haremos que tu inversión crezca!  
 ✨ 𝐂𝐫𝐲𝐩𝐭𝐨 𝐒𝐢𝐠𝐧𝐚𝐥 𝐁𝐨𝐭 ✨ Mantente pendiente del mensaje de mitad de sesión. ¡Feliz trading!
-"""
+""".strip()
 
-    # Inglés
+    # Texto en INGLÉS
     prompt_en = f"""
-Act as a professional crypto technical analyst and generate a perfectly structured message in English for the signals channel.
-
-Write a motivational message, with real analysis and visually clean for Telegram. The current BTC price is {precio_btc} USD.
-
-Use this exact structure:
-
 Good morning traders! What better way to start the day than with our first signal. Today, we analyze Bitcoin and give you our top recommendations. Let’s go!
 
 📅 Date: {fecha_en}  
@@ -133,55 +123,75 @@ Ideal setup for an intraday high-probability move.
 
 Thanks for choosing us as your trusted trading hub. Together, we grow your investment!  
 ✨ 𝐂𝐫𝐲𝐩𝐭𝐨 𝐒𝐢𝐠𝐧𝐚𝐥 𝐁𝐨𝐭 ✨ Stay tuned for the mid-session update. Happy trading!
-"""
+""".strip()
 
-    response_es = openai.ChatCompletion.create(
-        model="gpt-4o",
-        messages=[{"role": "user", "content": prompt_es}]
-    )
-    message_es = response_es.choices[0].message["content"]
+    # Opcional: Embellecer con GPT-4o
+    try:
+        resp_es = openai.ChatCompletion.create(
+            model="gpt-4o",
+            messages=[{"role": "user", "content": prompt_es}],
+            temperature=0.7,
+            max_tokens=800
+        )
+        message_es = resp_es.choices[0].message["content"]
+    except Exception as e:
+        print("❌ Error GPT-4o ES:", e)
+        message_es = prompt_es
 
-    response_en = openai.ChatCompletion.create(
-        model="gpt-4o",
-        messages=[{"role": "user", "content": prompt_en}]
-    )
-    message_en = response_en.choices[0].message["content"]
+    try:
+        resp_en = openai.ChatCompletion.create(
+            model="gpt-4o",
+            messages=[{"role": "user", "content": prompt_en}],
+            temperature=0.7,
+            max_tokens=800
+        )
+        message_en = resp_en.choices[0].message["content"]
+    except Exception as e:
+        print("❌ Error GPT-4o EN:", e)
+        message_en = prompt_en
 
+    # Inline keyboard (botón)
+    keyboard_es = {
+        "inline_keyboard": [[{
+            "text": "Señales premium 30 días gratis ✨",
+            "url": "https://t.me/CriptoSignalBotGestion_bot?start=676731307b8344cb070ac996"
+        }]]
+    }
+    keyboard_en = {
+        "inline_keyboard": [[{
+            "text": "Free Premium Signals 30 Days ✨",
+            "url": "https://t.me/CriptoSignalBotGestion_bot?start=676731307b8344cb070ac996"
+        }]]
+    }
+
+    # URL del método sendPhoto de Telegram
     url_photo = f"https://api.telegram.org/bot{BOT_TOKEN}/sendPhoto"
-    url_text = f"https://api.telegram.org/bot{BOT_TOKEN}/sendMessage"
 
-    # Enviar imagen a ambos canales
-    for chat_id in [CHANNEL_CHAT_ID_ES, CHANNEL_CHAT_ID_EN]:
-        requests.post(url_photo, data={
-            "chat_id": chat_id,
-            "photo": "https://cryptosignalbot.com/wp-content/uploads/2025/03/ini.png"
-        })
-
-    # Enviar texto a canal español
-    payload_es = {
-        "chat_id": CHANNEL_CHAT_ID_ES,
-        "text": message_es,
-        "parse_mode": "HTML",
-        "reply_markup": {
-            "inline_keyboard": [[{
-                "text": "Señales premium 30 días gratis ✨",
-                "url": "https://t.me/CriptoSignalBotGestion_bot?start=676731307b8344cb070ac996"
-            }]]
+    # 1) Enviar IMAGEN + CAPTION (ESPAÑOL)
+    imagen_url = "https://cryptosignalbot.com/wp-content/uploads/2025/03/ini.png"
+    requests.post(
+        url_photo,
+        json={
+            "chat_id": CHANNEL_CHAT_ID_ES,
+            "photo": imagen_url,
+            "caption": message_es,        # Aquí va el texto como caption
+            "parse_mode": "HTML",
+            "reply_markup": keyboard_es   # Agregamos el botón en la misma llamada
         }
-    }
+    )
 
-    # Enviar texto a canal inglés
-    payload_en = {
-        "chat_id": CHANNEL_CHAT_ID_EN,
-        "text": message_en,
-        "parse_mode": "HTML",
-        "reply_markup": {
-            "inline_keyboard": [[{
-                "text": "Free Premium Signals 30 Days ✨",
-                "url": "https://t.me/CriptoSignalBotGestion_bot?start=676731307b8344cb070ac996"
-            }]]
+    # 2) Enviar IMAGEN + CAPTION (INGLÉS)
+    requests.post(
+        url_photo,
+        json={
+            "chat_id": CHANNEL_CHAT_ID_EN,
+            "photo": imagen_url,
+            "caption": message_en,
+            "parse_mode": "HTML",
+            "reply_markup": keyboard_en
         }
-    }
+    )
 
-    requests.post(url_text, json=payload_es)
-    requests.post(url_text, json=payload_en)
+# Ejecutar la función si se llama directamente
+if __name__ == "__main__":
+    send_prompt_01()
