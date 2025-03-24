@@ -148,7 +148,7 @@ Thanks for choosing us as your trusted trading partner. Let’s grow together!
     for chat_id in [CHANNEL_CHAT_ID_ES, CHANNEL_CHAT_ID_EN]:
         requests.post(url_img, data={
             "chat_id": chat_id,
-            "photo": "https://cryptosignalbot.com/wp-content/uploads/2025/03/mitad.png"
+            "photo": "https://cryptosignalbot.com/wp-content/uploads/2025/03/senal.png"
         })
 
     payload_es = {
