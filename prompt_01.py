@@ -51,45 +51,79 @@ def send_prompt_01():
 
     # Español
     prompt_es = f"""
-Actúa como un analista técnico profesional especializado en criptomonedas y genera un mensaje en español perfectamente estructurado para el canal de señales.
+    Actúa como un analista técnico profesional especializado en criptomonedas. Tu objetivo es generar un análisis estructurado y preciso del comportamiento de Bitcoin (BTCUSD), enfocado únicamente en operaciones LONG de corto plazo. El análisis se basa en el gráfico de 1 hora, pero debe considerar múltiples temporalidades y factores macroeconómicos El precio actual de BTC es {precio_btc} USD..
 
-Crea un mensaje con estilo motivador, análisis real y visualmente claro para Telegram. El precio actual de BTC es {precio_btc} USD.
-
-Usa esta estructura exacta en el mensaje generado:
-
-Buenos días traders! Qué mejor manera de comenzar el día que con nuestra primera señal del día. Hoy vamos a analizar Bitcoin y darles nuestras recomendaciones. ¡Vamos allá!
-
-𝐅𝐞𝐜𝐡𝐚: {fecha_es}  
-𝐒𝐞𝐧̃𝐚𝐥: 1 de 3
-
-Nuestro equipo trabaja arduamente para ofrecer análisis técnico y fundamental en tiempo real tres veces al día, asegurándonos de mantener a nuestra comunidad completamente informada y preparada.
-
-Herramientas utilizadas:
-- Velas japonesas 📊
-- Medias Móviles Exp 📈
-- Fibonacci 🔢
-- Fuerza Relativa (RSI) ⚖️
-- (SQZMOM) ⚡️
-- Volumen (POC) 💼
-
-◉ 𝐀𝐧𝐚́𝐥𝐢𝐬𝐢𝐬 𝐓𝐞́𝐜𝐧𝐢𝐜𝐨:
-Incluye un análisis técnico claro basado en las herramientas anteriores.
-
-◉ 𝐀𝐧𝐚́𝐥𝐢𝐬𝐢𝐬 𝐅𝐮𝐧𝐝𝐚𝐦𝐞𝐧𝐭𝐚𝐥:
-Incluye visión del DXY, sentimiento de mercado, Nasdaq/SP500.
-
-◉ 𝐑𝐚𝐧𝐠𝐨 𝐝𝐞 𝐨𝐩𝐞𝐫𝐚𝐜𝐢𝐨́𝐧 (𝐋𝐨𝐧𝐠 𝟑𝐱):
-💰 Entrada óptima entre: ${rango_min}  
-🎯𝐑𝐚𝐧𝐠𝐨 𝐝𝐞 𝐨𝐩𝐞𝐫𝐚𝐜𝐢𝐨́𝐧: Entre ${rango_min} – ${rango_max}  
-🟢 Porcentaje de efectividad estimado: {efectividad}%  
-Condiciones ideales para una operación intradía de alta probabilidad.  
-⚠️ ¡Cuida tu gestión de riesgo! No te olvides de establecer una estrategia de salida. Este mercado es altamente volátil. Operación recomendada solo para hoy.
-
-📊 Señales, gráficos en vivo y análisis en tiempo real completamente GRATIS por 30 días.  
-🔑 𝐎𝐛𝐭𝐞́𝐧 𝐭𝐮 𝐦𝐞𝐬 𝐠𝐫𝐚𝐭𝐢𝐬 𝐚𝐡𝐨𝐫𝐚! 🚀  
-
-Gracias por elegirnos como tu portal de trading de confianza. ¡Juntos, haremos que tu inversión crezca!  
-✨ 𝐂𝐫𝐲𝐩𝐭𝐨 𝐒𝐢𝐠𝐧𝐚𝐥 𝐁𝐨𝐭 ✨ Mantente pendiente del mensaje de mitad de sesión. ¡Feliz trading!
+    Usa esta estructura exacta en el mensaje generado:
+    
+    Buenos días traders! Qué mejor manera de comenzar el día que con nuestra primera señal del día. Hoy vamos a analizar Bitcoin y darles nuestras recomendaciones. ¡Vamos allá!
+    
+    𝐅𝐞𝐜𝐡𝐚: {fecha_es}  
+    𝐒𝐞𝐧̃𝐚𝐥: 1 de 3
+    
+    Nuestro equipo trabaja arduamente para ofrecer análisis técnico y fundamental en tiempo real tres veces al día, asegurándonos de mantener a nuestra comunidad completamente informada y preparada.
+    
+    Herramientas utilizadas:
+    - Velas japonesas 📊
+    - Medias Móviles Exp 📈
+    - Fibonacci 🔢
+    - Fuerza Relativa (RSI) ⚖️
+    - (SQZMOM) ⚡️
+    - Volumen (POC) 💼
+    
+    ◉ 𝐀𝐧𝐚́𝐥𝐢𝐬𝐢𝐬 𝐓𝐞́𝐜𝐧𝐢𝐜𝐨:
+    
+    1. Gráfico Diario (1D)
+    Resumen técnico breve con:
+    - Tendencia general del día
+    - Niveles clave de soporte y resistencia
+    - Comentario corto sobre el momentum
+    
+    2. Gráfico de 4 Horas (4H)
+    Resumen técnico breve con:
+    - Estructura de velas y dirección dominante
+    - Zonas clave de rebote o congestión
+    - Lectura rápida del RSI y volumen
+    
+    3. Gráfico de 1 Hora (1H)
+    🔍 Análisis técnico detallado con:
+    - Patrones de velas (envolventes, doji, martillo, etc.)
+    - Soportes y resistencias precisas
+    - EMAs (21, 55, 100, 200) como soporte/resistencia dinámica
+    - Retrocesos de Fibonacci relevantes (38.2%, 50%, 61.8%, 78.6%)
+    - RSI con comentarios de sobrecompra/sobreventa o divergencias
+    - Volumen con Point of Control y zonas de acumulación/distribución
+    - SQZMOM para evaluar si hay compresión o expansión y la dirección del momentum
+    
+    ---
+    
+    ◉ 𝐀𝐧𝐚́𝐥𝐢𝐬𝐢𝐬 𝐅𝐮𝐧𝐝𝐚𝐦𝐞𝐧𝐭𝐚𝐥
+    
+    Evalúa si hay eventos macroeconómicos importantes que puedan afectar el comportamiento de BTC hoy, como:
+    
+    - Reunión de la FED, datos CPI/NFP, etc.
+    - DXY en contexto alcista o bajista
+    - Sentimiento general del mercado
+    - Relación con SP500 o Nasdaq si aplica
+    
+    ⚠️ Si las noticias son de **alto impacto y hay incertidumbre fuerte**, indica que **no es recomendable operar hoy**, y explica por qué.
+    
+    ---
+    
+    ◉ 𝐑𝐚𝐧𝐠𝐨 𝐝𝐞 𝐨𝐩𝐞𝐫𝐚𝐜𝐢𝐨́𝐧 (𝐋𝐨𝐧𝐠 𝟑𝐱):
+    
+    Con base en todo el análisis técnico y fundamental debes evaluar y calcular probabilidades reales uniendo el analisis tecnico y el analisis fundamental Precio de entrada ajustado recomendado (el más preciso posible, no un rango amplio), entrega:
+    
+    💰 Entrada óptima: ${rango_min}  
+    🎯𝐑𝐚𝐧𝐠𝐨 𝐝𝐞 𝐨𝐩𝐞𝐫𝐚𝐜𝐢𝐨́𝐧: Entre ${rango_min} – ${rango_max}  
+    🟢 Porcentaje de efectividad estimado: {efectividad}%  
+    Condiciones ideales para una operación intradía de alta probabilidad.  
+    ⚠️ ¡Cuida tu gestión de riesgo! No te olvides de establecer una estrategia de salida. Este mercado es altamente volátil. Operación recomendada solo para hoy.
+    
+    📊 Señales, gráficos en vivo y análisis en tiempo real completamente GRATIS por 30 días.  
+    🔑 𝐎𝐛𝐭𝐞́𝐧 𝐭𝐮 𝐦𝐞𝐬 𝐠𝐫𝐚𝐭𝐢𝐬 𝐚𝐡𝐨𝐫𝐚! 🚀  
+    
+    Gracias por elegirnos como tu portal de trading de confianza. ¡Juntos, haremos que tu inversión crezca!  
+    ✨ 𝐂𝐫𝐲𝐩𝐭𝐨 𝐒𝐢𝐠𝐧𝐚𝐥 𝐁𝐨𝐭 ✨ Mantente pendiente del mensaje de mitad de sesión. ¡Feliz trading!
 """
 
     # Inglés
