@@ -147,6 +147,7 @@ Si la probabilidad es superior al 70%, indica:
 Ejemplo del formato a entregar:
 
 ◉ 𝐑𝐚𝐧𝐠𝐨 𝐝𝐞 𝐨𝐩𝐞𝐫𝐚𝐜𝐢𝐨́𝐧 (𝐋𝐨𝐧𝐠 𝟑𝐱):
+
 💰 Entrada óptima entre: ${rango_min}  
 🎯𝐑𝐚𝐧𝐠𝐨 𝐝𝐞 𝐨𝐩𝐞𝐫𝐚𝐜𝐢𝐨́𝐧: Entre ${rango_min} – ${rango_max}  
 🟢 Porcentaje de efectividad estimado: {efectividad}%  
@@ -154,9 +155,7 @@ Condiciones ideales para una operación intradía de alta probabilidad.
 ⚠️ ¡Cuida tu gestión de riesgo! No te olvides de establecer una estrategia de salida. Este mercado es altamente volátil.
 
 ---
-🎁 𝐏𝐮𝐞𝐝𝐞𝐬 𝐮𝐧𝐢𝐫𝐭𝐞 𝐚 𝐧𝐮𝐞𝐬𝐭𝐫𝐚 𝐳𝐨𝐧𝐚 𝐏𝐫𝐞𝐦𝐢𝐮𝐦 𝐜𝐮𝐚𝐧𝐝𝐨 𝐪𝐮𝐢𝐞𝐫𝐚𝐬 GRATIS por 30 días.
-
-𝐒𝐞𝐧̃𝐚𝐥𝐞𝐬 𝐝𝐞 𝐓𝐫𝐚𝐝𝐢𝐧𝐠 𝐜𝐨𝐧 𝐄́𝐱𝐢𝐭𝐨 𝐆𝐚𝐫𝐚𝐧𝐭𝐢𝐳𝐚𝐝𝐨:
+🎁 𝐏𝐮𝐞𝐝𝐞𝐬 𝐮𝐧𝐢𝐫𝐭𝐞 𝐚 𝐧𝐮𝐞𝐬𝐭𝐫𝐚 𝐳𝐨𝐧𝐚 𝐏𝐫𝐞𝐦𝐢𝐮𝐦 𝐒𝐞𝐧̃𝐚𝐥𝐞𝐬 𝐝𝐞 𝐓𝐫𝐚𝐝𝐢𝐧𝐠 𝐜𝐨𝐧 𝐄́𝐱𝐢𝐭𝐨 𝐆𝐚𝐫𝐚𝐧𝐭𝐢𝐳𝐚𝐝𝐨:
 
 🔥 𝐅𝐈𝐑𝐄 𝐒𝐜𝐚𝐥𝐩𝐢𝐧𝐠  
 🏅 Rendimiento: 85.64%  
@@ -173,59 +172,145 @@ Condiciones ideales para una operación intradía de alta probabilidad.
 🟢 Ganadoras: 48  
 🔴 Perdedoras: 2  
 
---- 
 📡 Señales en tiempo real enviadas directo a nuestro sitio web y Telegram  
 📊 Historial público de operaciones para verificar resultados reales  
 📺 Plataforma con gráficos en vivo y seguimiento al mercado  
 📰 Noticias, calendario económico y análisis en vivo cada día
-➡️ Soporte 24/7 para responder tus dudas
-
-🔑 𝐔́𝐧𝐞𝐭𝐞 𝐚 𝐥𝐚 𝐳𝐨𝐧𝐚 𝐏𝐫𝐞𝐦𝐢𝐮𝐦 𝐲 𝐨𝐛𝐭𝐞́𝐧 𝐭𝐮 𝐚𝐜𝐜𝐞𝐬𝐨 𝐠𝐫𝐚𝐭𝐮𝐢𝐭𝐨 𝐩𝐨𝐫 𝟑𝟎 𝐝𝐢́𝐚𝐬.  
-
+➡️ Soporte 24/7 para responder tus dudas 
+--- 
 
 ✨ 𝐂𝐫𝐲𝐩𝐭𝐨 𝐒𝐢𝐠𝐧𝐚𝐥 𝐁𝐨𝐭 ✨ Mantente pendiente del mensaje de mitad de sesión. ¡Feliz trading!
 """
 
     # Inglés
     prompt_en = f"""
-Act as a professional crypto technical analyst and generate a perfectly structured message in English for the signals channel.
+prompt_en = f"""
+Act as a professional technical analyst specialized in cryptocurrencies. Your goal is to generate a well-structured and accurate analysis of Bitcoin (BTCUSD), focused exclusively on short-term LONG operations. The analysis must be based on the 1-hour chart, but should also consider multiple timeframes and macroeconomic factors. The current BTC price is {precio_btc} USD.
 
-Write a motivational message, with real analysis and visually clean for Telegram. The current BTC price is {precio_btc} USD.
+🧠 Use technical indicators such as:
+- Japanese candlesticks
+- EMAs (21, 55, 100, 200)
+- RSI
+- SQZMOM
+- Volume (POC)
+- Fibonacci retracements on 1D and 4H (internal use only, do not show in final message)
 
-Use this exact structure:
+Also, evaluate key macroeconomic or political events (FED meetings, CPI, employment data, statements from Trump or other global leaders, international conflicts, etc.) to validate or reject the decision to operate today.
 
-Good morning traders! What better way to start the day than with our first signal. Today, we analyze Bitcoin and give you our top recommendations. Let’s go!
+Use this exact structure in the generated message:
 
-📅 Date: {fecha_en}  
-📌 Signal: 1 of 3
+Good morning traders! What better way to start the day than with our first signal of the day. Today we’ll analyze Bitcoin and share our recommendations. Let’s go!
 
-Our team works hard to deliver real-time technical and fundamental analysis three times a day to keep you fully informed and ready.
+𝐃𝐚𝐭𝐞: {fecha_es}  
+𝐒𝐢𝐠𝐧𝐚𝐥: 1 of 3
+
+Our team works hard to deliver real-time technical and fundamental analysis three times a day, ensuring our community is fully informed and ready to act.
 
 Tools used:
-- Japanese Candlesticks 📊
+- Japanese candlesticks 📊
 - Exponential Moving Averages 📈
 - Fibonacci 🔢
-- RSI ⚖️
-- SQZMOM ⚡️
+- Relative Strength Index (RSI) ⚖️
+- (SQZMOM) ⚡️
 - Volume (POC) 💼
 
 ◉ 𝐓𝐞𝐜𝐡𝐧𝐢𝐜𝐚𝐥 𝐀𝐧𝐚𝐥𝐲𝐬𝐢𝐬:
-Include real technical analysis using the above tools.
 
-◉ 𝐅𝐮𝐧𝐝𝐚𝐦𝐞𝐧𝐭𝐚𝐥 𝐀𝐧𝐚𝐥𝐲𝐬𝐢𝐬:
-Include insights on DXY, market sentiment, Nasdaq/SP500.
+1. Daily Chart (1D)  
+Brief summary including:  
+- Overall daily trend
 
-◉ 𝐎𝐩𝐞𝐫𝐚𝐭𝐢𝐧𝐠 𝐑𝐚𝐧𝐠𝐞 (𝐋𝐨𝐧𝐠 𝟑𝐱):
-💰 Optimal entry between: ${rango_min}
-🎯 Trading range: ${rango_min} – ${rango_max}  
+2. 4-Hour Chart (4H)  
+Brief summary including:  
+- Candle structure and dominant direction  
+- Key bounce or congestion zones  
+- Quick read of RSI and volume
+
+3. 1-Hour Chart (1H)  
+🔍 Detailed technical analysis including:  
+- Candle patterns (engulfing, doji, hammer, etc.)  
+- Precise support and resistance  
+- EMAs (21, 55, 100, 200) as dynamic S/R  
+- Fibonacci retracements (38.2%, 50%, 61.8%, 78.6%)  
+- RSI with commentary on overbought/oversold and divergences  
+- Volume with Point of Control and accumulation/distribution zones  
+- SQZMOM direction and compression/expansion analysis
+
+---
+◉ 𝐅𝐮𝐧𝐝𝐚𝐦𝐞𝐧𝐭𝐚𝐥 𝐀𝐧𝐚𝐥𝐲𝐬𝐢𝐬
+
+Evaluate any important macroeconomic, political, or geopolitical events that could impact BTC today, including:
+
+- Key events like FED meetings, CPI, NFP releases, etc.  
+- Movement of the US Dollar Index (DXY)  
+- News from political figures like Donald Trump, regulatory announcements, or global tensions  
+- General market sentiment (whales, social narratives, risk appetite)  
+- Correlation with indices like SP500 or Nasdaq if relevant
+
+⚠️ If there are **high-impact news or political statements creating significant uncertainty**, make it clear that **it’s not a favorable time to trade**, or that probabilities are low. Suggest waiting for confirmations.
+
+This information must be analyzed and used to **calculate the final probability of success**, but does not need to be fully listed unless highly relevant.
+
+---
+◉ 𝐎𝐩𝐞𝐫𝐚𝐛𝐥𝐞 𝐑𝐚𝐧𝐠𝐞 (𝐋𝐨𝐧𝐠 𝟑𝐱):
+
+Based on the full technical and fundamental analysis, calculate:
+
+- 💰 𝐎𝐩𝐭𝐢𝐦𝐮𝐦 𝐄𝐧𝐭𝐫𝐲 𝐏𝐫𝐢𝐜𝐞: as technically precise as possible  
+- 🎯 𝐎𝐩𝐞𝐫𝐚𝐛𝐥𝐞 𝐑𝐚𝐧𝐠𝐞: maximum 2%, based on the 1-hour chart  
+- 🟢 𝐄𝐬𝐭𝐢𝐦𝐚𝐭𝐞𝐝 𝐒𝐮𝐜𝐜𝐞𝐬𝐬 𝐏𝐫𝐨𝐛𝐚𝐛𝐢𝐥𝐢𝐭𝐲: result (%) from combined technical + fundamental analysis
+
+If the probability is higher than 70%, indicate:
+
+🔁 𝐇𝐢𝐠𝐡-𝐏𝐫𝐞𝐜𝐢𝐬𝐢𝐨𝐧 𝐎𝐩𝐩𝐨𝐫𝐭𝐮𝐧𝐢𝐭𝐲  
+𝐓𝐡𝐞 𝐛𝐞𝐬𝐭 𝐬𝐭𝐫𝐚𝐭𝐞𝐠𝐲 𝐢𝐬 𝐭𝐨 𝐨𝐩𝐞𝐧 𝐚𝐧𝐝 𝐜𝐥𝐨𝐬𝐞 𝐬𝐡𝐨𝐫𝐭 𝐢𝐧𝐭𝐫𝐚𝐝𝐚𝐲 𝐭𝐫𝐚𝐝𝐞𝐬 𝐰𝐢𝐭𝐡𝐢𝐧 𝐭𝐡𝐞 𝐫𝐚𝐧𝐠𝐞.  
+𝐓𝐚𝐤𝐞 𝐚𝐝𝐯𝐚𝐧𝐭𝐚𝐠𝐞 𝐨𝐟 𝐦𝐨𝐦𝐞𝐧𝐭𝐮𝐦 𝐚𝐧𝐝 𝐜𝐨𝐧𝐬𝐨𝐥𝐢𝐝𝐚𝐭𝐢𝐨𝐧.
+
+If probability is below 70%, indicate:
+
+⚠️ 𝐂𝐮𝐫𝐫𝐞𝐧𝐭𝐥𝐲 𝐧𝐨 𝐜𝐥𝐞𝐚𝐫 𝐨𝐩𝐞𝐫𝐚𝐭𝐢𝐨𝐧𝐚𝐥 𝐬𝐞𝐭𝐮𝐩 𝐢𝐬 𝐝𝐞𝐭𝐞𝐜𝐭𝐞𝐝.  
+𝐌𝐚𝐫𝐤𝐞𝐭 𝐜𝐨𝐧𝐝𝐢𝐭𝐢𝐨𝐧𝐬 𝐚𝐫𝐞 𝐧𝐨𝐭 𝐟𝐚𝐯𝐨𝐫𝐚𝐛𝐥𝐞 𝐚𝐧𝐝 𝐬𝐮𝐜𝐜𝐞𝐬𝐬 𝐩𝐫𝐨𝐛𝐚𝐛𝐢𝐥𝐢𝐭𝐲 𝐢𝐬 𝐥𝐨𝐰.  
+📌 𝐖𝐚𝐢𝐭 𝐟𝐨𝐫 𝐭𝐡𝐞 𝐦𝐢𝐝-𝐬𝐞𝐬𝐬𝐢𝐨𝐧 𝐚𝐧𝐚𝐥𝐲𝐬𝐢𝐬 𝐭𝐨 𝐠𝐞𝐭 𝐛𝐞𝐭𝐭𝐞𝐫 𝐜𝐨𝐧𝐟𝐢𝐫𝐦𝐚𝐭𝐢𝐨𝐧𝐬.
+
+Example output format:
+
+◉ 𝐎𝐩𝐞𝐫𝐚𝐛𝐥𝐞 𝐑𝐚𝐧𝐠𝐞 (𝐋𝐨𝐧𝐠 𝟑𝐱):
+
+💰 Optimum entry price: ${rango_min}  
+🎯 Operable range: Between ${rango_min} – ${rango_max}  
 🟢 Estimated success rate: {efectividad}%  
-Ideal setup for an intraday high-probability move.  
-⚠️ Always manage your risk. This market is volatile. Valid only for today.
+Ideal for short intraday trades within this range.  
+⚠️ Always manage risk. Set your exit strategy. Crypto is highly volatile.
 
-📊 Real-time signals, live charts and full analysis FREE for 30 days.  
-🔑 𝐂𝐥𝐚𝐢𝐦 𝐲𝐨𝐮𝐫 𝐅𝐑𝐄𝐄 𝐦𝐨𝐧𝐭𝐡 𝐧𝐨𝐰! 🚀  
+---
+🎁 𝐘𝐨𝐮 𝐜𝐚𝐧 𝐣𝐨𝐢𝐧 𝐨𝐮𝐫 𝐏𝐫𝐞𝐦𝐢𝐮𝐦 𝐙𝐨𝐧𝐞 𝐭𝐨 𝐚𝐜𝐜𝐞𝐬𝐬 𝐚𝐥𝐥 𝐭𝐡𝐢𝐬
 
-Thanks for choosing us as your trusted trading hub. Together, we grow your investment!  
+𝐆𝐮𝐚𝐫𝐚𝐧𝐭𝐞𝐞𝐝 𝐑𝐞𝐬𝐮𝐥𝐭𝐬 𝐰𝐢𝐭𝐡 𝐏𝐫𝐨𝐯𝐞𝐧 𝐒𝐭𝐫𝐚𝐭𝐞𝐠𝐢𝐞𝐬:
+
+🔥 𝐅𝐈𝐑𝐄 𝐒𝐜𝐚𝐥𝐩𝐢𝐧𝐠  
+🏅 Performance: 85.64%  
+🟢 Wins: 1,563  
+🔴 Losses: 262
+
+💎 𝐄𝐋𝐈𝐓𝐄 𝐒𝐜𝐚𝐥𝐩𝐢𝐧𝐠 𝐏𝐑𝐎  
+🏅 Performance: 99.10%  
+🟢 Wins: 552  
+🔴 Losses: 5
+
+🪙 𝐃𝐄𝐋𝐓𝐀 𝐒𝐰𝐢𝐧𝐠  
+🏅 Performance: 96.00%  
+🟢 Wins: 48  
+🔴 Losses: 2
+
+📡 Real-time signals sent directly to our website and Telegram  
+📊 Public performance history for full transparency  
+📺 Live charting platform  
+📰 Daily news, economic calendar & live analysis  
+📲 Organized premium groups by crypto: BTC, ETH, XRP, ADA, BNB  
+🛠️ 24/7 support for all members
+
+🔑 𝐆𝐞𝐭 𝐲𝐨𝐮𝐫 𝐟𝐫𝐞𝐞 𝟑𝟎-𝐝𝐚𝐲 𝐚𝐜𝐜𝐞𝐬𝐬 𝐭𝐨 𝐨𝐮𝐫 𝐏𝐫𝐞𝐦𝐢𝐮𝐦 𝐒𝐞𝐫𝐯𝐢𝐜𝐞 𝐭𝐨𝐝𝐚𝐲 🚀
+
 ✨ 𝐂𝐫𝐲𝐩𝐭𝐨 𝐒𝐢𝐠𝐧𝐚𝐥 𝐁𝐨𝐭 ✨ Stay tuned for the mid-session update. Happy trading!
 """
 
