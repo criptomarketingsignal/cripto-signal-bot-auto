@@ -85,8 +85,6 @@ Herramientas utilizadas:
 1. Gráfico Diario (1D)
 Resumen técnico breve con:
 - Tendencia general del día
-- Niveles clave de soporte y resistencia
-- Comentario corto sobre el momentum
 
 2. Gráfico de 4 Horas (4H)
 Resumen técnico breve con:
@@ -155,15 +153,8 @@ Ejemplo del formato a entregar:
 Condiciones ideales para una operación intradía de alta probabilidad.  
 ⚠️ ¡Cuida tu gestión de riesgo! No te olvides de establecer una estrategia de salida. Este mercado es altamente volátil.
 
-
-🎁 𝐏𝐮𝐞𝐝𝐞𝐬 𝐮𝐧𝐢𝐫𝐭𝐞 𝐚 𝐧𝐮𝐞𝐬𝐭𝐫𝐚 𝐳𝐨𝐧𝐚 𝐏𝐫𝐞𝐦𝐢𝐮𝐦 𝐜𝐮𝐚𝐧𝐝𝐨 𝐪𝐮𝐢𝐞𝐫𝐚𝐬
-
-📊 Señales, gráficos en vivo y análisis en tiempo real completamente GRATIS por 30 días.  
-
 ---
-🎁 𝐏𝐮𝐞𝐝𝐞𝐬 𝐮𝐧𝐢𝐫𝐭𝐞 𝐚 𝐧𝐮𝐞𝐬𝐭𝐫𝐚 𝐳𝐨𝐧𝐚 𝐏𝐫𝐞𝐦𝐢𝐮𝐦 𝐜𝐮𝐚𝐧𝐝𝐨 𝐪𝐮𝐢𝐞𝐫𝐚𝐬
-
-𝐍𝐮𝐞𝐬𝐭𝐫𝐚𝐬 𝐬𝐞𝐧̃𝐚𝐥𝐞𝐬 𝐏𝐫𝐞𝐦𝐢𝐮𝐦 𝐬𝐞 𝐚𝐝𝐚𝐩𝐭𝐚𝐧 𝐚 𝐭𝐮 𝐞𝐬𝐭𝐢𝐥𝐨 𝐝𝐞 𝐭𝐫𝐚𝐝𝐢𝐧𝐠 — 𝐭𝐚𝐧𝐭𝐨 𝐬𝐢 𝐞𝐫𝐞𝐬 𝐞𝐬𝐭𝐫𝐚𝐭𝐞𝐠𝐚 𝐝𝐞 𝐬𝐜𝐚𝐥𝐩𝐢𝐧𝐠 𝐫𝐚́𝐩𝐢𝐝𝐨, 𝐨 𝐬𝐢 𝐩𝐫𝐞𝐟𝐢𝐞𝐫𝐞𝐬 𝐞𝐬𝐩𝐞𝐫𝐚𝐫 𝐥𝐚𝐬 𝐨𝐩𝐨𝐫𝐭𝐮𝐧𝐢𝐝𝐚𝐝𝐞𝐬 𝐦𝐚́𝐬 𝐬𝐨́𝐥𝐢𝐝𝐚𝐬.  
+🎁 𝐏𝐮𝐞𝐝𝐞𝐬 𝐮𝐧𝐢𝐫𝐭𝐞 𝐚 𝐧𝐮𝐞𝐬𝐭𝐫𝐚 𝐳𝐨𝐧𝐚 𝐏𝐫𝐞𝐦𝐢𝐮𝐦 𝐜𝐮𝐚𝐧𝐝𝐨 𝐪𝐮𝐢𝐞𝐫𝐚𝐬 GRATIS por 30 días.
 
 𝐒𝐞𝐧̃𝐚𝐥𝐞𝐬 𝐝𝐞 𝐓𝐫𝐚𝐝𝐢𝐧𝐠 𝐜𝐨𝐧 𝐄́𝐱𝐢𝐭𝐨 𝐆𝐚𝐫𝐚𝐧𝐭𝐢𝐳𝐚𝐝𝐨:
 
@@ -191,7 +182,7 @@ Condiciones ideales para una operación intradía de alta probabilidad.
 
 🔑 𝐔́𝐧𝐞𝐭𝐞 𝐚 𝐥𝐚 𝐳𝐨𝐧𝐚 𝐏𝐫𝐞𝐦𝐢𝐮𝐦 𝐲 𝐨𝐛𝐭𝐞́𝐧 𝐭𝐮 𝐚𝐜𝐜𝐞𝐬𝐨 𝐠𝐫𝐚𝐭𝐮𝐢𝐭𝐨 𝐩𝐨𝐫 𝟑𝟎 𝐝𝐢́𝐚𝐬.  
 
-Gracias por elegirnos como tu portal de trading de confianza. ¡Juntos, haremos que tu inversión crezca!  
+
 ✨ 𝐂𝐫𝐲𝐩𝐭𝐨 𝐒𝐢𝐠𝐧𝐚𝐥 𝐁𝐨𝐭 ✨ Mantente pendiente del mensaje de mitad de sesión. ¡Feliz trading!
 """
 
