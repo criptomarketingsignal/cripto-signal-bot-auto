@@ -211,7 +211,6 @@ Brief summary including:
 - Quick read of RSI and volume
 
 3. 1-Hour Chart (1H)  
-🔍 Detailed technical analysis including:  
 - Candle patterns (engulfing, doji, hammer, etc.)  
 - Precise support and resistance  
 - EMAs (21, 55, 100, 200) as dynamic S/R  
@@ -267,9 +266,7 @@ Ideal for short intraday trades within this range.
 ⚠️ Always manage risk. Set your exit strategy. Crypto is highly volatile.
 
 ---
-🎁 𝐘𝐨𝐮 𝐜𝐚𝐧 𝐣𝐨𝐢𝐧 𝐨𝐮𝐫 𝐏𝐫𝐞𝐦𝐢𝐮𝐦 𝐙𝐨𝐧𝐞 𝐭𝐨 𝐚𝐜𝐜𝐞𝐬𝐬 𝐚𝐥𝐥 𝐭𝐡𝐢𝐬
-
-𝐆𝐮𝐚𝐫𝐚𝐧𝐭𝐞𝐞𝐝 𝐑𝐞𝐬𝐮𝐥𝐭𝐬 𝐰𝐢𝐭𝐡 𝐏𝐫𝐨𝐯𝐞𝐧 𝐒𝐭𝐫𝐚𝐭𝐞𝐠𝐢𝐞𝐬:
+🎁 𝐘𝐨𝐮 𝐜𝐚𝐧 𝐣𝐨𝐢𝐧 𝐨𝐮𝐫 𝐏𝐫𝐞𝐦𝐢𝐮𝐦 𝐙𝐨𝐧𝐞 — 𝐓𝐫𝐚𝐝𝐢𝐧𝐠 𝐒𝐢𝐠𝐧𝐚𝐥𝐬 𝐰𝐢𝐭𝐡 𝐆𝐮𝐚𝐫𝐚𝐧𝐭𝐞𝐞𝐝 𝐒𝐮𝐜𝐜𝐞𝐬𝐬:
 
 🔥 𝐅𝐈𝐑𝐄 𝐒𝐜𝐚𝐥𝐩𝐢𝐧𝐠  
 🏅 Performance: 85.64%  
@@ -292,8 +289,6 @@ Ideal for short intraday trades within this range.
 📰 Daily news, economic calendar & live analysis  
 📲 Organized premium groups by crypto: BTC, ETH, XRP, ADA, BNB  
 🛠️ 24/7 support for all members
-
-🔑 𝐆𝐞𝐭 𝐲𝐨𝐮𝐫 𝐟𝐫𝐞𝐞 𝟑𝟎-𝐝𝐚𝐲 𝐚𝐜𝐜𝐞𝐬𝐬 𝐭𝐨 𝐨𝐮𝐫 𝐏𝐫𝐞𝐦𝐢𝐮𝐦 𝐒𝐞𝐫𝐯𝐢𝐜𝐞 𝐭𝐨𝐝𝐚𝐲 🚀
 
 ✨ 𝐂𝐫𝐲𝐩𝐭𝐨 𝐒𝐢𝐠𝐧𝐚𝐥 𝐁𝐨𝐭 ✨ Stay tuned for the mid-session update. Happy trading!
 """
