@@ -184,7 +184,6 @@ Condiciones ideales para una operación intradía de alta probabilidad.
 
     # Inglés
     prompt_en = f"""
-prompt_en = f"""
 Act as a professional technical analyst specialized in cryptocurrencies. Your goal is to generate a well-structured and accurate analysis of Bitcoin (BTCUSD), focused exclusively on short-term LONG operations. The analysis must be based on the 1-hour chart, but should also consider multiple timeframes and macroeconomic factors. The current BTC price is {precio_btc} USD.
 
 🧠 Use technical indicators such as:
