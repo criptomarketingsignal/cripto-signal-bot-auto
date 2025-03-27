@@ -73,50 +73,50 @@ Buenos días traders! Qué mejor manera de comenzar el día que con nuestra prim
 Nuestro equipo trabaja arduamente para ofrecer análisis técnico y fundamental en tiempo real tres veces al día, asegurándonos de mantener a nuestra comunidad completamente informada y preparada.
 
 ---
-◉ 𝐀𝐧𝐚́𝐥𝐢𝐬𝐢𝐬 𝐓𝐞́𝐜𝐧𝐢𝐜𝐨:
+📊 → 𝐀𝐧𝐚́𝐥𝐢𝐬𝐢𝐬 𝐓𝐞́𝐜𝐧𝐢𝐜𝐨:
 
-1. Gráfico Diario (1D)
+𝟏. 𝐆𝐫𝐚́𝐟𝐢𝐜𝐨 𝐃𝐢𝐚𝐫𝐢𝐨
 Resumen técnico breve con:
-- Tendencia general del día
+• Tendencia general del día
 
-2. Gráfico de 4 Horas (4H)
+𝟐. 𝐆𝐫𝐚́𝐟𝐢𝐜𝐨 𝐝𝐞 𝟒 𝐇𝐨𝐫𝐚𝐬
 Resumen técnico breve con:
-- Estructura de velas y dirección dominante
-- Zonas clave de rebote o congestión
-- Lectura rápida del RSI y volumen
+• Estructura de velas y dirección dominante
+• Zonas clave de rebote o congestión
+• Lectura rápida del RSI y volumen
 
-3. Gráfico de 1 Hora (1H)
-- Patrones de velas (envolventes, doji, martillo, etc.)
-- Soportes y resistencias precisas
-- EMAs (21, 55, 100, 200) como soporte/resistencia dinámica
-- Retrocesos de Fibonacci relevantes (38.2%, 50%, 61.8%, 78.6%)
-- RSI con comentarios de sobrecompra/sobreventa o divergencias
-- Volumen con Point of Control y zonas de acumulación/distribución
-- SQZMOM para evaluar si hay compresión o expansión y la dirección del momentum
+𝟑. 𝐆𝐫𝐚́𝐟𝐢𝐜𝐨 𝐝𝐞 𝟏 𝐇𝐨𝐫𝐚
+• Patrones de velas (envolventes, doji, martillo, etc.)
+• Soportes y resistencias precisas
+• EMAs (21, 55, 100, 200) como soporte/resistencia dinámica
+• Retrocesos de Fibonacci relevantes (38.2%, 50%, 61.8%, 78.6%)
+• RSI con comentarios de sobrecompra/sobreventa o divergencias
+• Volumen con Point of Control y zonas de acumulación/distribución
+• SQZMOM para evaluar si hay compresión o expansión y la dirección del momentum
 
 ---
-◉ 𝐀𝐧𝐚́𝐥𝐢𝐬𝐢𝐬 𝐅𝐮𝐧𝐝𝐚𝐦𝐞𝐧𝐭𝐚𝐥
+🔍 → 𝐀𝐧𝐚́𝐥𝐢𝐬𝐢𝐬 𝐅𝐮𝐧𝐝𝐚𝐦𝐞𝐧𝐭𝐚𝐥
 
 Evalúa si hay eventos macroeconómicos, políticos o geopolíticos importantes que puedan afectar el comportamiento de BTC hoy. Entre ellos deben considerarse:
 
-- Reuniones clave como la FED, publicación de datos económicos (CPI, NFP, etc.)
-- Movimiento del índice del dólar (DXY)
-- Noticias sobre figuras políticas influyentes como **Donald Trump**, decisiones regulatorias, declaraciones oficiales o conflictos internacionales
-- Sentimiento general del mercado (acumulación/distribución, narrativa en redes, actividad de ballenas)
-- Relación con índices bursátiles como SP500 o Nasdaq si aplica
+• Reuniones clave como la FED, publicación de datos económicos (CPI, NFP, etc.)
+• Movimiento del índice del dólar (DXY)
+• Noticias sobre figuras políticas influyentes como **Donald Trump**, decisiones regulatorias, declaraciones oficiales o conflictos internacionales
+• Sentimiento general del mercado (acumulación/distribución, narrativa en redes, actividad de ballenas)
+• Relación con índices bursátiles como SP500 o Nasdaq si aplica
 
 ⚠️ Si hay **noticias de alto impacto o declaraciones políticas que generen incertidumbre significativa**, indica claramente que **no es recomendable operar hoy**, o que la probabilidad es baja. En ese caso, recomienda esperar confirmaciones técnicas.
 
 La información debe ser analizada y utilizada para **calcular la probabilidad final de éxito**, aunque no es necesario listar todas las noticias si no son relevantes. Solo deben mencionarse si tienen impacto directo.
 
 ---
-◉ 𝐑𝐚𝐧𝐠𝐨 𝐝𝐞 𝐨𝐩𝐞𝐫𝐚𝐜𝐢𝐨́𝐧 (𝐋𝐨𝐧𝐠 𝟑𝐱):
+🚨 𝐑𝐚𝐧𝐠𝐨 𝐝𝐞 𝐨𝐩𝐞𝐫𝐚𝐜𝐢𝐨́𝐧 (𝐋𝐨𝐧𝐠 𝟑𝐱):
 
 Realiza el cálculo completo basándote en el análisis técnico multitemporal y el análisis fundamental del día. Considera especialmente:
-- Los retrocesos de Fibonacci en 1D y 4H (como herramienta interna de precisión, no mostrar en el mensaje final)
-- La estructura del mercado actual
-- El momentum, volumen y zonas de soporte/resistencia clave
-- Las noticias macroeconómicas activas
+• Los retrocesos de Fibonacci en 1D y 4H (como herramienta interna de precisión, no mostrar en el mensaje final)
+• La estructura del mercado actual
+• El momentum, volumen y zonas de soporte/resistencia clave
+• Las noticias macroeconómicas activas
 
 A partir del análisis técnico y fundamental completo, genera un:
 
@@ -138,37 +138,37 @@ Si la probabilidad es superior al 70%, indica:
 
 Ejemplo del formato a entregar:
 
-◉ 𝐑𝐚𝐧𝐠𝐨 𝐝𝐞 𝐨𝐩𝐞𝐫𝐚𝐜𝐢𝐨́𝐧 (𝐋𝐨𝐧𝐠 𝟑𝐱):
+🚨 𝐑𝐚𝐧𝐠𝐨 𝐝𝐞 𝐨𝐩𝐞𝐫𝐚𝐜𝐢𝐨́𝐧 (𝐋𝐨𝐧𝐠 𝟑𝐱):
 
 💰 Entrada óptima entre: ${rango_min}  
 🎯𝐑𝐚𝐧𝐠𝐨 𝐝𝐞 𝐨𝐩𝐞𝐫𝐚𝐜𝐢𝐨́𝐧: Entre ${rango_min} – ${rango_max}  
 🟢 Porcentaje de efectividad estimado: {efectividad}%  
 Condiciones ideales para una operación intradía de alta probabilidad.  
-⚠️ ¡Cuida tu gestión de riesgo! No te olvides de establecer una estrategia de salida. Este mercado es altamente volátil.
+⚠️ ¡Cuida tu gestión de riesgo! No te olvides de establecer una estrategia de salida. Este mercado es altamente volátil.//
 
 ---
 🎁 𝐏𝐮𝐞𝐝𝐞𝐬 𝐮𝐧𝐢𝐫𝐭𝐞 𝐚 𝐧𝐮𝐞𝐬𝐭𝐫𝐚 𝐳𝐨𝐧𝐚 𝐏𝐫𝐞𝐦𝐢𝐮𝐦 𝐒𝐞𝐧̃𝐚𝐥𝐞𝐬 𝐝𝐞 𝐓𝐫𝐚𝐝𝐢𝐧𝐠 𝐜𝐨𝐧 𝐄́𝐱𝐢𝐭𝐨 𝐆𝐚𝐫𝐚𝐧𝐭𝐢𝐳𝐚𝐝𝐨:
 
 🔥 𝐅𝐈𝐑𝐄 𝐒𝐜𝐚𝐥𝐩𝐢𝐧𝐠  
-🏅 Rendimiento: 85.64%  
-🟢 Ganadoras: 1,563  
-🔴 Perdedoras: 262  
+• Rendimiento: 85.64%  
+• Ganadoras: 1,563  
+• Perdedoras: 262  
 
 💎 𝐄𝐋𝐈𝐓𝐄 𝐒𝐜𝐚𝐥𝐩𝐢𝐧𝐠 𝐏𝐑𝐎  
-🏅 Rendimiento: 99.10%  
-🟢 Ganadoras: 552  
-🔴 Perdedoras: 5  
+• Rendimiento: 99.10%  
+• Ganadoras: 552  
+• Perdedoras: 5  
 
 🪙 𝐃𝐄𝐋𝐓𝐀 𝐒𝐰𝐢𝐧𝐠  
-🏅 Rendimiento: 96.00%  
-🟢 Ganadoras: 48  
-🔴 Perdedoras: 2  
+• Rendimiento: 96.00%  
+• Ganadoras: 48  
+• Perdedoras: 2  
 
-📡 Señales en tiempo real enviadas directo a nuestro sitio web y Telegram  
-📊 Historial público de operaciones para verificar resultados reales  
-📺 Plataforma con gráficos en vivo y seguimiento al mercado  
-📰 Noticias, calendario económico y análisis en vivo cada día
-➡️ Soporte 24/7 para responder tus dudas 
+• Señales en tiempo real enviadas directo a nuestro sitio web y Telegram  
+• Historial público de operaciones para verificar resultados reales  
+• Plataforma con gráficos en vivo y seguimiento al mercado  
+• Noticias, calendario económico y análisis en vivo cada día
+• Soporte 24/7 para responder tus dudas 
 --- 
 
 ✨ 𝐂𝐫𝐲𝐩𝐭𝐨 𝐒𝐢𝐠𝐧𝐚𝐥 𝐁𝐨𝐭 ✨ Mantente pendiente del mensaje de mitad de sesión. ¡Feliz trading!
@@ -269,26 +269,25 @@ Ideal for short intraday trades within this range.
 🎁 𝐘𝐨𝐮 𝐜𝐚𝐧 𝐣𝐨𝐢𝐧 𝐨𝐮𝐫 𝐏𝐫𝐞𝐦𝐢𝐮𝐦 𝐙𝐨𝐧𝐞 — 𝐓𝐫𝐚𝐝𝐢𝐧𝐠 𝐒𝐢𝐠𝐧𝐚𝐥𝐬 𝐰𝐢𝐭𝐡 𝐆𝐮𝐚𝐫𝐚𝐧𝐭𝐞𝐞𝐝 𝐒𝐮𝐜𝐜𝐞𝐬𝐬:
 
 🔥 𝐅𝐈𝐑𝐄 𝐒𝐜𝐚𝐥𝐩𝐢𝐧𝐠  
-🏅 Performance: 85.64%  
-🟢 Wins: 1,563  
-🔴 Losses: 262
+• Performance: 85.64%  
+• Wins: 1,563  
+• Losses: 262
 
 💎 𝐄𝐋𝐈𝐓𝐄 𝐒𝐜𝐚𝐥𝐩𝐢𝐧𝐠 𝐏𝐑𝐎  
-🏅 Performance: 99.10%  
-🟢 Wins: 552  
-🔴 Losses: 5
+• Performance: 99.10%  
+• Wins: 552  
+• Losses: 5
 
 🪙 𝐃𝐄𝐋𝐓𝐀 𝐒𝐰𝐢𝐧𝐠  
-🏅 Performance: 96.00%  
-🟢 Wins: 48  
-🔴 Losses: 2
+• Performance: 96.00%  
+• Wins: 48  
+• Losses: 2
 
-📡 Real-time signals sent directly to our website and Telegram  
-📊 Public performance history for full transparency  
-📺 Live charting platform  
-📰 Daily news, economic calendar & live analysis  
-📲 Organized premium groups by crypto: BTC, ETH, XRP, ADA, BNB  
-🛠️ 24/7 support for all members
+• Real-time signals sent directly to our website and Telegram  
+• Public performance history for full transparency  
+• Live charting platform  
+• Daily news, economic calendar & live analysis  
+• 24/7 support for all members
 
 ✨ 𝐂𝐫𝐲𝐩𝐭𝐨 𝐒𝐢𝐠𝐧𝐚𝐥 𝐁𝐨𝐭 ✨ Stay tuned for the mid-session update. Happy trading!
 """
