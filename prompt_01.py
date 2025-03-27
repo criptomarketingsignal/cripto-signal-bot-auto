@@ -72,14 +72,7 @@ Buenos días traders! Qué mejor manera de comenzar el día que con nuestra prim
 
 Nuestro equipo trabaja arduamente para ofrecer análisis técnico y fundamental en tiempo real tres veces al día, asegurándonos de mantener a nuestra comunidad completamente informada y preparada.
 
-Herramientas utilizadas:
-- Velas japonesas 📊
-- Medias Móviles Exp 📈
-- Fibonacci 🔢
-- Fuerza Relativa (RSI) ⚖️
-- (SQZMOM) ⚡️
-- Volumen (POC) 💼
-
+---
 ◉ 𝐀𝐧𝐚́𝐥𝐢𝐬𝐢𝐬 𝐓𝐞́𝐜𝐧𝐢𝐜𝐨:
 
 1. Gráfico Diario (1D)
@@ -93,7 +86,6 @@ Resumen técnico breve con:
 - Lectura rápida del RSI y volumen
 
 3. Gráfico de 1 Hora (1H)
-🔍 Análisis técnico detallado con:
 - Patrones de velas (envolventes, doji, martillo, etc.)
 - Soportes y resistencias precisas
 - EMAs (21, 55, 100, 200) como soporte/resistencia dinámica
@@ -205,14 +197,7 @@ Good morning traders! What better way to start the day than with our first signa
 
 Our team works hard to deliver real-time technical and fundamental analysis three times a day, ensuring our community is fully informed and ready to act.
 
-Tools used:
-- Japanese candlesticks 📊
-- Exponential Moving Averages 📈
-- Fibonacci 🔢
-- Relative Strength Index (RSI) ⚖️
-- (SQZMOM) ⚡️
-- Volume (POC) 💼
-
+---
 ◉ 𝐓𝐞𝐜𝐡𝐧𝐢𝐜𝐚𝐥 𝐀𝐧𝐚𝐥𝐲𝐬𝐢𝐬:
 
 1. Daily Chart (1D)  
