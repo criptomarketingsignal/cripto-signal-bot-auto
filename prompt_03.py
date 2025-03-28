@@ -78,14 +78,18 @@ Usa esta estructura exacta en el mensaje generado:
 Nuestro equipo trabaja arduamente para ofrecer análisis técnico y fundamental en tiempo real tres veces al día, asegurándonos de mantener a nuestra comunidad completamente informada y preparada.
 
 ---
-📊 → 𝐀𝐧𝐚́𝐥𝐢𝐬𝐢𝐬 𝐓𝐞́𝐜𝐧𝐢𝐜𝐨:
 
 agrega un texto breve resumen general de esto:
+
+🧠 → 𝐑𝐞𝐬𝐮𝐦𝐞𝐧 𝐆𝐞𝐧𝐞𝐫𝐚𝐥:
+
 1. Analiza cómo se desarrolló el comportamiento de BTC durante el día actual. 
 2. Evalúa si hubo un movimiento fuerte, una caída importante o consolidación, y si se respetaron los niveles claves del análisis anterior.
 3. Determina si hubo algún evento macroeconómico o político relevante (por ejemplo: decisión de tasas de la FED, informe CPI, datos de empleo, conflictos globales, declaraciones de Trump o Biden, etc.), y cómo impactó el precio.
 4. Proyecta el posible comportamiento para el día siguiente, basado en patrones actuales, volumen y estructura del mercado. 
 5. Sugiere si mañana podría haber una entrada LONG favorable o si es mejor esperar confirmación.
+
+📊 → 𝐀𝐧𝐚́𝐥𝐢𝐬𝐢𝐬 𝐓𝐞́𝐜𝐧𝐢𝐜𝐨:
 
 𝟏. 𝐆𝐫𝐚́𝐟𝐢𝐜𝐨 𝐃𝐢𝐚𝐫𝐢𝐨
 Resumen técnico breve con:
