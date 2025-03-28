@@ -78,9 +78,7 @@ Usa esta estructura exacta en el mensaje generado:
 Nuestro equipo trabaja arduamente para ofrecer análisis técnico y fundamental en tiempo real tres veces al día, asegurándonos de mantener a nuestra comunidad completamente informada y preparada.
 
 ---
-
 agrega un texto breve resumen general de esto:
-
 🧠 → 𝐑𝐞𝐬𝐮𝐦𝐞𝐧 𝐆𝐞𝐧𝐞𝐫𝐚𝐥:
 
 1. Analiza cómo se desarrolló el comportamiento de BTC durante el día actual. 
@@ -192,6 +190,16 @@ What better time than mid-session to reassess opportunities. Let’s dive into B
 Our team works hard to deliver real-time technical and fundamental analysis three times a day, ensuring our community is fully informed and ready to act.
 
 ---
+Add a brief general summary of this:
+🧠 → 𝐆𝐞𝐧𝐞𝐫𝐚𝐥 𝐑𝐞𝐬𝐮𝐦𝐞𝐧:
+
+1. Analyze how BTC's behavior developed during the current day.
+2. Evaluate whether there was a strong movement, a significant drop, or consolidation, and whether the key levels from the previous analysis were respected.
+3. Determine if there were any relevant macroeconomic or political events (e.g., Fed rate decision, CPI report, employment data, global conflicts, statements by Trump or Biden, etc.), and how they impacted the price.
+4. Project possible behavior for the next day, based on current patterns, volume, and market structure.
+5. Suggest whether there could be a favorable LONG entry tomorrow or if it is better to wait for confirmation.
+
+---
 📊 → 𝐓𝐞𝐜𝐡𝐧𝐢𝐜𝐚𝐥 𝐀𝐧𝐚𝐥𝐲𝐬𝐢𝐬:
 
 𝟏. 𝐃𝐚𝐢𝐥𝐲 𝐂𝐡𝐚𝐫𝐭 (𝟏𝐃)  
@@ -260,30 +268,11 @@ Ideal for short intraday trades within this range.
 ⚠️ Always manage risk. Set your exit strategy. Crypto is highly volatile.//
 
 ---
-🎁 𝐘𝐨𝐮 𝐜𝐚𝐧 𝐣𝐨𝐢𝐧 𝐨𝐮𝐫 𝐏𝐫𝐞𝐦𝐢𝐮𝐦 𝐙𝐨𝐧𝐞 — 𝐓𝐫𝐚𝐝𝐢𝐧𝐠 𝐒𝐢𝐠𝐧𝐚𝐥𝐬 𝐰𝐢𝐭𝐡 𝐆𝐮𝐚𝐫𝐚𝐧𝐭𝐞𝐞𝐝 𝐒𝐮𝐜𝐜𝐞𝐬𝐬:
+📊 Live signals, real-time charts, and in-depth analysis — absolutely FREE for 30 days.  
+🔑 𝐂𝐥𝐚𝐢𝐦 𝐲𝐨𝐮𝐫 𝐅𝐑𝐄𝐄 𝐦𝐨𝐧𝐭𝐡 𝐭𝐨𝐝𝐚𝐲! 🚀  
 
-🔥 𝐅𝐈𝐑𝐄 𝐒𝐜𝐚𝐥𝐩𝐢𝐧𝐠  
-🏅 Performance: 85.64%  
-🟢 Wins: 1,563  
-🔴 Losses: 262
-
-💎 𝐄𝐋𝐈𝐓𝐄 𝐒𝐜𝐚𝐥𝐩𝐢𝐧𝐠 𝐏𝐑𝐎  
-🏅 Performance: 99.10%  
-🟢 Wins: 552  
-🔴 Losses: 5
-
-🪙 𝐃𝐄𝐋𝐓𝐀 𝐒𝐰𝐢𝐧𝐠  
-🏅 Performance: 96.00%  
-🟢 Wins: 48  
-🔴 Losses: 2
-
-• Real-time signals sent directly to our website and Telegram  
-• Public performance history for full transparency  
-• Live charting platform  
-• Daily news, economic calendar & live analysis  
-• 24/7 support for all members
-
-✨ 𝐂𝐫𝐲𝐩𝐭𝐨 𝐒𝐢𝐠𝐧𝐚𝐥 𝐁𝐨𝐭 ✨ Stay tuned for the mid-session update. Happy trading!
+Thank you for choosing us as your trusted trading partner. Together, we’ll make your investment grow!  
+✨ 𝐂𝐫𝐲𝐩𝐭𝐨 𝐒𝐢𝐠𝐧𝐚𝐥 𝐁𝐨𝐭 ✨ See you tomorrow for more opportunities. Happy trading!
 """
 
     response_es = openai.ChatCompletion.create(
