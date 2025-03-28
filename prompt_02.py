@@ -172,7 +172,7 @@ Thanks for choosing us as your trusted trading partner. Let’s grow together!
         "reply_markup": {
             "inline_keyboard": [[
                 {
-                    "text": "🎯 Free Premium Signals 30 Days"
+                    "text": "🎯 Free Premium Signals 30 Days",
                     "url": "https://t.me/CriptoSignalBotGestion_bot?start=676731307b8344cb070ac996"
                 }
             ]]
