@@ -150,19 +150,19 @@ Condiciones ideales para una operación intradía de alta probabilidad.
 🎁 𝐏𝐮𝐞𝐝𝐞𝐬 𝐮𝐧𝐢𝐫𝐭𝐞 𝐚 𝐧𝐮𝐞𝐬𝐭𝐫𝐚 𝐳𝐨𝐧𝐚 𝐏𝐫𝐞𝐦𝐢𝐮𝐦 𝐒𝐞𝐧̃𝐚𝐥𝐞𝐬 𝐝𝐞 𝐓𝐫𝐚𝐝𝐢𝐧𝐠 𝐜𝐨𝐧 𝐄́𝐱𝐢𝐭𝐨 𝐆𝐚𝐫𝐚𝐧𝐭𝐢𝐳𝐚𝐝𝐨:
 
 🔥 𝐅𝐈𝐑𝐄 𝐒𝐜𝐚𝐥𝐩𝐢𝐧𝐠  
-• Rendimiento: 85.64%  
-• Ganadoras: 1,563  
-• Perdedoras: 262  
+🏅 Rendimiento: 85.64%  
+🟢 Ganadoras: 1,563  
+🔴 Perdedoras: 262  
 
 💎 𝐄𝐋𝐈𝐓𝐄 𝐒𝐜𝐚𝐥𝐩𝐢𝐧𝐠 𝐏𝐑𝐎  
-• Rendimiento: 99.10%  
-• Ganadoras: 552  
-• Perdedoras: 5  
+🏅 Rendimiento: 99.10%  
+🟢 Ganadoras: 552  
+🔴 Perdedoras: 5  
 
 🪙 𝐃𝐄𝐋𝐓𝐀 𝐒𝐰𝐢𝐧𝐠  
-• Rendimiento: 96.00%  
-• Ganadoras: 48  
-• Perdedoras: 2  
+🏅 Rendimiento: 96.00% 
+🟢 Ganadoras: 48  
+🔴 Perdedoras: 2 
 
 • Señales en tiempo real enviadas directo a nuestro sitio web y Telegram  
 • Historial público de operaciones para verificar resultados reales  
@@ -198,19 +198,19 @@ Good morning traders! What better way to start the day than with our first signa
 Our team works hard to deliver real-time technical and fundamental analysis three times a day, ensuring our community is fully informed and ready to act.
 
 ---
-◉ 𝐓𝐞𝐜𝐡𝐧𝐢𝐜𝐚𝐥 𝐀𝐧𝐚𝐥𝐲𝐬𝐢𝐬:
+📊 → 𝐓𝐞𝐜𝐡𝐧𝐢𝐜𝐚𝐥 𝐀𝐧𝐚𝐥𝐲𝐬𝐢𝐬:
 
-1. Daily Chart (1D)  
+𝟏. 𝐃𝐚𝐢𝐥𝐲 𝐂𝐡𝐚𝐫𝐭 (𝟏𝐃)  
 Brief summary including:  
 - Overall daily trend
 
-2. 4-Hour Chart (4H)  
+𝟐. 𝟒-𝐇𝐨𝐮𝐫 𝐂𝐡𝐚𝐫𝐭 (𝟒𝐇)  
 Brief summary including:  
 - Candle structure and dominant direction  
 - Key bounce or congestion zones  
 - Quick read of RSI and volume
 
-3. 1-Hour Chart (1H)  
+𝟑. 𝟏-𝐇𝐨𝐮𝐫 𝐂𝐡𝐚𝐫𝐭 (𝟏𝐇)  
 - Candle patterns (engulfing, doji, hammer, etc.)  
 - Precise support and resistance  
 - EMAs (21, 55, 100, 200) as dynamic S/R  
@@ -220,7 +220,7 @@ Brief summary including:
 - SQZMOM direction and compression/expansion analysis
 
 ---
-◉ 𝐅𝐮𝐧𝐝𝐚𝐦𝐞𝐧𝐭𝐚𝐥 𝐀𝐧𝐚𝐥𝐲𝐬𝐢𝐬
+🔍 → 𝐅𝐮𝐧𝐝𝐚𝐦𝐞𝐧𝐭𝐚𝐥 𝐀𝐧𝐚𝐥𝐲𝐬𝐢𝐬
 
 Evaluate any important macroeconomic, political, or geopolitical events that could impact BTC today, including:
 
@@ -235,7 +235,7 @@ Evaluate any important macroeconomic, political, or geopolitical events that cou
 This information must be analyzed and used to **calculate the final probability of success**, but does not need to be fully listed unless highly relevant.
 
 ---
-◉ 𝐎𝐩𝐞𝐫𝐚𝐛𝐥𝐞 𝐑𝐚𝐧𝐠𝐞 (𝐋𝐨𝐧𝐠 𝟑𝐱):
+🚨 𝐎𝐩𝐞𝐫𝐚𝐛𝐥𝐞 𝐑𝐚𝐧𝐠𝐞 (𝐋𝐨𝐧𝐠 𝟑𝐱):
 
 Based on the full technical and fundamental analysis, calculate:
 
@@ -257,31 +257,31 @@ If probability is below 70%, indicate:
 
 Example output format:
 
-◉ 𝐎𝐩𝐞𝐫𝐚𝐛𝐥𝐞 𝐑𝐚𝐧𝐠𝐞 (𝐋𝐨𝐧𝐠 𝟑𝐱):
+🚨 𝐎𝐩𝐞𝐫𝐚𝐛𝐥𝐞 𝐑𝐚𝐧𝐠𝐞 (𝐋𝐨𝐧𝐠 𝟑𝐱):
 
 💰 Optimum entry price: ${rango_min}  
 🎯 Operable range: Between ${rango_min} – ${rango_max}  
 🟢 Estimated success rate: {efectividad}%  
 Ideal for short intraday trades within this range.  
-⚠️ Always manage risk. Set your exit strategy. Crypto is highly volatile.
+⚠️ Always manage risk. Set your exit strategy. Crypto is highly volatile.//
 
 ---
 🎁 𝐘𝐨𝐮 𝐜𝐚𝐧 𝐣𝐨𝐢𝐧 𝐨𝐮𝐫 𝐏𝐫𝐞𝐦𝐢𝐮𝐦 𝐙𝐨𝐧𝐞 — 𝐓𝐫𝐚𝐝𝐢𝐧𝐠 𝐒𝐢𝐠𝐧𝐚𝐥𝐬 𝐰𝐢𝐭𝐡 𝐆𝐮𝐚𝐫𝐚𝐧𝐭𝐞𝐞𝐝 𝐒𝐮𝐜𝐜𝐞𝐬𝐬:
 
 🔥 𝐅𝐈𝐑𝐄 𝐒𝐜𝐚𝐥𝐩𝐢𝐧𝐠  
-• Performance: 85.64%  
-• Wins: 1,563  
-• Losses: 262
+🏅 Performance: 85.64%  
+🟢 Wins: 1,563  
+🔴 Losses: 262
 
 💎 𝐄𝐋𝐈𝐓𝐄 𝐒𝐜𝐚𝐥𝐩𝐢𝐧𝐠 𝐏𝐑𝐎  
-• Performance: 99.10%  
-• Wins: 552  
-• Losses: 5
+🏅 Performance: 99.10%  
+🟢 Wins: 552  
+🔴 Losses: 5
 
 🪙 𝐃𝐄𝐋𝐓𝐀 𝐒𝐰𝐢𝐧𝐠  
-• Performance: 96.00%  
-• Wins: 48  
-• Losses: 2
+🏅 Performance: 96.00%  
+🟢 Wins: 48  
+🔴 Losses: 2
 
 • Real-time signals sent directly to our website and Telegram  
 • Public performance history for full transparency  
