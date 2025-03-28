@@ -190,10 +190,6 @@ Our team works hard to deliver real-time technical and fundamental analysis thre
 ---
 📊 → 𝐓𝐞𝐜𝐡𝐧𝐢𝐜𝐚𝐥 𝐀𝐧𝐚𝐥𝐲𝐬𝐢𝐬:
 
-𝟏. 𝐃𝐚𝐢𝐥𝐲 𝐂𝐡𝐚𝐫𝐭 (𝟏𝐃)  
-Brief summary including:  
-- Overall daily trend
-
 𝟐. 𝟒-𝐇𝐨𝐮𝐫 𝐂𝐡𝐚𝐫𝐭 (𝟒𝐇)  
 Brief summary including:  
 - Candle structure and dominant direction  
