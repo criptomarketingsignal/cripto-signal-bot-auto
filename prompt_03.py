@@ -170,47 +170,172 @@ Condiciones ideales para una operación intradía de alta probabilidad.
 ✨ 𝐂𝐫𝐲𝐩𝐭𝐨 𝐒𝐢𝐠𝐧𝐚𝐥 𝐁𝐨𝐭 ✨ Mantente pendiente del mensaje de mitad de sesión. ¡Feliz trading!
 """
 
-    prompt_en = f"""
-Translate this message into perfect English for a Telegram crypto trading channel audience, keeping the formatting, emojis, and tone:
+# Inglés
+prompt_en = f"""
 
-{prompt_es}
+Act as a professional technical analyst specialized in cryptocurrencies. Your goal is to generate a well-structured and accurate analysis of Bitcoin (BTCUSD), focused exclusively on short-term LONG operations. The analysis must be based on the 1-hour chart, but should also consider multiple timeframes and macroeconomic factors. The current BTC price is {precio_btc} USD.
+
+🧠 Use technical indicators such as:
+- Japanese candlesticks
+- EMAs (21, 55, 100, 200)
+- RSI
+- SQZMOM
+- Volume (POC)
+- Fibonacci retracements on 1D and 4H (internal use only, do not show in final message)
+
+Also, evaluate key macroeconomic or political events (FED meetings, CPI, employment data, statements from Trump or other global leaders, international conflicts, etc.) to validate or reject the decision to operate today.
+
+Use this exact structure in the generated message:
+
+Good evening traders! What better way to end the day than with our final signal. Let’s analyze how Bitcoin closed and what to expect for tomorrow. Let’s go!
+
+𝐃𝐚𝐭𝐞: {today_date}
+𝐒𝐢𝐠𝐧𝐚𝐥: 3 of 3
+
+Our team works hard to provide real-time technical and fundamental analysis three times a day, ensuring our community stays fully informed and prepared.
+
+---
+📊 → 𝐓𝐞𝐜𝐡𝐧𝐢𝐜𝐚𝐥 𝐀𝐧𝐚𝐥𝐲𝐬𝐢𝐬:
+
+𝟏. 𝐃𝐚𝐢𝐥𝐲 𝐂𝐡𝐚𝐫𝐭 (𝟏𝐃)  
+Brief summary including:  
+- Overall daily trend
+
+𝟐. 𝟒-𝐇𝐨𝐮𝐫 𝐂𝐡𝐚𝐫𝐭 (𝟒𝐇)  
+Brief summary including:  
+- Candle structure and dominant direction  
+- Key bounce or congestion zones  
+- Quick read of RSI and volume
+
+𝟑. 𝟏-𝐇𝐨𝐮𝐫 𝐂𝐡𝐚𝐫𝐭 (𝟏𝐇)  
+- Candle patterns (engulfing, doji, hammer, etc.)  
+- Precise support and resistance  
+- EMAs (21, 55, 100, 200) as dynamic S/R  
+- Fibonacci retracements (38.2%, 50%, 61.8%, 78.6%)  
+- RSI with commentary on overbought/oversold and divergences  
+- Volume with Point of Control and accumulation/distribution zones  
+- SQZMOM direction and compression/expansion analysis
+
+---
+🔍 → 𝐅𝐮𝐧𝐝𝐚𝐦𝐞𝐧𝐭𝐚𝐥 𝐀𝐧𝐚𝐥𝐲𝐬𝐢𝐬
+
+Evaluate any important macroeconomic, political, or geopolitical events that could impact BTC today, including:
+
+- Key events like FED meetings, CPI, NFP releases, etc.  
+- Movement of the US Dollar Index (DXY)  
+- News from political figures like Donald Trump, regulatory announcements, or global tensions  
+- General market sentiment (whales, social narratives, risk appetite)  
+- Correlation with indices like SP500 or Nasdaq if relevant
+
+⚠️ If there are **high-impact news or political statements creating significant uncertainty**, make it clear that **it’s not a favorable time to trade**, or that probabilities are low. Suggest waiting for confirmations.
+
+This information must be analyzed and used to **calculate the final probability of success**, but does not need to be fully listed unless highly relevant.
+
+---
+🚨 𝐎𝐩𝐞𝐫𝐚𝐛𝐥𝐞 𝐑𝐚𝐧𝐠𝐞 (𝐋𝐨𝐧𝐠 𝟑𝐱):
+
+Based on the full technical and fundamental analysis, calculate:
+
+- 💰 𝐎𝐩𝐭𝐢𝐦𝐮𝐦 𝐄𝐧𝐭𝐫𝐲 𝐏𝐫𝐢𝐜𝐞: as technically precise as possible  
+- 🎯 𝐎𝐩𝐞𝐫𝐚𝐛𝐥𝐞 𝐑𝐚𝐧𝐠𝐞: maximum 2%, based on the 1-hour chart  
+- 🟢 𝐄𝐬𝐭𝐢𝐦𝐚𝐭𝐞𝐝 𝐒𝐮𝐜𝐜𝐞𝐬𝐬 𝐏𝐫𝐨𝐛𝐚𝐛𝐢𝐥𝐢𝐭𝐲: result (%) from combined technical + fundamental analysis
+
+If the probability is higher than 70%, indicate:
+
+🔁 𝐇𝐢𝐠𝐡-𝐏𝐫𝐞𝐜𝐢𝐬𝐢𝐨𝐧 𝐎𝐩𝐩𝐨𝐫𝐭𝐮𝐧𝐢𝐭𝐲  
+𝐓𝐡𝐞 𝐛𝐞𝐬𝐭 𝐬𝐭𝐫𝐚𝐭𝐞𝐠𝐲 𝐢𝐬 𝐭𝐨 𝐨𝐩𝐞𝐧 𝐚𝐧𝐝 𝐜𝐥𝐨𝐬𝐞 𝐬𝐡𝐨𝐫𝐭 𝐢𝐧𝐭𝐫𝐚𝐝𝐚𝐲 𝐭𝐫𝐚𝐝𝐞𝐬 𝐰𝐢𝐭𝐡𝐢𝐧 𝐭𝐡𝐞 𝐫𝐚𝐧𝐠𝐞.  
+𝐓𝐚𝐤𝐞 𝐚𝐝𝐯𝐚𝐧𝐭𝐚𝐠𝐞 𝐨𝐟 𝐦𝐨𝐦𝐞𝐧𝐭𝐮𝐦 𝐚𝐧𝐝 𝐜𝐨𝐧𝐬𝐨𝐥𝐢𝐝𝐚𝐭𝐢𝐨𝐧.
+
+If probability is below 70%, indicate:
+
+⚠️ 𝐂𝐮𝐫𝐫𝐞𝐧𝐭𝐥𝐲 𝐧𝐨 𝐜𝐥𝐞𝐚𝐫 𝐨𝐩𝐞𝐫𝐚𝐭𝐢𝐨𝐧𝐚𝐥 𝐬𝐞𝐭𝐮𝐩 𝐢𝐬 𝐝𝐞𝐭𝐞𝐜𝐭𝐞𝐝.  
+𝐌𝐚𝐫𝐤𝐞𝐭 𝐜𝐨𝐧𝐝𝐢𝐭𝐢𝐨𝐧𝐬 𝐚𝐫𝐞 𝐧𝐨𝐭 𝐟𝐚𝐯𝐨𝐫𝐚𝐛𝐥𝐞 𝐚𝐧𝐝 𝐬𝐮𝐜𝐜𝐞𝐬𝐬 𝐩𝐫𝐨𝐛𝐚𝐛𝐢𝐥𝐢𝐭𝐲 𝐢𝐬 𝐥𝐨𝐰.  
+📌 𝐖𝐚𝐢𝐭 𝐟𝐨𝐫 𝐭𝐡𝐞 𝐦𝐢𝐝-𝐬𝐞𝐬𝐬𝐢𝐨𝐧 𝐚𝐧𝐚𝐥𝐲𝐬𝐢𝐬 𝐭𝐨 𝐠𝐞𝐭 𝐛𝐞𝐭𝐭𝐞𝐫 𝐜𝐨𝐧𝐟𝐢𝐫𝐦𝐚𝐭𝐢𝐨𝐧𝐬.
+
+Example output format:
+
+🚨 𝐎𝐩𝐞𝐫𝐚𝐛𝐥𝐞 𝐑𝐚𝐧𝐠𝐞 (𝐋𝐨𝐧𝐠 𝟑𝐱):
+
+💰 Optimum entry price: ${rango_min}  
+🎯 Operable range: Between ${rango_min} – ${rango_max}  
+🟢 Estimated success rate: {efectividad}%  
+Ideal for short intraday trades within this range.  
+⚠️ Always manage risk. Set your exit strategy. Crypto is highly volatile.//
+
+---
+🎁 𝐘𝐨𝐮 𝐜𝐚𝐧 𝐣𝐨𝐢𝐧 𝐨𝐮𝐫 𝐏𝐫𝐞𝐦𝐢𝐮𝐦 𝐙𝐨𝐧𝐞 — 𝐓𝐫𝐚𝐝𝐢𝐧𝐠 𝐒𝐢𝐠𝐧𝐚𝐥𝐬 𝐰𝐢𝐭𝐡 𝐆𝐮𝐚𝐫𝐚𝐧𝐭𝐞𝐞𝐝 𝐒𝐮𝐜𝐜𝐞𝐬𝐬:
+
+🔥 𝐅𝐈𝐑𝐄 𝐒𝐜𝐚𝐥𝐩𝐢𝐧𝐠  
+🏅 Performance: 85.64%  
+🟢 Wins: 1,563  
+🔴 Losses: 262
+
+💎 𝐄𝐋𝐈𝐓𝐄 𝐒𝐜𝐚𝐥𝐩𝐢𝐧𝐠 𝐏𝐑𝐎  
+🏅 Performance: 99.10%  
+🟢 Wins: 552  
+🔴 Losses: 5
+
+🪙 𝐃𝐄𝐋𝐓𝐀 𝐒𝐰𝐢𝐧𝐠  
+🏅 Performance: 96.00%  
+🟢 Wins: 48  
+🔴 Losses: 2
+
+• Real-time signals sent directly to our website and Telegram  
+• Public performance history for full transparency  
+• Live charting platform  
+• Daily news, economic calendar & live analysis  
+• 24/7 support for all members
+
+✨ 𝐂𝐫𝐲𝐩𝐭𝐨 𝐒𝐢𝐠𝐧𝐚𝐥 𝐁𝐨𝐭 ✨ Stay tuned for the mid-session update. Happy trading!
 """
 
-    response_es = openai.ChatCompletion.create(
-        model="gpt-4o",
-        messages=[{"role": "user", "content": prompt_es}]
-    )
-    mensaje_es = response_es.choices[0].message["content"]
+response_es = openai.ChatCompletion.create(
+    model="gpt-4o",
+    messages=[{"role": "user", "content": prompt_es}]
+)
+message_es = response_es.choices[0].message["content"]
 
-    response_en = openai.ChatCompletion.create(
-        model="gpt-4o",
-        messages=[{"role": "user", "content": prompt_en}]
-    )
-    mensaje_en = response_en.choices[0].message["content"]
+response_en = openai.ChatCompletion.create(
+    model="gpt-4o",
+    messages=[{"role": "user", "content": prompt_en}]
+)
+message_en = response_en.choices[0].message["content"]
 
-    url_photo = f"https://api.telegram.org/bot{BOT_TOKEN}/sendPhoto"
-    url_msg = f"https://api.telegram.org/bot{BOT_TOKEN}/sendMessage"
-    imagen_url = "https://cryptosignalbot.com/wp-content/uploads/2025/03/fin-ses.png"
+url_photo = f"https://api.telegram.org/bot{BOT_TOKEN}/sendPhoto"
+url_text = f"https://api.telegram.org/bot{BOT_TOKEN}/sendMessage"
 
-    # Primero enviamos la imagen a ambos canales
-    for canal in [CHANNEL_CHAT_ID_ES, CHANNEL_CHAT_ID_EN]:
-        requests.post(url_photo, data={"chat_id": canal, "photo": imagen_url})
+# Enviar imagen a ambos canales
+for chat_id in [CHANNEL_CHAT_ID_ES, CHANNEL_CHAT_ID_EN]:
+    requests.post(url_photo, data={
+        "chat_id": chat_id,
+        "photo": "https://cryptosignalbot.com/wp-content/uploads/2025/03/principio.png"
+    })
 
-    # Luego el mensaje con botón
-    for canal, mensaje in [(CHANNEL_CHAT_ID_ES, mensaje_es), (CHANNEL_CHAT_ID_EN, mensaje_en)]:
-        payload = {
-            "chat_id": canal,
-            "text": mensaje,
-            "parse_mode": "HTML",
-            "reply_markup": {
-                "inline_keyboard": [
-                    [
-                        {
-                            "text": "Señales premium 30 días gratis ✨",
-                            "url": "https://t.me/CriptoSignalBotGestion_bot?start=676731307b8344cb070ac996"
-                        }
-                    ]
-                ]
-            }
-        }
-        requests.post(url_msg, json=payload)
+# Enviar texto a canal español
+payload_es = {
+    "chat_id": CHANNEL_CHAT_ID_ES,
+    "text": message_es,
+    "parse_mode": "HTML",
+    "reply_markup": {
+        "inline_keyboard": [[{
+            "text": "🎯 Señales premium 30 días gratis",
+            "url": "https://t.me/CriptoSignalBotGestion_bot?start=676731307b8344cb070ac996"
+        }]]
+    }
+}
+
+# Enviar texto a canal inglés
+payload_en = {
+    "chat_id": CHANNEL_CHAT_ID_EN,
+    "text": message_en,
+    "parse_mode": "HTML",
+    "reply_markup": {
+        "inline_keyboard": [[{
+            "text": "🎯 Free Premium Signals 30 Days",
+            "url": "https://t.me/CriptoSignalBotGestion_bot?start=676731307b8344cb070ac996"
+        }]]
+    }
+}
+
+requests.post(url_text, json=payload_es)
+requests.post(url_text, json=payload_en)
