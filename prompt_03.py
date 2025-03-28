@@ -172,7 +172,6 @@ Condiciones ideales para una operación intradía de alta probabilidad.
 
 # Inglés
 prompt_en = f"""
-
 Act as a professional technical analyst specialized in cryptocurrencies. Your goal is to generate a well-structured and accurate analysis of Bitcoin (BTCUSD), focused exclusively on short-term LONG operations. The analysis must be based on the 1-hour chart, but should also consider multiple timeframes and macroeconomic factors. The current BTC price is {precio_btc} USD.
 
 🧠 Use technical indicators such as:
@@ -189,8 +188,8 @@ Use this exact structure in the generated message:
 
 Good evening traders! What better way to end the day than with our final signal. Let’s analyze how Bitcoin closed and what to expect for tomorrow. Let’s go!
 
-𝐃𝐚𝐭𝐞: {today_date}
-𝐒𝐢𝐠𝐧𝐚𝐥: 3 of 3
+𝐃𝐚𝐭𝐞: {fecha_es}  
+𝐒𝐢𝐠𝐧𝐚𝐥: 1 of 3
 
 Our team works hard to provide real-time technical and fundamental analysis three times a day, ensuring our community stays fully informed and prepared.
 
