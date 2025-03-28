@@ -73,7 +73,7 @@ Usa esta estructura exacta en el mensaje generado:
 ✨ Qué mejor momento que el cierre de la vela diaria para evaluar el panorama completo. ¡Vamos a analizar Bitcoin con todo!
 
 𝐅𝐞𝐜𝐡𝐚: {fecha_hoy}  
-𝐒𝐞𝐧̃𝐚𝐥: 2 de 3
+𝐒𝐞𝐧̃𝐚𝐥: 3 de 3
 
 Nuestro equipo trabaja arduamente para ofrecer análisis técnico y fundamental en tiempo real tres veces al día, asegurándonos de mantener a nuestra comunidad completamente informada y preparada.
 
@@ -185,7 +185,7 @@ Gracias por elegirnos como tu portal de trading de confianza. ¡Juntos, haremos 
 What better time than mid-session to reassess opportunities. Let’s dive into Bitcoin!
 
 𝐃𝐚𝐭𝐞: {fecha_hoy}  
-𝐒𝐢𝐠𝐧𝐚𝐥: 2 of 3
+𝐒𝐢𝐠𝐧𝐚𝐥: 3 of 3
 
 Our team works hard to deliver real-time technical and fundamental analysis three times a day, ensuring our community is fully informed and ready to act.
 
