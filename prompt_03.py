@@ -158,32 +158,11 @@ Ejemplo del formato a entregar:
 Condiciones ideales para una operación intradía de alta probabilidad.  
 ⚠️ ¡Cuida tu gestión de riesgo! No te olvides de establecer una estrategia de salida. Este mercado es altamente volátil.//
 
----
-🎁 𝐏𝐮𝐞𝐝𝐞𝐬 𝐮𝐧𝐢𝐫𝐭𝐞 𝐚 𝐧𝐮𝐞𝐬𝐭𝐫𝐚 𝐳𝐨𝐧𝐚 𝐏𝐫𝐞𝐦𝐢𝐮𝐦 𝐒𝐞𝐧̃𝐚𝐥𝐞𝐬 𝐝𝐞 𝐓𝐫𝐚𝐝𝐢𝐧𝐠 𝐜𝐨𝐧 𝐄́𝐱𝐢𝐭𝐨 𝐆𝐚𝐫𝐚𝐧𝐭𝐢𝐳𝐚𝐝𝐨:
+📊 Señales, gráficos en vivo y análisis en tiempo real completamente GRATIS por 30 días.  
+🔑 𝐎𝐛𝐭𝐞́𝐧 𝐭𝐮 𝐦𝐞𝐬 𝐠𝐫𝐚𝐭𝐢𝐬 𝐚𝐡𝐨𝐫𝐚! 🚀  
 
-🔥 𝐅𝐈𝐑𝐄 𝐒𝐜𝐚𝐥𝐩𝐢𝐧𝐠  
-🏅 Rendimiento: 85.64%  
-🟢 Ganadoras: 1,563  
-🔴 Perdedoras: 262  
-
-💎 𝐄𝐋𝐈𝐓𝐄 𝐒𝐜𝐚𝐥𝐩𝐢𝐧𝐠 𝐏𝐑𝐎  
-🏅 Rendimiento: 99.10%  
-🟢 Ganadoras: 552  
-🔴 Perdedoras: 5  
-
-🪙 𝐃𝐄𝐋𝐓𝐀 𝐒𝐰𝐢𝐧𝐠  
-🏅 Rendimiento: 96.00% 
-🟢 Ganadoras: 48  
-🔴 Perdedoras: 2 
-
-• Señales en tiempo real enviadas directo a nuestro sitio web y Telegram  
-• Historial público de operaciones para verificar resultados reales  
-• Plataforma con gráficos en vivo y seguimiento al mercado  
-• Noticias, calendario económico y análisis en vivo cada día
-• Soporte 24/7 para responder tus dudas 
---- 
-
-✨ 𝐂𝐫𝐲𝐩𝐭𝐨 𝐒𝐢𝐠𝐧𝐚𝐥 𝐁𝐨𝐭 ✨ Mantente pendiente del mensaje de mitad de sesión. ¡Feliz trading!
+Gracias por elegirnos como tu portal de trading de confianza. ¡Juntos, haremos que tu inversión crezca!  
+✨ 𝐂𝐫𝐲𝐩𝐭𝐨 𝐒𝐢𝐠𝐧𝐚𝐥 𝐁𝐨𝐭 ✨ Te esperamos mañana para nuevas oportunidades. ¡Feliz trading!
 """
 
     prompt_en = f"""
