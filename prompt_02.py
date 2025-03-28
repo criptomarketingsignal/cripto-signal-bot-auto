@@ -315,7 +315,7 @@ Ideal for short intraday trades within this range.
         "reply_markup": {
             "inline_keyboard": [[
                 {
-                    "text": "Señales premium 30 días gratis ✨",
+                    "text": "🎯 Señales premium 30 días gratis",
                     "url": "https://t.me/CriptoSignalBotGestion_bot?start=676731307b8344cb070ac996"
                 }
             ]]
@@ -329,7 +329,7 @@ Ideal for short intraday trades within this range.
         "reply_markup": {
             "inline_keyboard": [[
                 {
-                    "text": "Free 30-Day Premium Signals ✨",
+                    "text": "🎯 Free Premium Signals 30 Days",
                     "url": "https://t.me/CriptoSignalBotGestion_bot?start=676731307b8344cb070ac996"
                 }
             ]]
