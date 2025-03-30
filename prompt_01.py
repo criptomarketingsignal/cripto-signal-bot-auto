@@ -77,7 +77,7 @@ def send_prompt_01():
 
 Usa esta estructura exacta en el mensaje generado:
 
-✨ Qué mejor momento que el cierre de la vela diaria para evaluar el panorama completo. ¡Vamos a analizar Bitcoin con todo!
+✨ Buenos días traders! Qué mejor manera de comenzar el día que con nuestra primera señal del día. Hoy vamos a analizar Bitcoin y darles nuestras recomendaciones. ¡Vamos allá!
 
 🕘 𝐅𝐞𝐜𝐡𝐚: {fecha_hoy}  
 🌞 𝐀𝐧𝐚́𝐥𝐢𝐬𝐢𝐬 𝐈𝐧𝐢𝐜𝐢𝐚𝐥 – 𝐒𝐞𝐧̃𝐚𝐥 𝟏 𝐝𝐞 𝟑
@@ -168,7 +168,7 @@ Condiciones ideales para una operación intradía de alta probabilidad.
 🎁 𝐏𝐮𝐞𝐝𝐞𝐬 𝐮𝐧𝐢𝐫𝐭𝐞 𝐚 𝐧𝐮𝐞𝐬𝐭𝐫𝐚 𝐳𝐨𝐧𝐚 𝐏𝐫𝐞𝐦𝐢𝐮𝐦 𝐒𝐞𝐧̃𝐚𝐥𝐞𝐬 𝐝𝐞 𝐓𝐫𝐚𝐝𝐢𝐧𝐠 𝐜𝐨𝐧 𝐄́𝐱𝐢𝐭𝐨 𝐆𝐚𝐫𝐚𝐧𝐭𝐢𝐳𝐚𝐝𝐨  
 
 Gracias por elegirnos como tu portal de trading de confianza. ¡Juntos, haremos que tu inversión crezca!  
-✨ 𝐂𝐫𝐲𝐩𝐭𝐨 𝐒𝐢𝐠𝐧𝐚𝐥 𝐁𝐨𝐭 ✨ Te esperamos mañana para nuevas oportunidades. ¡Feliz trading!
+✨ 𝐂𝐫𝐲𝐩𝐭𝐨 𝐒𝐢𝐠𝐧𝐚𝐥 𝐁𝐨𝐭 ✨ Mantente pendiente del mensaje de mitad de sesión. ¡Feliz trading!
 """
 
     prompt_en = f"""
@@ -204,7 +204,7 @@ What better time than mid-session to reassess opportunities. Let’s dive into B
 🕘 𝐃𝐚𝐭𝐞: {fecha_hoy}  
 🌞 𝐌𝐨𝐫𝐧𝐢𝐧𝐠 𝐀𝐧𝐚𝐥𝐲𝐬𝐢𝐬 – 𝐒𝐢𝐠𝐧𝐚𝐥 𝟏 𝐨𝐟 𝟑 
 
-✨ What better time than the close of the daily candle to assess the bigger picture? Let's analyze Bitcoin with all our might!
+✨ Good morning traders! What better way to start the day than with our first signal of the day. Today we’ll analyze Bitcoin and share our recommendations. Let’s go!
 
 ---
 Add a brief general summary of this:
@@ -285,7 +285,7 @@ Ideal for short intraday trades within this range.
 🎁 𝐘𝐨𝐮 𝐜𝐚𝐧 𝐣𝐨𝐢𝐧 𝐨𝐮𝐫 𝐏𝐫𝐞𝐦𝐢𝐮𝐦 𝐙𝐨𝐧𝐞 — 𝐓𝐫𝐚𝐝𝐢𝐧𝐠 𝐒𝐢𝐠𝐧𝐚𝐥𝐬 𝐰𝐢𝐭𝐡 𝐆𝐮𝐚𝐫𝐚𝐧𝐭𝐞𝐞𝐝 𝐒𝐮𝐜𝐜𝐞𝐬𝐬 
 
 Thank you for choosing us as your trusted trading partner. Together, we’ll make your investment grow!  
-✨ 𝐂𝐫𝐲𝐩𝐭𝐨 𝐒𝐢𝐠𝐧𝐚𝐥 𝐁𝐨𝐭 ✨ See you tomorrow for more opportunities. Happy trading!
+✨ 𝐂𝐫𝐲𝐩𝐭𝐨 𝐒𝐢𝐠𝐧𝐚𝐥 𝐁𝐨𝐭 ✨ Stay tuned for the mid-session update. Happy trading!
 """
 
     response_es = openai.ChatCompletion.create(
