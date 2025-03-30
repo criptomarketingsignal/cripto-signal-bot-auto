@@ -58,12 +58,6 @@ def send_prompt_01():
 
     Actúa como un analista técnico profesional especializado en criptomonedas. Tu objetivo es generar un análisis estructurado y preciso del comportamiento de Bitcoin (BTCUSD), enfocado únicamente en operaciones LONG de corto plazo. El análisis se basa en el gráfico de 1 hora, pero debe considerar múltiples temporalidades y factores macroeconómicos El precio actual de BTC es {precio_btc} USD..
     📊 El análisis debe estar basado en el gráfico de 1 hora, pero considerar multitemporalidad (4H y 1D) para mayor contexto. El precio actual de BTC es {precio_btc} USD.
-
-✅ Instrucciones:
-1. Analiza cómo se desarrolló el comportamiento de BTC despues del cierre de la vela del dia anterior hasta el momento actual. 
-2. Evalúa si hubo un movimiento fuerte, una caída importante o consolidación.
-3. Proyecta el posible comportamiento para el día actual, basado en patrones actuales, volumen y estructura del mercado. 
-4. Sugiere si hoy podría haber una entrada LONG favorable o si es mejor esperar confirmación.
     
     🧠 Utiliza indicadores técnicos como:
     - Velas japonesas
@@ -185,13 +179,6 @@ def send_prompt_01():
     Act as a professional technical analyst specialized in cryptocurrencies. Your goal is to generate a well-structured and accurate analysis of Bitcoin (BTCUSD), focused exclusively on short-term LONG operations. The analysis must be based on the 1-hour chart, but should also consider multiple timeframes and macroeconomic factors. The current BTC price is {precio_btc} USD.
         
     📊 The analysis should be based on the 1-hour chart, while also taking into account higher timeframes (4H and 1D) for broader context. The current price of BTC is {precio_btc} USD.
-
-    ✅ Instructions:
-
-1. Analyze how BTC's performance developed from the close of the previous day's candle to the current moment.
-2. Evaluate whether there was a strong move, a significant drop, or consolidation.
-3. Project possible behavior for the current day, based on current patterns, volume, and market structure.
-4. Suggest whether there could be a favorable LONG entry today or if it is better to wait for confirmation.
     
     🧠 Use technical indicators such as:
     - Japanese candlesticks
