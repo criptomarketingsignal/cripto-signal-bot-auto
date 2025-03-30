@@ -279,7 +279,7 @@ Example output format:
 🎯 Operable range: Between ${rango_min} – ${rango_max}  
 🟢 Estimated success rate: {efectividad}%  
 Ideal for short intraday trades within this range.  
-⚠️ Always manage risk. Set your exit strategy. Crypto is highly volatile.//
+⚠️ Always manage risk. Set your exit strategy. Crypto is highly volatile.
 
 ---
 🎁 𝐘𝐨𝐮 𝐜𝐚𝐧 𝐣𝐨𝐢𝐧 𝐨𝐮𝐫 𝐏𝐫𝐞𝐦𝐢𝐮𝐦 𝐙𝐨𝐧𝐞 — 𝐓𝐫𝐚𝐝𝐢𝐧𝐠 𝐒𝐢𝐠𝐧𝐚𝐥𝐬 𝐰𝐢𝐭𝐡 𝐆𝐮𝐚𝐫𝐚𝐧𝐭𝐞𝐞𝐝 𝐒𝐮𝐜𝐜𝐞𝐬𝐬 
@@ -307,7 +307,7 @@ Thank you for choosing us as your trusted trading partner. Together, we’ll mak
     for chat_id in [CHANNEL_CHAT_ID_ES, CHANNEL_CHAT_ID_EN]:
         requests.post(url_img, data={
             "chat_id": chat_id,
-            "photo": "https://cryptosignalbot.com/wp-content/uploads/2025/03/fin-ses.png"
+            "photo": "https://cryptosignalbot.com/wp-content/uploads/2025/03/principio.png"
         })
 
     payload_es = {
