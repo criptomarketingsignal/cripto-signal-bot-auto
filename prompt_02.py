@@ -70,7 +70,7 @@ Además, evalúa eventos macroeconómicos o políticos importantes (FED, CPI, da
 
 Usa esta estructura exacta en el mensaje generado:
 
-Qué mejor momento que la mitad de sesión para evaluar oportunidades. ¡Vamos a analizar Bitcoin con todo!
+✨ Qué mejor momento que la mitad de sesión para evaluar oportunidades. ¡Vamos a analizar Bitcoin con todo!
 
 🕘 𝐅𝐞𝐜𝐡𝐚: {fecha_hoy}  
 ☀️ 𝐄𝐯𝐚𝐥𝐮𝐚𝐜𝐢𝐨́𝐧 𝐌𝐞𝐝𝐢𝐨 𝐝𝐢́𝐚 – 𝐒𝐞𝐧̃𝐚𝐥 𝟐 𝐝𝐞 𝟑
@@ -198,7 +198,7 @@ Condiciones ideales para una operación intradía de alta probabilidad.
     
     Use this exact structure in the generated message:
 
-What better time than mid-session to reassess opportunities. Let’s dive into Bitcoin!
+✨ What better time than mid-session to reassess opportunities. Let’s dive into Bitcoin!
 
 🕘 𝐃𝐚𝐭𝐞: {fecha_hoy}  
 ☀️ 𝐌𝐢𝐝𝐝𝐚𝐲 𝐄𝐯𝐚𝐥𝐮𝐚𝐭𝐢𝐨𝐧 – 𝐒𝐢𝐠𝐧𝐚𝐥 𝟐 𝐨𝐟 𝟑
