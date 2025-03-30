@@ -94,6 +94,7 @@ agrega un texto breve resumen general de esto:
 4. Proyecta el posible comportamiento para el día siguiente, basado en patrones actuales, volumen y estructura del mercado. 
 5. Sugiere si mañana podría haber una entrada LONG favorable o si es mejor esperar confirmación.
 
+---
 📊 → 𝐀𝐧𝐚́𝐥𝐢𝐬𝐢𝐬 𝐓𝐞́𝐜𝐧𝐢𝐜𝐨:
 𝟏. 𝐆𝐫𝐚́𝐟𝐢𝐜𝐨 𝐃𝐢𝐚𝐫𝐢𝐨
 Resumen técnico breve con:
