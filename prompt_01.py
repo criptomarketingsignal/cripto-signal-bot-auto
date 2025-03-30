@@ -1,12 +1,12 @@
-    import os
-    import requests
-    import openai
-    from datetime import datetime
+import os
+import requests
+import openai
+from datetime import datetime
     
-    openai.api_key = os.getenv("OPENAI_API_KEY")
-    BOT_TOKEN = os.getenv("TELEGRAM_BOT_TOKEN")
-    CHANNEL_CHAT_ID_ES = "-1002440626725"
-    CHANNEL_CHAT_ID_EN = "-1002288256984"
+openai.api_key = os.getenv("OPENAI_API_KEY")
+BOT_TOKEN = os.getenv("TELEGRAM_BOT_TOKEN")
+CHANNEL_CHAT_ID_ES = "-1002440626725"
+CHANNEL_CHAT_ID_EN = "-1002288256984"
     
     def obtener_fecha_en_espanol():
         meses = {
@@ -393,3 +393,4 @@ Add a brief general summary of this:
     
         requests.post(url_text, json=payload_es)
         requests.post(url_text, json=payload_en)
+
