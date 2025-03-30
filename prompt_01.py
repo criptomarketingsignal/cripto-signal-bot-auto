@@ -293,7 +293,7 @@ Ideal for short intraday trades within this range.
 """
 
     response_es = openai.ChatCompletion.create(
-        model="gpt-4o",
+        model="gpt-3.5-turbo",
         messages=[{"role": "user", "content": prompt_es}]
     )
     message_es = response_es.choices[0].message["content"]
