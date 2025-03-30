@@ -51,7 +51,7 @@ def send_prompt_01():
 
     # Español
     prompt_es = f"""
-Actúa como un analista técnico profesional especializado en criptomonedas. Tu objetivo es generar un análisis estructurado y preciso del comportamiento de Bitcoin (BTCUSD), enfocado únicamente en operaciones LONG de corto plazo. El análisis se basa en el gráfico de 1 hora, pero debe considerar múltiples temporalidades y factores macroeconómicos debes analizar desde el cierre de la vela del dia anterior hasta este momento y dar un resumen y decir lo que el precio de bitcoin hizo si bajo o subio, y porque tuvo cambios o no El precio actual de BTC es {precio_btc} USD..
+Actúa como un analista técnico profesional especializado en criptomonedas. Tu objetivo es generar un análisis estructurado y preciso del comportamiento de Bitcoin (BTCUSD), enfocado únicamente en operaciones LONG de corto plazo. El análisis se basa en el gráfico de 1 hora, pero debe considerar múltiples temporalidades y factores macroeconómicos El precio actual de BTC es {precio_btc} USD..
 
 🧠 Utiliza indicadores técnicos como:
 - Velas japonesas
@@ -61,7 +61,7 @@ Actúa como un analista técnico profesional especializado en criptomonedas. Tu 
 - Volumen (POC)
 - Retrocesos de Fibonacci en 1D y 4H (solo para análisis interno, no mostrar en el mensaje)
 
-Además, evalúa eventos macroeconómicos o políticos importantes (FED, CPI, datos de empleo, declaraciones de Trump u otros líderes, conflictos globales, etc.) para reforzar o rechazar la validez de operar hoy, distinguir si es dia de semana o fin de semana y incluye en el resumen y analizar la proyeccion para el dia de hoy.
+Además, evalúa eventos macroeconómicos o políticos importantes (FED, CPI, datos de empleo, declaraciones de Trump u otros líderes, conflictos globales, etc.) para reforzar o rechazar la validez de operar hoy.
 
 Usa esta estructura exacta en el mensaje generado:
 
@@ -149,6 +149,21 @@ Condiciones ideales para una operación intradía de alta probabilidad.
 ---
 🎁 𝐏𝐮𝐞𝐝𝐞𝐬 𝐮𝐧𝐢𝐫𝐭𝐞 𝐚 𝐧𝐮𝐞𝐬𝐭𝐫𝐚 𝐳𝐨𝐧𝐚 𝐏𝐫𝐞𝐦𝐢𝐮𝐦 𝐒𝐞𝐧̃𝐚𝐥𝐞𝐬 𝐝𝐞 𝐓𝐫𝐚𝐝𝐢𝐧𝐠 𝐜𝐨𝐧 𝐄́𝐱𝐢𝐭𝐨 𝐆𝐚𝐫𝐚𝐧𝐭𝐢𝐳𝐚𝐝𝐨:
 
+🔥 𝐅𝐈𝐑𝐄 𝐒𝐜𝐚𝐥𝐩𝐢𝐧𝐠  
+🏅 Rendimiento: 85.64%  
+🟢 Ganadoras: 1,563  
+🔴 Perdedoras: 262  
+
+💎 𝐄𝐋𝐈𝐓𝐄 𝐒𝐜𝐚𝐥𝐩𝐢𝐧𝐠 𝐏𝐑𝐎  
+🏅 Rendimiento: 99.10%  
+🟢 Ganadoras: 552  
+🔴 Perdedoras: 5  
+
+🪙 𝐃𝐄𝐋𝐓𝐀 𝐒𝐰𝐢𝐧𝐠  
+🏅 Rendimiento: 96.00% 
+🟢 Ganadoras: 48  
+🔴 Perdedoras: 2 
+
 • Señales en tiempo real enviadas directo a nuestro sitio web y Telegram  
 • Historial público de operaciones para verificar resultados reales  
 • Plataforma con gráficos en vivo y seguimiento al mercado  
@@ -161,17 +176,17 @@ Condiciones ideales para una operación intradía de alta probabilidad.
 
     # Inglés
     prompt_en = f"""
-    Act as a professional technical analyst specializing in cryptocurrencies. Your goal is to generate a structured and accurate analysis of Bitcoin (BTCUSD) performance, focusing solely on short-term long trades. The analysis is based on the 1-hour chart, but it should consider multiple time frames and macroeconomic factors. You should analyze from the close of the previous day's candle to this point, provide a summary, and explain what the Bitcoin price did, whether it went up or down, and why it changed or not. The current BTC price is {price_btc} USD.
+Act as a professional technical analyst specialized in cryptocurrencies. Your goal is to generate a well-structured and accurate analysis of Bitcoin (BTCUSD), focused exclusively on short-term LONG operations. The analysis must be based on the 1-hour chart, but should also consider multiple timeframes and macroeconomic factors. The current BTC price is {precio_btc} USD.
 
-    🧠 Use technical indicators such as:
-    - Japanese candlesticks
-    - EMAs (21, 55, 100, 200)
-    - RSI
-    - SQZMOM
-    - Volume (POC)
-    - 1D and 4H Fibonacci retracements (for internal analysis only, do not display in the message)
-    
-    Also, evaluate important macroeconomic or political events (FED, CPI, employment data, statements by Trump or other leaders, global conflicts, etc.) to reinforce or reject the validity of trading today. Distinguish whether it is a weekday or weekend, and include this in the summary and analyze the projection for today.
+🧠 Use technical indicators such as:
+- Japanese candlesticks
+- EMAs (21, 55, 100, 200)
+- RSI
+- SQZMOM
+- Volume (POC)
+- Fibonacci retracements on 1D and 4H (internal use only, do not show in final message)
+
+Also, evaluate key macroeconomic or political events (FED meetings, CPI, employment data, statements from Trump or other global leaders, international conflicts, etc.) to validate or reject the decision to operate today.
 
 Use this exact structure in the generated message:
 
@@ -253,6 +268,21 @@ Ideal for short intraday trades within this range.
 ---
 🎁 𝐘𝐨𝐮 𝐜𝐚𝐧 𝐣𝐨𝐢𝐧 𝐨𝐮𝐫 𝐏𝐫𝐞𝐦𝐢𝐮𝐦 𝐙𝐨𝐧𝐞 — 𝐓𝐫𝐚𝐝𝐢𝐧𝐠 𝐒𝐢𝐠𝐧𝐚𝐥𝐬 𝐰𝐢𝐭𝐡 𝐆𝐮𝐚𝐫𝐚𝐧𝐭𝐞𝐞𝐝 𝐒𝐮𝐜𝐜𝐞𝐬𝐬:
 
+🔥 𝐅𝐈𝐑𝐄 𝐒𝐜𝐚𝐥𝐩𝐢𝐧𝐠  
+🏅 Performance: 85.64%  
+🟢 Wins: 1,563  
+🔴 Losses: 262
+
+💎 𝐄𝐋𝐈𝐓𝐄 𝐒𝐜𝐚𝐥𝐩𝐢𝐧𝐠 𝐏𝐑𝐎  
+🏅 Performance: 99.10%  
+🟢 Wins: 552  
+🔴 Losses: 5
+
+🪙 𝐃𝐄𝐋𝐓𝐀 𝐒𝐰𝐢𝐧𝐠  
+🏅 Performance: 96.00%  
+🟢 Wins: 48  
+🔴 Losses: 2
+
 • Real-time signals sent directly to our website and Telegram  
 • Public performance history for full transparency  
 • Live charting platform  
@@ -291,7 +321,7 @@ Ideal for short intraday trades within this range.
         "parse_mode": "HTML",
         "reply_markup": {
             "inline_keyboard": [[{
-                "text": "🎯 Señales premium 30 días gratis",
+                "text": "🎯 Señales premium",
                 "url": "https://t.me/CriptoSignalBotGestion_bot?start=676731307b8344cb070ac996"
             }]]
         }
@@ -304,7 +334,7 @@ Ideal for short intraday trades within this range.
         "parse_mode": "HTML",
         "reply_markup": {
             "inline_keyboard": [[{
-                "text": "🎯 Free Premium Signals 30 Days",
+                "text": "🎯 Free Premium Signals",
                 "url": "https://t.me/CriptoSignalBotGestion_bot?start=676731307b8344cb070ac996"
             }]]
         }
