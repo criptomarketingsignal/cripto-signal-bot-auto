@@ -194,8 +194,8 @@ def send_prompt_01():
     ✨ 𝐂𝐫𝐲𝐩𝐭𝐨 𝐒𝐢𝐠𝐧𝐚𝐥 𝐁𝐨𝐭 ✨ Mantente pendiente del mensaje de mitad de sesión. ¡Feliz trading!
     """
     
-        # Inglés
-        prompt_en = f"""
+    # Inglés
+    prompt_en = f"""
     🚫 ABSOLUTELY FORBIDDEN to use traditional bold formatting.
     ❌ Never, ever use double asterisks (**) to highlight words.
     ❌ Do not use any kind of conventional bold formatting.
