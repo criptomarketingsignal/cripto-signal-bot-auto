@@ -276,13 +276,13 @@ Thank you for choosing us as your trusted trading partner. Together, we’ll mak
 """
 
     response_es = openai.ChatCompletion.create(
-        model="gpt-4o",
+        model="gpt-4o-mini",
         messages=[{"role": "user", "content": prompt_es}]
     )
     message_es = response_es.choices[0].message["content"]
 
     response_en = openai.ChatCompletion.create(
-        model="gpt-4o",
+        model="gpt-4o-mini",
         messages=[{"role": "user", "content": prompt_en}]
     )
     message_en = response_en.choices[0].message["content"]
@@ -304,7 +304,7 @@ Thank you for choosing us as your trusted trading partner. Together, we’ll mak
         "reply_markup": {
             "inline_keyboard": [[
                 {
-                    "text": "🎯 Señales premium 30 días gratis",
+                    "text": "🎯 Señales premium",
                     "url": "https://t.me/CriptoSignalBotGestion_bot?start=676731307b8344cb070ac996"
                 }
             ]]
@@ -318,7 +318,7 @@ Thank you for choosing us as your trusted trading partner. Together, we’ll mak
         "reply_markup": {
             "inline_keyboard": [[
                 {
-                    "text": "🎯 Free Premium Signals 30 Days",
+                    "text": "🎯 Free Premium",
                     "url": "https://t.me/CriptoSignalBotGestion_bot?start=676731307b8344cb070ac996"
                 }
             ]]
