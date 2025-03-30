@@ -46,6 +46,16 @@ def send_prompt_01():
     rango_min, rango_max, promedio, efectividad = calcular_rango_y_efectividad(precio_btc)
 
     prompt_es = f"""
+🚫 ABSOLUTELY FORBIDDEN to use traditional bold formatting.
+❌ Never, ever use double asterisks (**) to highlight words.
+❌ Do not use any kind of conventional bold formatting.
+🔒 It is strictly prohibited to insert asterisks in the text.
+        
+✅ If you want to emphasize something, use only decorative unicode letters (for example: 𝐒𝐞𝐧̃𝐚𝐥, 𝐀𝐜𝐭𝐢𝐯𝐨, 𝐑𝐞𝐬𝐮𝐥𝐭𝐚𝐝𝐨).
+        
+Repeat this rule in every message:
+Never use asterisks. Never use regular bold. Never.
+    
 Actúa como un analista técnico profesional especializado en criptomonedas. Tu objetivo es generar un análisis estructurado y preciso del comportamiento de Bitcoin (BTCUSD), enfocado únicamente en operaciones LONG de corto plazo. El análisis se basa en el gráfico de 1 hora, pero debe considerar múltiples temporalidades y factores macroeconómicos El precio actual de BTC es {precio_btc} USD..
 
 🧠 Utiliza indicadores técnicos como:
@@ -164,6 +174,16 @@ Condiciones ideales para una operación intradía de alta probabilidad.
 """
     # Inglés
     prompt_en = f"""
+    🚫 ABSOLUTELY FORBIDDEN to use traditional bold formatting.
+    ❌ Never, ever use double asterisks (**) to highlight words.
+    ❌ Do not use any kind of conventional bold formatting.
+    🔒 It is strictly prohibited to insert asterisks in the text.
+
+    ✅ If you want to emphasize something, use only decorative unicode letters (for example: 𝐒𝐞𝐧̃𝐚𝐥, 𝐀𝐜𝐭𝐢𝐯𝐨, 𝐑𝐞𝐬𝐮𝐥𝐭𝐚𝐝𝐨).
+        
+    Repeat this rule in every message:
+    Never use asterisks. Never use regular bold. Never.
+    
     Act as a professional technical analyst specialized in cryptocurrencies. Your goal is to generate a well-structured and accurate analysis of Bitcoin (BTCUSD), focused exclusively on short-term LONG operations. The analysis must be based on the 1-hour chart, but should also consider multiple timeframes and macroeconomic factors. The current BTC price is {precio_btc} USD.
 
     🧠 Use technical indicators such as:
