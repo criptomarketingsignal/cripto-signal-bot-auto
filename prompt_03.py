@@ -81,7 +81,7 @@ Usa esta estructura exacta en el mensaje generado:
 ✨ Qué mejor momento que el cierre de la vela diaria para evaluar el panorama completo. ¡Vamos a analizar Bitcoin con todo!
 
 𝐅𝐞𝐜𝐡𝐚: {fecha_hoy}  
-𝐒𝐞𝐧̃𝐚𝐥: 2 de 3
+𝐔𝐥𝐭𝐢𝐦𝐨 𝐀𝐧𝐚́𝐥𝐢𝐬𝐢𝐬 𝐝𝐞𝐥 𝐝𝐢́𝐚 🌙 – 𝐒𝐞𝐧̃𝐚𝐥 𝟑 𝐝𝐞 𝟑
 
 Nuestro equipo trabaja arduamente para ofrecer análisis técnico y fundamental en tiempo real tres veces al día, asegurándonos de mantener a nuestra comunidad completamente informada y preparada.
 
@@ -206,10 +206,9 @@ Act like a professional technical analyst specializing in cryptocurrency. Your t
 What better time than mid-session to reassess opportunities. Let’s dive into Bitcoin!
 
 𝐃𝐚𝐭𝐞: {fecha_hoy}  
-𝐒𝐢𝐠𝐧𝐚𝐥: 2 of 3
+𝐄𝐧𝐝 𝐨𝐟 𝐃𝐚𝐲 𝐑𝐞𝐯𝐢𝐞𝐰 🌙 – 𝐒𝐢𝐠𝐧𝐚𝐥 𝟑 𝐨𝐟 𝟑
 
-Our team works hard to deliver real-time technical and fundamental analysis three times a day, ensuring our community is fully informed and ready to act.
-
+✨ What better time than the close of the daily candle to assess the bigger picture? Let's analyze Bitcoin with all our might!
 ---
 Add a brief general summary of this:
 🧠 → 𝐆𝐞𝐧𝐞𝐫𝐚𝐥 𝐑𝐞𝐬𝐮𝐦𝐞𝐧:
