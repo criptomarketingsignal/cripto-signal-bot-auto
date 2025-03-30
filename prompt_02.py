@@ -46,16 +46,6 @@ def send_prompt_01():
     rango_min, rango_max, promedio, efectividad = calcular_rango_y_efectividad(precio_btc)
 
     prompt_es = f"""
-    🚫 PROHIBIDO ABSOLUTAMENTE usar negrillas tradicionales.
-    ❌ Nunca, jamás utilices doble asterisco (**) para resaltar palabras.
-    ❌ No uses ningún tipo de formato de negrita convencional.
-    🔒 Está terminantemente prohibido insertar asteriscos en el texto.
-    
-    ✅ Si deseas destacar algo, usa únicamente letras decorativas tipo unicode (por ejemplo: 𝐒𝐞𝐧̃𝐚𝐥, 𝐀𝐜𝐭𝐢𝐯𝐨, 𝐑𝐞𝐬𝐮𝐥𝐭𝐚𝐝𝐨).
-    
-    Repite esta regla en cada mensaje:
-    Nunca uses asteriscos. Nunca uses negritas comunes. Nunca.
-    
 Actúa como un analista técnico profesional especializado en criptomonedas. Tu objetivo es generar un análisis estructurado y preciso del comportamiento de Bitcoin (BTCUSD), enfocado únicamente en operaciones LONG de corto plazo. El análisis se basa en el gráfico de 1 hora, pero debe considerar múltiples temporalidades y factores macroeconómicos El precio actual de BTC es {precio_btc} USD..
 
 🧠 Utiliza indicadores técnicos como:
@@ -72,8 +62,8 @@ Usa esta estructura exacta en el mensaje generado:
 
 Qué mejor momento que la mitad de sesión para evaluar oportunidades. ¡Vamos a analizar Bitcoin con todo!
 
-𝐅𝐞𝐜𝐡𝐚: {fecha_hoy}  
-𝐒𝐞𝐧̃𝐚𝐥: 2 de 3
+🕘 𝐅𝐞𝐜𝐡𝐚: {fecha_hoy}  
+☀️ 𝐄𝐯𝐚𝐥𝐮𝐚𝐜𝐢𝐨́𝐧 𝐌𝐞𝐝𝐢𝐨 𝐝𝐢́𝐚 – 𝐒𝐞𝐧̃𝐚𝐥 𝟐 𝐝𝐞 𝟑
 
 Nuestro equipo trabaja arduamente para ofrecer análisis técnico y fundamental en tiempo real tres veces al día, asegurándonos de mantener a nuestra comunidad completamente informada y preparada.
 
@@ -174,16 +164,6 @@ Condiciones ideales para una operación intradía de alta probabilidad.
 """
     # Inglés
     prompt_en = f"""
-    🚫 Traditional bold is STRICTLY PROHIBITED.
-    ❌ Never, ever use a double asterisk (**) to highlight words.
-    ❌ Do not use any type of conventional bold.
-    🔒 Inserting asterisks in your text is strictly prohibited.
-    
-    ✅ If you want to emphasize something, use only decorative Unicode letters (for example: 𝐒𝐞𝐧̃𝐚𝐥, 𝐀𝐜𝐭𝐢𝐯𝐨, 𝐑𝐞𝐬𝐮𝐥𝐭𝐚𝐝𝐨).
-    
-    Repeat this rule in every message:
-    Never use asterisks. Never use regular bold. Never.
-    
     Act as a professional technical analyst specialized in cryptocurrencies. Your goal is to generate a well-structured and accurate analysis of Bitcoin (BTCUSD), focused exclusively on short-term LONG operations. The analysis must be based on the 1-hour chart, but should also consider multiple timeframes and macroeconomic factors. The current BTC price is {precio_btc} USD.
 
     🧠 Use technical indicators such as:
@@ -200,14 +180,13 @@ Condiciones ideales para una operación intradía de alta probabilidad.
 
 What better time than mid-session to reassess opportunities. Let’s dive into Bitcoin!
 
-𝐃𝐚𝐭𝐞: {fecha_hoy}  
-🕛 𝐌𝐢𝐝𝐝𝐚𝐲 𝐄𝐯𝐚𝐥𝐮𝐚𝐭𝐢𝐨𝐧 – 𝐒𝐢𝐠𝐧𝐚𝐥 𝟐 𝐨𝐟 𝟑
+🕘 𝐃𝐚𝐭𝐞: {fecha_hoy}  
+☀️ 𝐌𝐢𝐝𝐝𝐚𝐲 𝐄𝐯𝐚𝐥𝐮𝐚𝐭𝐢𝐨𝐧 – 𝐒𝐢𝐠𝐧𝐚𝐥 𝟐 𝐨𝐟 𝟑
 
 Our team works hard to deliver real-time technical and fundamental analysis three times a day, keeping our community fully informed and prepared.
 
 ---
 📊 → 𝐓𝐞𝐜𝐡𝐧𝐢𝐜𝐚𝐥 𝐀𝐧𝐚𝐥𝐲𝐬𝐢𝐬:
-
 𝟐. 𝟒-𝐇𝐨𝐮𝐫 𝐂𝐡𝐚𝐫𝐭 (𝟒𝐇)  
 Brief summary including:  
 - Candle structure and dominant direction  
@@ -225,7 +204,6 @@ Brief summary including:
 
 ---
 🔍 → 𝐅𝐮𝐧𝐝𝐚𝐦𝐞𝐧𝐭𝐚𝐥 𝐀𝐧𝐚𝐥𝐲𝐬𝐢𝐬
-
 Evaluate any important macroeconomic, political, or geopolitical events that could impact BTC today, including:
 
 - Key events like FED meetings, CPI, NFP releases, etc.  
@@ -297,13 +275,13 @@ Ideal for short intraday trades within this range.
 """
 
     response_es = openai.ChatCompletion.create(
-        model="gpt-4o",
+        model="gpt-4o-mini",
         messages=[{"role": "user", "content": prompt_es}]
     )
     message_es = response_es.choices[0].message["content"]
 
     response_en = openai.ChatCompletion.create(
-        model="gpt-4o",
+        model="gpt-4o-mini",
         messages=[{"role": "user", "content": prompt_en}]
     )
     message_en = response_en.choices[0].message["content"]
@@ -325,7 +303,7 @@ Ideal for short intraday trades within this range.
         "reply_markup": {
             "inline_keyboard": [[
                 {
-                    "text": "🎯 Señales premium 30 días gratis",
+                    "text": "🎯 Señales premium",
                     "url": "https://t.me/CriptoSignalBotGestion_bot?start=676731307b8344cb070ac996"
                 }
             ]]
@@ -339,7 +317,7 @@ Ideal for short intraday trades within this range.
         "reply_markup": {
             "inline_keyboard": [[
                 {
-                    "text": "🎯 Free Premium Signals 30 Days",
+                    "text": "🎯 Premium Signals",
                     "url": "https://t.me/CriptoSignalBotGestion_bot?start=676731307b8344cb070ac996"
                 }
             ]]
