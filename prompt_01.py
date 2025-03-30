@@ -169,21 +169,6 @@ def send_prompt_01():
     ---
     🎁 𝐏𝐮𝐞𝐝𝐞𝐬 𝐮𝐧𝐢𝐫𝐭𝐞 𝐚 𝐧𝐮𝐞𝐬𝐭𝐫𝐚 𝐳𝐨𝐧𝐚 𝐏𝐫𝐞𝐦𝐢𝐮𝐦 𝐒𝐞𝐧̃𝐚𝐥𝐞𝐬 𝐝𝐞 𝐓𝐫𝐚𝐝𝐢𝐧𝐠 𝐜𝐨𝐧 𝐄́𝐱𝐢𝐭𝐨 𝐆𝐚𝐫𝐚𝐧𝐭𝐢𝐳𝐚𝐝𝐨:
     
-    🔥 𝐅𝐈𝐑𝐄 𝐒𝐜𝐚𝐥𝐩𝐢𝐧𝐠  
-    🏅 Rendimiento: 85.64%  
-    🟢 Ganadoras: 1,563  
-    🔴 Perdedoras: 262  
-    
-    💎 𝐄𝐋𝐈𝐓𝐄 𝐒𝐜𝐚𝐥𝐩𝐢𝐧𝐠 𝐏𝐑𝐎  
-    🏅 Rendimiento: 99.10%  
-    🟢 Ganadoras: 552  
-    🔴 Perdedoras: 5  
-    
-    🪙 𝐃𝐄𝐋𝐓𝐀 𝐒𝐰𝐢𝐧𝐠  
-    🏅 Rendimiento: 96.00% 
-    🟢 Ganadoras: 48  
-    🔴 Perdedoras: 2 
-    
     • Señales en tiempo real enviadas directo a nuestro sitio web y Telegram  
     • Historial público de operaciones para verificar resultados reales  
     • Plataforma con gráficos en vivo y seguimiento al mercado  
@@ -313,21 +298,6 @@ Add a brief general summary of this:
     
     ---
     🎁 𝐘𝐨𝐮 𝐜𝐚𝐧 𝐣𝐨𝐢𝐧 𝐨𝐮𝐫 𝐏𝐫𝐞𝐦𝐢𝐮𝐦 𝐙𝐨𝐧𝐞 — 𝐓𝐫𝐚𝐝𝐢𝐧𝐠 𝐒𝐢𝐠𝐧𝐚𝐥𝐬 𝐰𝐢𝐭𝐡 𝐆𝐮𝐚𝐫𝐚𝐧𝐭𝐞𝐞𝐝 𝐒𝐮𝐜𝐜𝐞𝐬𝐬:
-    
-    🔥 𝐅𝐈𝐑𝐄 𝐒𝐜𝐚𝐥𝐩𝐢𝐧𝐠  
-    🏅 Performance: 85.64%  
-    🟢 Wins: 1,563  
-    🔴 Losses: 262
-    
-    💎 𝐄𝐋𝐈𝐓𝐄 𝐒𝐜𝐚𝐥𝐩𝐢𝐧𝐠 𝐏𝐑𝐎  
-    🏅 Performance: 99.10%  
-    🟢 Wins: 552  
-    🔴 Losses: 5
-    
-    🪙 𝐃𝐄𝐋𝐓𝐀 𝐒𝐰𝐢𝐧𝐠  
-    🏅 Performance: 96.00%  
-    🟢 Wins: 48  
-    🔴 Losses: 2
     
     • Real-time signals sent directly to our website and Telegram  
     • Public performance history for full transparency  
