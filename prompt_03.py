@@ -290,13 +290,13 @@ Thank you for choosing us as your trusted trading partner. Together, we’ll mak
 """
 
     response_es = openai.ChatCompletion.create(
-        model="gpt-4o",
+        model="gpt-4o-mini",
         messages=[{"role": "user", "content": prompt_es}]
     )
     message_es = response_es.choices[0].message["content"]
 
     response_en = openai.ChatCompletion.create(
-        model="gpt-4o",
+        model="gpt-4o-mini",
         messages=[{"role": "user", "content": prompt_en}]
     )
     message_en = response_en.choices[0].message["content"]
