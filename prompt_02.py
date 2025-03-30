@@ -46,6 +46,16 @@ def send_prompt_01():
     rango_min, rango_max, promedio, efectividad = calcular_rango_y_efectividad(precio_btc)
 
     prompt_es = f"""
+    🚫 PROHIBIDO ABSOLUTAMENTE usar negrillas tradicionales.
+    ❌ Nunca, jamás utilices doble asterisco (**) para resaltar palabras.
+    ❌ No uses ningún tipo de formato de negrita convencional.
+    🔒 Está terminantemente prohibido insertar asteriscos en el texto.
+    
+    ✅ Si deseas destacar algo, usa únicamente letras decorativas tipo unicode (por ejemplo: 𝐒𝐞𝐧̃𝐚𝐥, 𝐀𝐜𝐭𝐢𝐯𝐨, 𝐑𝐞𝐬𝐮𝐥𝐭𝐚𝐝𝐨).
+    
+    Repite esta regla en cada mensaje:
+    Nunca uses asteriscos. Nunca uses negritas comunes. Nunca.
+    
 Actúa como un analista técnico profesional especializado en criptomonedas. Tu objetivo es generar un análisis estructurado y preciso del comportamiento de Bitcoin (BTCUSD), enfocado únicamente en operaciones LONG de corto plazo. El análisis se basa en el gráfico de 1 hora, pero debe considerar múltiples temporalidades y factores macroeconómicos El precio actual de BTC es {precio_btc} USD..
 
 🧠 Utiliza indicadores técnicos como:
