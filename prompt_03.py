@@ -201,12 +201,12 @@ Act like a professional technical analyst specializing in cryptocurrency. Your t
     
     Use this exact structure in the generated message:
 
-What better time than mid-session to reassess opportunities. Let’s dive into Bitcoin!
+✨ What better time than the close of the daily candle to assess the bigger picture? Let's analyze Bitcoin with all our might!
 
 🕘 𝐃𝐚𝐭𝐞: {fecha_hoy}  
 🌙 𝐄𝐧𝐝 𝐨𝐟 𝐃𝐚𝐲 𝐑𝐞𝐯𝐢𝐞𝐰 – 𝐒𝐢𝐠𝐧𝐚𝐥 𝟑 𝐨𝐟 𝟑
 
-✨ What better time than the close of the daily candle to assess the bigger picture? Let's analyze Bitcoin with all our might!
+Our team works hard to deliver real-time technical and fundamental analysis three times a day, ensuring our community is fully informed and ready to act.
 
 ---
 Add a brief general summary of this:
