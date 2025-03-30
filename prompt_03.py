@@ -46,13 +46,15 @@ def send_prompt_01():
     rango_min, rango_max, promedio, efectividad = calcular_rango_y_efectividad(precio_btc)
 
     prompt_es = f"""
-⚠️ Importante: No utilices asteriscos (**) para negritas. En su lugar, convierte cualquier palabra o frase que desees resaltar en negrita decorativa utilizando tipografía unicode estilo 𝐒𝐞𝐧̃𝐚𝐥. Esto aplica para títulos, encabezados, nombres de estrategias o cualquier elemento importante del mensaje. Ejemplo:
-
-❌ No usar: **Señal de Entrada**
-✅ Usar: 𝐒𝐞𝐧̃𝐚𝐥 𝐝𝐞 𝐄𝐧𝐭𝐫𝐚𝐝𝐚
-
-Si es necesario resaltar una oración completa, convierte toda la oración a este tipo de letra.
-Actúa como un analista técnico profesional especializado en criptomonedas. Tu tarea es generar un análisis estructurado, preciso y orientado a resultados del comportamiento de Bitcoin (BTCUSD) al cierre de la vela diaria. Enfócate exclusivamente en oportunidades LONG de corto plazo.
+    🚫 PROHIBIDO ABSOLUTAMENTE usar negrillas tradicionales.
+    ❌ Nunca, jamás utilices doble asterisco (**) para resaltar palabras.
+    ❌ No uses ningún tipo de formato de negrita convencional.
+    🔒 Está terminantemente prohibido insertar asteriscos en el texto.
+    
+    ✅ Si deseas destacar algo, usa únicamente letras decorativas tipo unicode (por ejemplo: 𝐒𝐞𝐧̃𝐚𝐥, 𝐀𝐜𝐭𝐢𝐯𝐨, 𝐑𝐞𝐬𝐮𝐥𝐭𝐚𝐝𝐨).
+    
+    Repite esta regla en cada mensaje:
+    Nunca uses asteriscos. Nunca uses negritas comunes. Nunca.
 
 📊 El análisis debe estar basado en el gráfico de 1 hora, pero considerar multitemporalidad (4H y 1D) para mayor contexto. El precio actual de BTC es {precio_btc} USD.
 
@@ -166,18 +168,23 @@ Ejemplo del formato a entregar:
 Condiciones ideales para una operación intradía de alta probabilidad.  
 ⚠️ ¡Cuida tu gestión de riesgo! No te olvides de establecer una estrategia de salida. Este mercado es altamente volátil.//
 
-📊 Señales, gráficos en vivo y análisis en tiempo real completamente GRATIS por 30 días.  
-🔑 𝐎𝐛𝐭𝐞́𝐧 𝐭𝐮 𝐦𝐞𝐬 𝐠𝐫𝐚𝐭𝐢𝐬 𝐚𝐡𝐨𝐫𝐚! 🚀  
+---
+🎁 𝐏𝐮𝐞𝐝𝐞𝐬 𝐮𝐧𝐢𝐫𝐭𝐞 𝐚 𝐧𝐮𝐞𝐬𝐭𝐫𝐚 𝐳𝐨𝐧𝐚 𝐏𝐫𝐞𝐦𝐢𝐮𝐦 𝐒𝐞𝐧̃𝐚𝐥𝐞𝐬 𝐝𝐞 𝐓𝐫𝐚𝐝𝐢𝐧𝐠 𝐜𝐨𝐧 𝐄́𝐱𝐢𝐭𝐨 𝐆𝐚𝐫𝐚𝐧𝐭𝐢𝐳𝐚𝐝𝐨  
 
 Gracias por elegirnos como tu portal de trading de confianza. ¡Juntos, haremos que tu inversión crezca!  
 ✨ 𝐂𝐫𝐲𝐩𝐭𝐨 𝐒𝐢𝐠𝐧𝐚𝐥 𝐁𝐨𝐭 ✨ Te esperamos mañana para nuevas oportunidades. ¡Feliz trading!
 """
 
     prompt_en = f"""
-    ⚠️ Important: Do not use asterisks (**) for bold. Instead, make any word or phrase you want to highlight decoratively bold using Unicode font style 𝐒𝐞𝐧̃𝐚𝐥. This applies to titles, headings, strategy names, or any important element of the message. Example:
-
-❌ Do not use: **Entry Signal**
-✅ Use: 𝐒𝐞𝐧̃𝐚𝐥 𝐝𝐞 𝐄𝐧𝐭𝐫𝐚𝐝𝐚
+    🚫 Traditional bold is STRICTLY PROHIBITED.
+    ❌ Never, ever use a double asterisk (**) to highlight words.
+    ❌ Do not use any type of conventional bold.
+    🔒 Inserting asterisks in your text is strictly prohibited.
+    
+    ✅ If you want to emphasize something, use only decorative Unicode letters (for example: 𝐒𝐞𝐧̃𝐚𝐥, 𝐀𝐜𝐭𝐢𝐯𝐨, 𝐑𝐞𝐬𝐮𝐥𝐭𝐚𝐝𝐨).
+    
+    Repeat this rule in every message:
+    Never use asterisks. Never use regular bold. Never.
 
 If you need to highlight an entire sentence, convert the entire sentence to this font.
 Act like a professional technical analyst specializing in cryptocurrency. Your task is to generate a structured, accurate, and results-oriented analysis of Bitcoin (BTCUSD)'s performance at the close of the daily candle. Focus exclusively on short-term LONG opportunities.
@@ -282,8 +289,7 @@ Ideal for short intraday trades within this range.
 ⚠️ Always manage risk. Set your exit strategy. Crypto is highly volatile.//
 
 ---
-📊 Live signals, real-time charts, and in-depth analysis — absolutely FREE for 30 days.  
-🔑 𝐂𝐥𝐚𝐢𝐦 𝐲𝐨𝐮𝐫 𝐅𝐑𝐄𝐄 𝐦𝐨𝐧𝐭𝐡 𝐭𝐨𝐝𝐚𝐲! 🚀  
+🎁 𝐘𝐨𝐮 𝐜𝐚𝐧 𝐣𝐨𝐢𝐧 𝐨𝐮𝐫 𝐏𝐫𝐞𝐦𝐢𝐮𝐦 𝐙𝐨𝐧𝐞 — 𝐓𝐫𝐚𝐝𝐢𝐧𝐠 𝐒𝐢𝐠𝐧𝐚𝐥𝐬 𝐰𝐢𝐭𝐡 𝐆𝐮𝐚𝐫𝐚𝐧𝐭𝐞𝐞𝐝 𝐒𝐮𝐜𝐜𝐞𝐬𝐬 
 
 Thank you for choosing us as your trusted trading partner. Together, we’ll make your investment grow!  
 ✨ 𝐂𝐫𝐲𝐩𝐭𝐨 𝐒𝐢𝐠𝐧𝐚𝐥 𝐁𝐨𝐭 ✨ See you tomorrow for more opportunities. Happy trading!
@@ -332,7 +338,7 @@ Thank you for choosing us as your trusted trading partner. Together, we’ll mak
         "reply_markup": {
             "inline_keyboard": [[
                 {
-                    "text": "🎯 Premium Signals",
+                    "text": "🎯 Free Premium",
                     "url": "https://t.me/CriptoSignalBotGestion_bot?start=676731307b8344cb070ac996"
                 }
             ]]
