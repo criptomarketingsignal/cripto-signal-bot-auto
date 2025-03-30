@@ -2,64 +2,59 @@ import os
 import requests
 import openai
 from datetime import datetime
-    
+
 openai.api_key = os.getenv("OPENAI_API_KEY")
 BOT_TOKEN = os.getenv("TELEGRAM_BOT_TOKEN")
 CHANNEL_CHAT_ID_ES = "-1002440626725"
 CHANNEL_CHAT_ID_EN = "-1002288256984"
-    
-    def obtener_fecha_en_espanol():
-        meses = {
-            "January": "enero", "February": "febrero", "March": "marzo",
-            "April": "abril", "May": "mayo", "June": "junio",
-            "July": "julio", "August": "agosto", "September": "septiembre",
-            "October": "octubre", "November": "noviembre", "December": "diciembre"
-        }
-        hoy = datetime.now()
-        mes = meses[hoy.strftime("%B")]
-        return f"{hoy.day} de {mes} de {hoy.year}"
-    
-    def obtener_fecha_en_ingles():
-        return datetime.now().strftime("%B %d, %Y")
-    
-    def obtener_precio_btc():
-        try:
-            url = "https://api.coingecko.com/api/v3/simple/price"
-            params = {"ids": "bitcoin", "vs_currencies": "usd"}
-            response = requests.get(url, params=params)
-            data = response.json()
-            return float(data["bitcoin"]["usd"])
-        except Exception as e:
-            print("❌ Error al obtener precio BTC:", e)
-            return None
-    
-    def calcular_rango_y_efectividad(precio):
+
+def obtener_precio_btc():
+    try:
+        url = "https://api.coingecko.com/api/v3/simple/price"
+        params = {"ids": "bitcoin", "vs_currencies": "usd"}
+        response = requests.get(url, params=params)
+        data = response.json()
+        return float(data["bitcoin"]["usd"])
+    except Exception as e:
+        print("❌ Error al obtener precio BTC:", e)
+        return None
+
+def calcular_rango_y_efectividad(precio):
         rango_min = round(precio * 0.9925, 2)
         rango_max = round(precio * 1.0025, 2)
         promedio = round((rango_min + rango_max) / 2, 2)
         efectividad = round(99.35 - abs(rango_max - rango_min) / precio * 100, 2)
         return rango_min, rango_max, promedio, efectividad
+
+def obtener_fecha_es():
+    meses = {
+        "January": "enero", "February": "febrero", "March": "marzo",
+        "April": "abril", "May": "mayo", "June": "junio",
+        "July": "julio", "August": "agosto", "September": "septiembre",
+        "October": "octubre", "November": "noviembre", "December": "diciembre"
+    }
+    ahora = datetime.now()
+    mes_es = meses[ahora.strftime("%B")]
+    return f"{ahora.day} de {mes_es} de {ahora.year}"
+
+def send_prompt_01():
+    fecha_hoy = obtener_fecha_es()
+    precio_btc = obtener_precio_btc()
+    if not precio_btc:
+        return
+
+    rango_min, rango_max, promedio, efectividad = calcular_rango_y_efectividad(precio_btc)
+
+    prompt_es = f"""
+    🚫 PROHIBIDO ABSOLUTAMENTE usar negrillas tradicionales.
+    ❌ Nunca, jamás utilices doble asterisco (**) para resaltar palabras.
+    ❌ No uses ningún tipo de formato de negrita convencional.
+    🔒 Está terminantemente prohibido insertar asteriscos en el texto.
     
-    def send_prompt_01():
-        fecha_es = obtener_fecha_en_espanol()
-        fecha_en = obtener_fecha_en_ingles()
-        precio_btc = obtener_precio_btc()
-        if not precio_btc:
-            return
-    
-        rango_min, rango_max, promedio, efectividad = calcular_rango_y_efectividad(precio_btc)
-    
-        # Español
-        prompt_es = f"""
-        🚫 PROHIBIDO ABSOLUTAMENTE usar negrillas tradicionales.
-        ❌ Nunca, jamás utilices doble asterisco (**) para resaltar palabras.
-        ❌ No uses ningún tipo de formato de negrita convencional.
-        🔒 Está terminantemente prohibido insertar asteriscos en el texto.
+    ✅ Si deseas destacar algo, usa únicamente letras decorativas tipo unicode (por ejemplo: 𝐒𝐞𝐧̃𝐚𝐥, 𝐀𝐜𝐭𝐢𝐯𝐨, 𝐑𝐞𝐬𝐮𝐥𝐭𝐚𝐝𝐨).
         
-        ✅ Si deseas destacar algo, usa únicamente letras decorativas tipo unicode (por ejemplo: 𝐒𝐞𝐧̃𝐚𝐥, 𝐀𝐜𝐭𝐢𝐯𝐨, 𝐑𝐞𝐬𝐮𝐥𝐭𝐚𝐝𝐨).
-        
-        Repite esta regla en cada mensaje:
-        Nunca uses asteriscos. Nunca uses negritas comunes. Nunca.
+    Repite esta regla en cada mensaje:
+    Nunca uses asteriscos. Nunca uses negritas comunes. Nunca.
 
     Actúa como un analista técnico profesional especializado en criptomonedas. Tu objetivo es generar un análisis estructurado y preciso del comportamiento de Bitcoin (BTCUSD), enfocado únicamente en operaciones LONG de corto plazo. El análisis se basa en el gráfico de 1 hora, pero debe considerar múltiples temporalidades y factores macroeconómicos El precio actual de BTC es {precio_btc} USD..
 
