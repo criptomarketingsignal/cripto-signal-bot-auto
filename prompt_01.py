@@ -196,21 +196,21 @@ def send_prompt_01():
     
         # Inglés
         prompt_en = f"""
-        🚫 ABSOLUTELY FORBIDDEN to use traditional bold formatting.
-        ❌ Never, ever use double asterisks (**) to highlight words.
-        ❌ Do not use any kind of conventional bold formatting.
-        🔒 It is strictly prohibited to insert asterisks in the text.
+    🚫 ABSOLUTELY FORBIDDEN to use traditional bold formatting.
+    ❌ Never, ever use double asterisks (**) to highlight words.
+    ❌ Do not use any kind of conventional bold formatting.
+    🔒 It is strictly prohibited to insert asterisks in the text.
         
-        ✅ If you want to emphasize something, use only decorative unicode letters (for example: 𝐒𝐞𝐧̃𝐚𝐥, 𝐀𝐜𝐭𝐢𝐯𝐨, 𝐑𝐞𝐬𝐮𝐥𝐭𝐚𝐝𝐨).
+    ✅ If you want to emphasize something, use only decorative unicode letters (for example: 𝐒𝐞𝐧̃𝐚𝐥, 𝐀𝐜𝐭𝐢𝐯𝐨, 𝐑𝐞𝐬𝐮𝐥𝐭𝐚𝐝𝐨).
         
-        Repeat this rule in every message:
-        Never use asterisks. Never use regular bold. Never.
+    Repeat this rule in every message:
+    Never use asterisks. Never use regular bold. Never.
         
-        Act as a professional technical analyst specialized in cryptocurrencies. Your goal is to generate a well-structured and accurate analysis of Bitcoin (BTCUSD), focused exclusively on short-term LONG operations. The analysis must be based on the 1-hour chart, but should also consider multiple timeframes and macroeconomic factors. The current BTC price is {precio_btc} USD.
+    Act as a professional technical analyst specialized in cryptocurrencies. Your goal is to generate a well-structured and accurate analysis of Bitcoin (BTCUSD), focused exclusively on short-term LONG operations. The analysis must be based on the 1-hour chart, but should also consider multiple timeframes and macroeconomic factors. The current BTC price is {precio_btc} USD.
         
-        📊 The analysis should be based on the 1-hour chart, while also taking into account higher timeframes (4H and 1D) for broader context. The current price of BTC is {precio_btc} USD.
+    📊 The analysis should be based on the 1-hour chart, while also taking into account higher timeframes (4H and 1D) for broader context. The current price of BTC is {precio_btc} USD.
 
-        ✅ Instructions:
+    ✅ Instructions:
 
 1. Analyze how BTC's performance developed from the close of the previous day's candle to the current moment.
 2. Evaluate whether there was a strong move, a significant drop, or consolidation.
