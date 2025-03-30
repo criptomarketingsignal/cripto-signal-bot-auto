@@ -199,12 +199,12 @@ Act like a professional technical analyst specializing in cryptocurrency. Your t
     
     Use this exact structure in the generated message:
 
-What better time than mid-session to reassess opportunities. Let’s dive into Bitcoin!
+✨ Good morning traders! What better way to start the day than with our first signal of the day. Today we’ll analyze Bitcoin and share our recommendations. Let’s go!
 
 🕘 𝐃𝐚𝐭𝐞: {fecha_hoy}  
 🌞 𝐌𝐨𝐫𝐧𝐢𝐧𝐠 𝐀𝐧𝐚𝐥𝐲𝐬𝐢𝐬 – 𝐒𝐢𝐠𝐧𝐚𝐥 𝟏 𝐨𝐟 𝟑 
 
-✨ Good morning traders! What better way to start the day than with our first signal of the day. Today we’ll analyze Bitcoin and share our recommendations. Let’s go!
+Our team works hard to provide real-time technical and fundamental analysis three times a day, ensuring our community is fully informed and prepared.
 
 ---
 Add a brief general summary of this:
