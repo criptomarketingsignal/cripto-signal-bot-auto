@@ -79,7 +79,6 @@ Nuestro equipo trabaja arduamente para ofrecer análisis técnico y fundamental 
 
 ---
 📊 → 𝐀𝐧𝐚́𝐥𝐢𝐬𝐢𝐬 𝐓𝐞́𝐜𝐧𝐢𝐜𝐨:
-
 𝟐. 𝐆𝐫𝐚́𝐟𝐢𝐜𝐨 𝐝𝐞 𝟒 𝐇𝐨𝐫𝐚𝐬
 Resumen técnico breve con:
 • Estructura de velas y dirección dominante
@@ -97,7 +96,6 @@ Resumen técnico breve con:
 
 ---
 🔍 → 𝐀𝐧𝐚́𝐥𝐢𝐬𝐢𝐬 𝐅𝐮𝐧𝐝𝐚𝐦𝐞𝐧𝐭𝐚𝐥
-
 Evalúa si hay eventos macroeconómicos, políticos o geopolíticos importantes que puedan afectar el comportamiento de BTC hoy. Entre ellos deben considerarse:
 
 • Reuniones clave como la FED, publicación de datos económicos (CPI, NFP, etc.)
@@ -176,6 +174,16 @@ Condiciones ideales para una operación intradía de alta probabilidad.
 """
     # Inglés
     prompt_en = f"""
+    🚫 Traditional bold is STRICTLY PROHIBITED.
+    ❌ Never, ever use a double asterisk (**) to highlight words.
+    ❌ Do not use any type of conventional bold.
+    🔒 Inserting asterisks in your text is strictly prohibited.
+    
+    ✅ If you want to emphasize something, use only decorative Unicode letters (for example: 𝐒𝐞𝐧̃𝐚𝐥, 𝐀𝐜𝐭𝐢𝐯𝐨, 𝐑𝐞𝐬𝐮𝐥𝐭𝐚𝐝𝐨).
+    
+    Repeat this rule in every message:
+    Never use asterisks. Never use regular bold. Never.
+    
     Act as a professional technical analyst specialized in cryptocurrencies. Your goal is to generate a well-structured and accurate analysis of Bitcoin (BTCUSD), focused exclusively on short-term LONG operations. The analysis must be based on the 1-hour chart, but should also consider multiple timeframes and macroeconomic factors. The current BTC price is {precio_btc} USD.
 
     🧠 Use technical indicators such as:
@@ -193,7 +201,7 @@ Condiciones ideales para una operación intradía de alta probabilidad.
 What better time than mid-session to reassess opportunities. Let’s dive into Bitcoin!
 
 𝐃𝐚𝐭𝐞: {fecha_hoy}  
-𝐒𝐢𝐠𝐧𝐚𝐥: 2 of 3
+🕛 𝐌𝐢𝐝𝐝𝐚𝐲 𝐄𝐯𝐚𝐥𝐮𝐚𝐭𝐢𝐨𝐧 – 𝐒𝐢𝐠𝐧𝐚𝐥 𝟐 𝐨𝐟 𝟑
 
 Our team works hard to deliver real-time technical and fundamental analysis three times a day, keeping our community fully informed and prepared.
 
