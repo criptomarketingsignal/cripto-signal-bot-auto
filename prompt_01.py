@@ -337,55 +337,54 @@ Add a brief general summary of this:
     
     ✨ 𝐂𝐫𝐲𝐩𝐭𝐨 𝐒𝐢𝐠𝐧𝐚𝐥 𝐁𝐨𝐭 ✨ Stay tuned for the mid-session update. Happy trading!
     """
-    
-        response_es = openai.ChatCompletion.create(
-            model="gpt-4o-mini",
-            messages=[{"role": "user", "content": prompt_es}]
-        )
-        message_es = response_es.choices[0].message["content"]
-    
-        response_en = openai.ChatCompletion.create(
-            model="gpt-4o-mini",
-            messages=[{"role": "user", "content": prompt_en}]
-        )
-        message_en = response_en.choices[0].message["content"]
-    
-        url_photo = f"https://api.telegram.org/bot{BOT_TOKEN}/sendPhoto"
-        url_text = f"https://api.telegram.org/bot{BOT_TOKEN}/sendMessage"
-    
-        # Enviar imagen a ambos canales
-        for chat_id in [CHANNEL_CHAT_ID_ES, CHANNEL_CHAT_ID_EN]:
-            requests.post(url_photo, data={
-                "chat_id": chat_id,
-                "photo": "https://cryptosignalbot.com/wp-content/uploads/2025/03/principio.png"
-            })
-    
-        # Enviar texto a canal español
-        payload_es = {
-            "chat_id": CHANNEL_CHAT_ID_ES,
-            "text": message_es,
-            "parse_mode": "HTML",
-            "reply_markup": {
-                "inline_keyboard": [[{
-                    "text": "🎯 Señales premium",
-                    "url": "https://t.me/CriptoSignalBotGestion_bot?start=676731307b8344cb070ac996"
-                }]]
-            }
-        }
-    
-        # Enviar texto a canal inglés
-        payload_en = {
-            "chat_id": CHANNEL_CHAT_ID_EN,
-            "text": message_en,
-            "parse_mode": "HTML",
-            "reply_markup": {
-                "inline_keyboard": [[{
-                    "text": "🎯 Premium Signals",
-                    "url": "https://t.me/CriptoSignalBotGestion_bot?start=676731307b8344cb070ac996"
-                }]]
-            }
-        }
-    
-        requests.post(url_text, json=payload_es)
-        requests.post(url_text, json=payload_en)
 
+    response_es = openai.ChatCompletion.create(
+        model="gpt-4o-mini",
+        messages=[{"role": "user", "content": prompt_es}]
+    )
+    message_es = response_es.choices[0].message["content"]
+
+    response_en = openai.ChatCompletion.create(
+        model="gpt-4o-mini",
+        messages=[{"role": "user", "content": prompt_en}]
+    )
+    message_en = response_en.choices[0].message["content"]
+
+    url_photo = f"https://api.telegram.org/bot{BOT_TOKEN}/sendPhoto"
+    url_text = f"https://api.telegram.org/bot{BOT_TOKEN}/sendMessage"
+
+    # Enviar imagen a ambos canales
+    for chat_id in [CHANNEL_CHAT_ID_ES, CHANNEL_CHAT_ID_EN]:
+        requests.post(url_photo, data={
+            "chat_id": chat_id,
+            "photo": "https://cryptosignalbot.com/wp-content/uploads/2025/03/principio.png"
+        })
+
+    # Enviar texto a canal español
+    payload_es = {
+        "chat_id": CHANNEL_CHAT_ID_ES,
+        "text": message_es,
+        "parse_mode": "HTML",
+        "reply_markup": {
+            "inline_keyboard": [[{
+                "text": "🎯 Señales premium",
+                "url": "https://t.me/CriptoSignalBotGestion_bot?start=676731307b8344cb070ac996"
+            }]]
+        }
+    }
+
+    # Enviar texto a canal inglés
+    payload_en = {
+        "chat_id": CHANNEL_CHAT_ID_EN,
+        "text": message_en,
+        "parse_mode": "HTML",
+        "reply_markup": {
+            "inline_keyboard": [[{
+                "text": "🎯 Premium Signals",
+                "url": "https://t.me/CriptoSignalBotGestion_bot?start=676731307b8344cb070ac996"
+            }]]
+        }
+    }
+
+    requests.post(url_text, json=payload_es)
+    requests.post(url_text, json=payload_en)
