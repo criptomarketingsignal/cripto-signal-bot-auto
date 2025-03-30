@@ -57,11 +57,9 @@ def send_prompt_01():
     Nunca uses asteriscos. Nunca uses negritas comunes. Nunca.
 
     Actúa como un analista técnico profesional especializado en criptomonedas. Tu objetivo es generar un análisis estructurado y preciso del comportamiento de Bitcoin (BTCUSD), enfocado únicamente en operaciones LONG de corto plazo. El análisis se basa en el gráfico de 1 hora, pero debe considerar múltiples temporalidades y factores macroeconómicos El precio actual de BTC es {precio_btc} USD..
-
     📊 El análisis debe estar basado en el gráfico de 1 hora, pero considerar multitemporalidad (4H y 1D) para mayor contexto. El precio actual de BTC es {precio_btc} USD.
 
 ✅ Instrucciones:
-
 1. Analiza cómo se desarrolló el comportamiento de BTC despues del cierre de la vela del dia anterior hasta el momento actual. 
 2. Evalúa si hubo un movimiento fuerte, una caída importante o consolidación.
 3. Proyecta el posible comportamiento para el día actual, basado en patrones actuales, volumen y estructura del mercado. 
