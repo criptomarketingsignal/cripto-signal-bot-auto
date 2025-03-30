@@ -20,11 +20,11 @@ def obtener_precio_btc():
         return None
 
 def calcular_rango_y_efectividad(precio):
-    rango_min = round(precio * 0.9925, 2)   # -0.75%
-    rango_max = round(precio * 1.0025, 2)   # +0.25%
-    promedio = round((rango_min + rango_max) / 2, 2)
-    efectividad = round(99.35 - abs(rango_max - rango_min) / precio * 100, 2)
-    return rango_min, rango_max, promedio, efectividad
+        rango_min = round(precio * 0.9925, 2)
+        rango_max = round(precio * 1.0025, 2)
+        promedio = round((rango_min + rango_max) / 2, 2)
+        efectividad = round(99.35 - abs(rango_max - rango_min) / precio * 100, 2)
+        return rango_min, rango_max, promedio, efectividad
 
 def obtener_fecha_es():
     meses = {
@@ -46,7 +46,13 @@ def send_prompt_01():
     rango_min, rango_max, promedio, efectividad = calcular_rango_y_efectividad(precio_btc)
 
     prompt_es = f"""
-    Actúa como un analista técnico profesional especializado en criptomonedas. Tu tarea es generar un análisis estructurado, preciso y orientado a resultados del comportamiento de Bitcoin (BTCUSD) al cierre de la vela diaria. Enfócate exclusivamente en oportunidades LONG de corto plazo.
+⚠️ Importante: No utilices asteriscos (**) para negritas. En su lugar, convierte cualquier palabra o frase que desees resaltar en negrita decorativa utilizando tipografía unicode estilo 𝐒𝐞𝐧̃𝐚𝐥. Esto aplica para títulos, encabezados, nombres de estrategias o cualquier elemento importante del mensaje. Ejemplo:
+
+❌ No usar: **Señal de Entrada**
+✅ Usar: 𝐒𝐞𝐧̃𝐚𝐥 𝐝𝐞 𝐄𝐧𝐭𝐫𝐚𝐝𝐚
+
+Si es necesario resaltar una oración completa, convierte toda la oración a este tipo de letra.
+Actúa como un analista técnico profesional especializado en criptomonedas. Tu tarea es generar un análisis estructurado, preciso y orientado a resultados del comportamiento de Bitcoin (BTCUSD) al cierre de la vela diaria. Enfócate exclusivamente en oportunidades LONG de corto plazo.
 
 📊 El análisis debe estar basado en el gráfico de 1 hora, pero considerar multitemporalidad (4H y 1D) para mayor contexto. El precio actual de BTC es {precio_btc} USD.
 
@@ -73,7 +79,7 @@ Usa esta estructura exacta en el mensaje generado:
 ✨ Qué mejor momento que el cierre de la vela diaria para evaluar el panorama completo. ¡Vamos a analizar Bitcoin con todo!
 
 𝐅𝐞𝐜𝐡𝐚: {fecha_hoy}  
-𝐒𝐞𝐧̃𝐚𝐥: 3 de 3
+𝐒𝐞𝐧̃𝐚𝐥: 2 de 3
 
 Nuestro equipo trabaja arduamente para ofrecer análisis técnico y fundamental en tiempo real tres veces al día, asegurándonos de mantener a nuestra comunidad completamente informada y preparada.
 
@@ -168,6 +174,14 @@ Gracias por elegirnos como tu portal de trading de confianza. ¡Juntos, haremos 
 """
 
     prompt_en = f"""
+    ⚠️ Important: Do not use asterisks (**) for bold. Instead, make any word or phrase you want to highlight decoratively bold using Unicode font style 𝐒𝐞𝐧̃𝐚𝐥. This applies to titles, headings, strategy names, or any important element of the message. Example:
+
+❌ Do not use: **Entry Signal**
+✅ Use: 𝐒𝐞𝐧̃𝐚𝐥 𝐝𝐞 𝐄𝐧𝐭𝐫𝐚𝐝𝐚
+
+If you need to highlight an entire sentence, convert the entire sentence to this font.
+Act like a professional technical analyst specializing in cryptocurrency. Your task is to generate a structured, accurate, and results-oriented analysis of Bitcoin (BTCUSD)'s performance at the close of the daily candle. Focus exclusively on short-term LONG opportunities.
+
     Act as a professional technical analyst specialized in cryptocurrencies. Your goal is to generate a well-structured and accurate analysis of Bitcoin (BTCUSD), focused exclusively on short-term LONG operations. The analysis must be based on the 1-hour chart, but should also consider multiple timeframes and macroeconomic factors. The current BTC price is {precio_btc} USD.
 
     🧠 Use technical indicators such as:
@@ -185,7 +199,7 @@ Gracias por elegirnos como tu portal de trading de confianza. ¡Juntos, haremos 
 What better time than mid-session to reassess opportunities. Let’s dive into Bitcoin!
 
 𝐃𝐚𝐭𝐞: {fecha_hoy}  
-𝐒𝐢𝐠𝐧𝐚𝐥: 3 of 3
+𝐒𝐢𝐠𝐧𝐚𝐥: 2 of 3
 
 Our team works hard to deliver real-time technical and fundamental analysis three times a day, ensuring our community is fully informed and ready to act.
 
@@ -276,13 +290,13 @@ Thank you for choosing us as your trusted trading partner. Together, we’ll mak
 """
 
     response_es = openai.ChatCompletion.create(
-        model="gpt-4o-mini",
+        model="gpt-4o",
         messages=[{"role": "user", "content": prompt_es}]
     )
     message_es = response_es.choices[0].message["content"]
 
     response_en = openai.ChatCompletion.create(
-        model="gpt-4o-mini",
+        model="gpt-4o",
         messages=[{"role": "user", "content": prompt_en}]
     )
     message_en = response_en.choices[0].message["content"]
@@ -318,7 +332,7 @@ Thank you for choosing us as your trusted trading partner. Together, we’ll mak
         "reply_markup": {
             "inline_keyboard": [[
                 {
-                    "text": "🎯 Free Premium",
+                    "text": "🎯 Premium Signals",
                     "url": "https://t.me/CriptoSignalBotGestion_bot?start=676731307b8344cb070ac996"
                 }
             ]]
