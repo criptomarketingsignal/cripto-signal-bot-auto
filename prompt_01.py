@@ -81,8 +81,8 @@ def send_prompt_01():
     
     Buenos días traders! Qué mejor manera de comenzar el día que con nuestra primera señal del día. Hoy vamos a analizar Bitcoin y darles nuestras recomendaciones. ¡Vamos allá!
     
-    𝐅𝐞𝐜𝐡𝐚: {fecha_es}  
-    🕘 𝐀𝐧𝐚́𝐥𝐢𝐬𝐢𝐬 𝐈𝐧𝐢𝐜𝐢𝐚𝐥 – 𝐒𝐞𝐧̃𝐚𝐥 𝟏 𝐝𝐞 𝟑
+    🕘 𝐅𝐞𝐜𝐡𝐚: {fecha_es}  
+    🌞 𝐀𝐧𝐚́𝐥𝐢𝐬𝐢𝐬 𝐈𝐧𝐢𝐜𝐢𝐚𝐥 – 𝐒𝐞𝐧̃𝐚𝐥 𝟏 𝐝𝐞 𝟑
     
     Nuestro equipo trabaja arduamente para ofrecer análisis técnico y fundamental en tiempo real tres veces al día, asegurándonos de mantener a nuestra comunidad completamente informada y preparada.
     
@@ -231,8 +231,8 @@ def send_prompt_01():
     
     Good morning traders! What better way to start the day than with our first signal of the day. Today we’ll analyze Bitcoin and share our recommendations. Let’s go!
     
-    𝐃𝐚𝐭𝐞: {fecha_es}  
-    𝐌𝐨𝐫𝐧𝐢𝐧𝐠 𝐀𝐧𝐚𝐥𝐲𝐬𝐢𝐬 🕘 – 𝐒𝐢𝐠𝐧𝐚𝐥 𝟏 𝐨𝐟 𝟑
+    🕘 𝐃𝐚𝐭𝐞: {fecha_es}  
+    🌞 𝐌𝐨𝐫𝐧𝐢𝐧𝐠 𝐀𝐧𝐚𝐥𝐲𝐬𝐢𝐬 – 𝐒𝐢𝐠𝐧𝐚𝐥 𝟏 𝐨𝐟 𝟑
     
     Our team works hard to deliver real-time technical and fundamental analysis three times a day, ensuring our community is fully informed and ready to act.
 
