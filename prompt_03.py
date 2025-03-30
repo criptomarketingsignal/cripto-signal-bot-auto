@@ -81,14 +81,13 @@ Usa esta estructura exacta en el mensaje generado:
 ✨ Qué mejor momento que el cierre de la vela diaria para evaluar el panorama completo. ¡Vamos a analizar Bitcoin con todo!
 
 𝐅𝐞𝐜𝐡𝐚: {fecha_hoy}  
-𝐔𝐥𝐭𝐢𝐦𝐨 𝐀𝐧𝐚́𝐥𝐢𝐬𝐢𝐬 𝐝𝐞𝐥 𝐝𝐢́𝐚 🌙 – 𝐒𝐞𝐧̃𝐚𝐥 𝟑 𝐝𝐞 𝟑
+🌙 𝐔𝐥𝐭𝐢𝐦𝐨 𝐀𝐧𝐚́𝐥𝐢𝐬𝐢𝐬 𝐝𝐞𝐥 𝐝𝐢́𝐚 – 𝐒𝐞𝐧̃𝐚𝐥 𝟑 𝐝𝐞 𝟑
 
 Nuestro equipo trabaja arduamente para ofrecer análisis técnico y fundamental en tiempo real tres veces al día, asegurándonos de mantener a nuestra comunidad completamente informada y preparada.
 
 ---
 agrega un texto breve resumen general de esto:
 🧠 → 𝐑𝐞𝐬𝐮𝐦𝐞𝐧 𝐆𝐞𝐧𝐞𝐫𝐚𝐥:
-
 1. Analiza cómo se desarrolló el comportamiento de BTC durante el día actual. 
 2. Evalúa si hubo un movimiento fuerte, una caída importante o consolidación, y si se respetaron los niveles claves del análisis anterior.
 3. Determina si hubo algún evento macroeconómico o político relevante (por ejemplo: decisión de tasas de la FED, informe CPI, datos de empleo, conflictos globales, declaraciones de Trump o Biden, etc.), y cómo impactó el precio.
@@ -96,7 +95,6 @@ agrega un texto breve resumen general de esto:
 5. Sugiere si mañana podría haber una entrada LONG favorable o si es mejor esperar confirmación.
 
 📊 → 𝐀𝐧𝐚́𝐥𝐢𝐬𝐢𝐬 𝐓𝐞́𝐜𝐧𝐢𝐜𝐨:
-
 𝟏. 𝐆𝐫𝐚́𝐟𝐢𝐜𝐨 𝐃𝐢𝐚𝐫𝐢𝐨
 Resumen técnico breve con:
 • Tendencia general del día
@@ -118,7 +116,6 @@ Resumen técnico breve con:
 
 ---
 🔍 → 𝐀𝐧𝐚́𝐥𝐢𝐬𝐢𝐬 𝐅𝐮𝐧𝐝𝐚𝐦𝐞𝐧𝐭𝐚𝐥
-
 Evalúa si hay eventos macroeconómicos, políticos o geopolíticos importantes que puedan afectar el comportamiento de BTC hoy. Entre ellos deben considerarse:
 
 • Reuniones clave como la FED, publicación de datos económicos (CPI, NFP, etc.)
@@ -206,13 +203,12 @@ Act like a professional technical analyst specializing in cryptocurrency. Your t
 What better time than mid-session to reassess opportunities. Let’s dive into Bitcoin!
 
 𝐃𝐚𝐭𝐞: {fecha_hoy}  
-𝐄𝐧𝐝 𝐨𝐟 𝐃𝐚𝐲 𝐑𝐞𝐯𝐢𝐞𝐰 🌙 – 𝐒𝐢𝐠𝐧𝐚𝐥 𝟑 𝐨𝐟 𝟑
+🌙 𝐄𝐧𝐝 𝐨𝐟 𝐃𝐚𝐲 𝐑𝐞𝐯𝐢𝐞𝐰 – 𝐒𝐢𝐠𝐧𝐚𝐥 𝟑 𝐨𝐟 𝟑
 
 ✨ What better time than the close of the daily candle to assess the bigger picture? Let's analyze Bitcoin with all our might!
 ---
 Add a brief general summary of this:
 🧠 → 𝐆𝐞𝐧𝐞𝐫𝐚𝐥 𝐑𝐞𝐬𝐮𝐦𝐞𝐧:
-
 1. Analyze how BTC's behavior developed during the current day.
 2. Evaluate whether there was a strong movement, a significant drop, or consolidation, and whether the key levels from the previous analysis were respected.
 3. Determine if there were any relevant macroeconomic or political events (e.g., Fed rate decision, CPI report, employment data, global conflicts, statements by Trump or Biden, etc.), and how they impacted the price.
@@ -221,7 +217,6 @@ Add a brief general summary of this:
 
 ---
 📊 → 𝐓𝐞𝐜𝐡𝐧𝐢𝐜𝐚𝐥 𝐀𝐧𝐚𝐥𝐲𝐬𝐢𝐬:
-
 𝟏. 𝐃𝐚𝐢𝐥𝐲 𝐂𝐡𝐚𝐫𝐭 (𝟏𝐃)  
 Brief summary including:  
 - Overall daily trend
@@ -243,7 +238,6 @@ Brief summary including:
 
 ---
 🔍 → 𝐅𝐮𝐧𝐝𝐚𝐦𝐞𝐧𝐭𝐚𝐥 𝐀𝐧𝐚𝐥𝐲𝐬𝐢𝐬
-
 Evaluate any important macroeconomic, political, or geopolitical events that could impact BTC today, including:
 
 - Key events like FED meetings, CPI, NFP releases, etc.  
@@ -337,7 +331,7 @@ Thank you for choosing us as your trusted trading partner. Together, we’ll mak
         "reply_markup": {
             "inline_keyboard": [[
                 {
-                    "text": "🎯 Free Premium",
+                    "text": "🎯 Premium Signals",
                     "url": "https://t.me/CriptoSignalBotGestion_bot?start=676731307b8344cb070ac996"
                 }
             ]]
