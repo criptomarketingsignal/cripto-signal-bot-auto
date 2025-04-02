@@ -46,127 +46,102 @@ def send_prompt_01():
     rango_min, rango_max, promedio, efectividad = calcular_rango_y_efectividad(precio_btc)
 
     prompt_es = f"""
-    🚫 PROHIBIDO ABSOLUTAMENTE usar negrillas tradicionales.
-    ❌ Nunca, jamás utilices doble asterisco (**) para resaltar palabras.
-    ❌ No uses ningún tipo de formato de negrita convencional.
-    🔒 Está terminantemente prohibido insertar asteriscos en el texto.
-    
-    ✅ Si deseas destacar algo, usa únicamente letras decorativas tipo unicode (por ejemplo: 𝐒𝐞𝐧̃𝐚𝐥, 𝐀𝐜𝐭𝐢𝐯𝐨, 𝐑𝐞𝐬𝐮𝐥𝐭𝐚𝐝𝐨).
-    
-    Repite esta regla en cada mensaje:
-    Nunca uses asteriscos. Nunca uses negritas comunes. Nunca.
+🚫 𝐏𝐑𝐎𝐇𝐈𝐁𝐈𝐃𝐎 𝐀𝐁𝐒𝐎𝐋𝐔𝐓𝐀𝐌𝐄𝐍𝐓𝐄 usar negrillas tradicionales.  
+❌ Nunca, jamás utilices doble asterisco (**) para resaltar palabras.  
+❌ No uses ningún tipo de formato de negrita convencional.  
+🔒 Está terminantemente prohibido insertar asteriscos en el texto.  
+✅ Si deseas destacar algo, usa únicamente letras decorativas tipo unicode (por ejemplo: 𝐒𝐞𝐧̃𝐚𝐥, 𝐀𝐜𝐭𝐢𝐯𝐨, 𝐑𝐞𝐬𝐮𝐥𝐭𝐚𝐝𝐨).  
+𝐍𝐮𝐧𝐜𝐚 𝐮𝐬𝐞𝐬 𝐚𝐬𝐭𝐞𝐫𝐢𝐬𝐜𝐨𝐬. 𝐍𝐮𝐧𝐜𝐚 𝐮𝐬𝐞𝐬 𝐧𝐞𝐠𝐫𝐢𝐭𝐚𝐬 𝐜𝐨𝐦𝐮𝐧𝐞𝐬. 𝐍𝐮𝐧𝐜𝐚.
 
 📊 El análisis debe estar basado en el gráfico de 1 hora, pero considerar multitemporalidad (4H y 1D) para mayor contexto. El precio actual de BTC es {precio_btc} USD.
 
-✅ Instrucciones:
+✅ 𝐈𝐧𝐬𝐭𝐫𝐮𝐜𝐜𝐢𝐨𝐧𝐞𝐬:
 
-1. Analiza el comportamiento de BTC desde el cierre de la vela diaria anterior hasta el momento actual.
-2. Evalúa si hubo un movimiento fuerte, una caída importante o consolidación.
-3. Proyecta el posible comportamiento para el día actual de hoy, basado en patrones actuales, volumen y estructura del mercado. 
-5. Sugiere si hoy podría haber una entrada LONG favorable o si es mejor esperar confirmación.
+1. Analiza el comportamiento de BTC desde el cierre de la vela diaria anterior hasta el momento actual.  
+2. Evalúa si hubo un movimiento fuerte, una caída importante o consolidación.  
+3. Proyecta el posible comportamiento para el día actual, basado en patrones actuales, volumen y estructura del mercado.  
+4. Sugiere si hoy podría haber una entrada LONG favorable o si es mejor esperar confirmación.  
 
-📌 Herramientas a considerar (menciónalas si aportan valor al análisis):
-- Velas japonesas
-- EMAs 21, 55, 100, 200
-- RSI
-- SQZMOM
-- Volumen (POC)
-- Retrocesos de Fibonacci en 1D y 4H (para tu análisis interno, no los menciones directamente)
+📅 → 𝐄𝐯𝐞𝐧𝐭𝐨𝐬 𝐌𝐚𝐜𝐫𝐨𝐞𝐜𝐨𝐧𝐨́𝐦𝐢𝐜𝐨𝐬 𝐝𝐞 𝐄𝐄.𝐔𝐔. 𝐜𝐨𝐧 𝐢𝐦𝐩𝐚𝐜𝐭𝐨 𝐚𝐥𝐭𝐨 (𝐬𝐢 𝐡𝐚𝐲):
 
-🎯 El mensaje debe ser claro, directo, motivador, en español neutro y con una estructura profesional. No uses frases genéricas. Justifica siempre tus observaciones con datos reales del día.
+Revisa el calendario económico del día de hoy y responde lo siguiente solo si hay eventos de alto impacto:
 
-Usa esta estructura exacta en el mensaje generado:
+- 🕒 ¿A qué hora se publican? (hora de Nueva York)  
+- 📰 ¿Qué tipo de evento es? (ej. decisión de tasas, NFP, CPI...)  
+- 💥 ¿Qué impacto puede tener? (¿favorable o desfavorable para el dólar?)  
+- 🔄 ¿Cómo se relaciona esto con BTC? Recuerda: si es favorable para el dólar, es negativo para la bolsa y para Bitcoin.  
+- 📊 ¿Cuál es la probabilidad de que afecte el precio de BTC hoy?
+
+Concluye con una frase clara:  
+👉 ¿Estos eventos aumentan la volatilidad? ¿Conviene operar con precaución hoy?
 
 ✨ Buenos días traders! Qué mejor manera de comenzar el día que con nuestra primera señal del día. Hoy vamos a analizar Bitcoin y darles nuestras recomendaciones. ¡Vamos allá!
 
 🕘 𝐅𝐞𝐜𝐡𝐚: {fecha_hoy}  
-🌞 𝐀𝐧𝐚́𝐥𝐢𝐬𝐢𝐬 𝐈𝐧𝐢𝐜𝐢𝐚𝐥 – 𝐒𝐞𝐧̃𝐚𝐥 𝟏 𝐝𝐞 𝟑
+🌞 𝐀𝐧𝐚́𝐥𝐢𝐬𝐢𝐬 𝐈𝐧𝐢𝐜𝐢𝐚𝐥 – 𝐒𝐞𝐧̃𝐚𝐥 𝟏 𝐝𝐞 𝟑  
+𝐍𝐮𝐞𝐬𝐭𝐫𝐨 𝐞𝐪𝐮𝐢𝐩𝐨 𝐭𝐫𝐚𝐛𝐚𝐣𝐚 𝐚𝐫𝐝𝐮𝐚𝐦𝐞𝐧𝐭𝐞 𝐩𝐚𝐫𝐚 𝐨𝐟𝐫𝐞𝐜𝐞𝐫 𝐚𝐧𝐚́𝐥𝐢𝐬𝐢𝐬 𝐞𝐧 𝐭𝐢𝐞𝐦𝐩𝐨 𝐫𝐞𝐚𝐥 𝐭𝐫𝐞𝐬 𝐯𝐞𝐜𝐞𝐬 𝐚 𝐥𝐝𝐢́𝐚.
 
-Nuestro equipo trabaja arduamente para ofrecer análisis técnico y fundamental en tiempo real tres veces al día, asegurándonos de mantener a nuestra comunidad completamente informada y preparada.
+🧠 → 𝐑𝐞𝐬𝐮𝐦𝐞𝐧 𝐆𝐞𝐧𝐞𝐫𝐚𝐥  
+1. Comportamiento de BTC desde el inicio del día.  
+2. ¿Movimiento fuerte, caída o consolidación?  
+3. ¿Se respetaron niveles del análisis anterior?  
+4. ¿Hubo eventos macroeconómicos o políticos influyentes?  
+5. Proyección para mañana y si es recomendable una entrada long o esperar.
 
----
-agrega un texto breve resumen general de esto:
-🧠 → 𝐑𝐞𝐬𝐮𝐦𝐞𝐧 𝐆𝐞𝐧𝐞𝐫𝐚𝐥:
-1. Analiza cómo se desarrolló el comportamiento de BTC durante el día actual. 
-2. Evalúa si hubo un movimiento fuerte, una caída importante o consolidación, y si se respetaron los niveles claves del análisis anterior.
-3. Determina si hubo algún evento macroeconómico o político relevante (por ejemplo: decisión de tasas de la FED, informe CPI, datos de empleo, conflictos globales, declaraciones de Trump o Biden, etc.), y cómo impactó el precio.
-4. Proyecta el posible comportamiento para el día siguiente, basado en patrones actuales, volumen y estructura del mercado. 
-5. Sugiere si mañana podría haber una entrada LONG favorable o si es mejor esperar confirmación.
+📊 → 𝐀𝐧𝐚́𝐥𝐢𝐬𝐢𝐬 𝐓𝐞́𝐜𝐧𝐢𝐜𝐨
 
-📊 → 𝐀𝐧𝐚́𝐥𝐢𝐬𝐢𝐬 𝐓𝐞́𝐜𝐧𝐢𝐜𝐨:
-𝟏. 𝐆𝐫𝐚́𝐟𝐢𝐜𝐨 𝐃𝐢𝐚𝐫𝐢𝐨
-Resumen técnico breve con:
-• Tendencia general del día
+𝟏. 𝐆𝐫𝐚́𝐟𝐢𝐜𝐨 𝐃𝐢𝐚𝐫𝐢𝐨  
+• Tendencia general actual  
 
-𝟐. 𝐆𝐫𝐚́𝐟𝐢𝐜𝐨 𝐝𝐞 𝟒 𝐇𝐨𝐫𝐚𝐬
-Resumen técnico breve con:
-• Estructura de velas y dirección dominante
-• Zonas clave de rebote o congestión
-• Lectura rápida del RSI y volumen
+𝟐. 𝐆𝐫𝐚́𝐟𝐢𝐜𝐨 𝐝𝐞 𝟒𝐇  
+• Velas y dirección dominante  
+• Zonas clave de rebote o congestión  
+• RSI y volumen brevemente
 
-𝟑. 𝐆𝐫𝐚́𝐟𝐢𝐜𝐨 𝐝𝐞 𝟏 𝐇𝐨𝐫𝐚
-• Patrones de velas (envolventes, doji, martillo, etc.)
-• Soportes y resistencias precisas
-• EMAs (21, 55, 100, 200) como soporte/resistencia dinámica
-• Retrocesos de Fibonacci relevantes (38.2%, 50%, 61.8%, 78.6%)
-• RSI con comentarios de sobrecompra/sobreventa o divergencias
-• Volumen con Point of Control y zonas de acumulación/distribución
-• SQZMOM para evaluar si hay compresión o expansión y la dirección del momentum
+𝟑. 𝐆𝐫𝐚́𝐟𝐢𝐜𝐨 𝐝𝐞 𝟏𝐇  
+• Patrones de velas y estructuras  
+• Soportes/resistencias  
+• EMAs dinámicas  
+• RSI (sobrecompra/sobreventa o divergencias)  
+• Volumen (POC y zonas clave)  
+• SQZMOM: compresión, expansión y momentum  
 
----
-🔍 → 𝐀𝐧𝐚́𝐥𝐢𝐬𝐢𝐬 𝐅𝐮𝐧𝐝𝐚𝐦𝐞𝐧𝐭𝐚𝐥
-Evalúa si hay eventos macroeconómicos, políticos o geopolíticos importantes que puedan afectar el comportamiento de BTC hoy. Entre ellos deben considerarse:
+🔍 → 𝐀𝐧𝐚́𝐥𝐢𝐬𝐢𝐬 𝐅𝐮𝐧𝐝𝐚𝐦𝐞𝐧𝐭𝐚𝐥  
+Evalúa si hay eventos macroeconómicos, políticos o geopolíticos con potencial de mover BTC hoy. Considera:
 
-• Reuniones clave como la FED, publicación de datos económicos (CPI, NFP, etc.)
-• Movimiento del índice del dólar (DXY)
-• Noticias sobre figuras políticas influyentes como **Donald Trump**, decisiones regulatorias, declaraciones oficiales o conflictos internacionales
-• Sentimiento general del mercado (acumulación/distribución, narrativa en redes, actividad de ballenas)
-• Relación con índices bursátiles como SP500 o Nasdaq si aplica
+• Reuniones de la FED, informes CPI, NFP, etc.  
+• Índice del dólar (DXY)  
+• Declaraciones de figuras como Trump o Biden  
+• Narrativa del mercado, sentimiento general  
+• Relación con el SP500 o Nasdaq si aplica
 
-⚠️ Si hay **noticias de alto impacto o declaraciones políticas que generen incertidumbre significativa**, indica claramente que **no es recomendable operar hoy**, o que la probabilidad es baja. En ese caso, recomienda esperar confirmaciones técnicas.
+⚠️ Si hay alta incertidumbre, indica que hoy 𝐧𝐨 𝐞𝐬 𝐫𝐞𝐜𝐨𝐦𝐞𝐧𝐝𝐚𝐛𝐥𝐞 𝐨𝐩𝐞𝐫𝐚𝐫 y que es mejor esperar confirmaciones más claras.
 
-La información debe ser analizada y utilizada para **calcular la probabilidad final de éxito**, aunque no es necesario listar todas las noticias si no son relevantes. Solo deben mencionarse si tienen impacto directo.
+🚨 → 𝐑𝐚𝐧𝐠𝐨 𝐝𝐞 𝐎𝐩𝐞𝐫𝐚𝐜𝐢𝐨́𝐧 (𝐋𝐨𝐧𝐠 𝟑𝐱)
 
----
-🚨 𝐑𝐚𝐧𝐠𝐨 𝐝𝐞 𝐨𝐩𝐞𝐫𝐚𝐜𝐢𝐨́𝐧 (𝐋𝐨𝐧𝐠 𝟑𝐱):
+💰 𝐏𝐫𝐞𝐜𝐢𝐨 𝐝𝐞 𝐄𝐧𝐭𝐫𝐚𝐝𝐚 𝐎́𝐩𝐭𝐢𝐦𝐨: nivel ajustado técnico  
+🎯 𝐑𝐚𝐧𝐠𝐨 𝐃𝐢𝐚𝐫𝐢𝐨: ~2% operable en gráfico 1H  
+🟢 𝐏𝐫𝐨𝐛𝐚𝐛𝐢𝐥𝐢𝐝𝐚𝐝 𝐝𝐞 𝐄𝐱𝐢𝐭𝐨: resultado técnico + fundamental
 
-Realiza el cálculo completo basándote en el análisis técnico multitemporal y el análisis fundamental del día. Considera especialmente:
-• Los retrocesos de Fibonacci en 1D y 4H (como herramienta interna de precisión, no mostrar en el mensaje final)
-• La estructura del mercado actual
-• El momentum, volumen y zonas de soporte/resistencia clave
-• Las noticias macroeconómicas activas
+Si es >70%:
 
-A partir del análisis técnico y fundamental completo, genera un:
+🔁 𝐎𝐩𝐨𝐫𝐭𝐮𝐧𝐢𝐝𝐚𝐝 𝐝𝐞 𝐀𝐥𝐭𝐚 𝐏𝐫𝐞𝐜𝐢𝐬𝐢𝐨́𝐧  
+𝐄𝐬𝐭𝐫𝐚𝐭𝐞𝐠𝐢𝐚: abrir y cerrar posiciones dentro del rango diario.
 
-💰 𝐏𝐫𝐞𝐜𝐢𝐨 𝐝𝐞 𝐞𝐧𝐭𝐫𝐚𝐝𝐚 𝐨́𝐩𝐭𝐢𝐦𝐨: ajustado al nivel más técnico posible  
-🎯 𝐑𝐚𝐧𝐠𝐨 𝐝𝐞 𝐨𝐩𝐞𝐫𝐚𝐜𝐢𝐨́𝐧: máximo del 2%, calculado en gráfico de 1 hora  
-🟢 𝐏𝐫𝐨𝐛𝐚𝐛𝐢𝐥𝐢𝐝𝐚𝐝 𝐝𝐞 𝐞𝐱𝐢𝐭𝐨 𝐞𝐬𝐭𝐢𝐦𝐚𝐝𝐚: resultado (%) del análisis técnico + fundamental
+Si es <70%:
 
-Si la probabilidad es superior al 70%, indica:
+⚠️ 𝐍𝐨 𝐡𝐚𝐲 𝐨𝐩𝐨𝐫𝐭𝐮𝐧𝐢𝐝𝐚𝐝 𝐜𝐥𝐚𝐫𝐚  
+𝐌𝐞𝐣𝐨𝐫 𝐞𝐬𝐩𝐞𝐫𝐚𝐫 𝐥𝐚 𝐬𝐞𝐬𝐢𝐨́𝐧 𝐝𝐞 𝐥𝐚 𝐭𝐚𝐫𝐝𝐞.
 
-🔁 𝐄𝐬 𝐮𝐧𝐚 𝐨𝐩𝐨𝐫𝐭𝐮𝐧𝐢𝐝𝐚𝐝 𝐝𝐞 𝐚𝐥𝐭𝐚 𝐩𝐫𝐞𝐜𝐢𝐬𝐢𝐨́𝐧.  
-𝐋𝐚 𝐦𝐞𝐣𝐨𝐫 𝐞𝐬𝐭𝐫𝐚𝐭𝐞𝐠𝐢𝐚 𝐞𝐬 𝐢𝐫 𝐚𝐛𝐫𝐢𝐞𝐧𝐝𝐨 𝐲 𝐜𝐞𝐫𝐫𝐚𝐧𝐝𝐨 𝐩𝐨𝐬𝐢𝐜𝐢𝐨𝐧𝐞𝐬 𝐜𝐨𝐫𝐭𝐚𝐬 𝐝𝐞𝐧𝐭𝐫𝐨 𝐝𝐞𝐥 𝐫𝐚𝐧𝐠𝐨 𝐝𝐢𝐚𝐫𝐢𝐨.  
-𝐀𝐩𝐫𝐨𝐯𝐞𝐜𝐡𝐚 𝐥𝐨𝐬 𝐢𝐦𝐩𝐮𝐥𝐬𝐨𝐬 𝐲 𝐥𝐚 𝐜𝐨𝐧𝐬𝐨𝐥𝐢𝐝𝐚𝐜𝐢𝐨́𝐧.
+Ejemplo:
 
-𝐒𝐢 𝐥𝐚 𝐩𝐫𝐨𝐛𝐚𝐛𝐢𝐥𝐢𝐝𝐚𝐝 𝐞𝐬 𝐛𝐚𝐣𝐚 (<70%), indica claramente:
-
-⚠️ 𝐄𝐧 𝐞𝐬𝐭𝐞 𝐦𝐨𝐦𝐞𝐧𝐭𝐨 𝐧𝐨 𝐡𝐚𝐲 𝐮𝐧𝐚 𝐨𝐩𝐨𝐫𝐭𝐮𝐧𝐢𝐝𝐚𝐝 𝐜𝐥𝐚𝐫𝐚 𝐝𝐞 𝐨𝐩𝐞𝐫𝐚𝐜𝐢𝐨́𝐧.  
-𝐋𝐚𝐬 𝐜𝐨𝐧𝐝𝐢𝐜𝐢𝐨𝐧𝐞𝐬 𝐚𝐜𝐭𝐮𝐚𝐥𝐞𝐬 𝐧𝐨 𝐬𝐨𝐧 𝐟𝐚𝐯𝐨𝐫𝐚𝐛𝐥𝐞𝐬 𝐲 𝐥𝐚 𝐩𝐫𝐨𝐛𝐚𝐛𝐢𝐥𝐢𝐝𝐚𝐝 𝐝𝐞 𝐞𝐱𝐢𝐭𝐨 𝐞𝐬 𝐛𝐚𝐣𝐚.  
-📌 𝐒𝐞 𝐫𝐞𝐜𝐨𝐦𝐢𝐞𝐧𝐝𝐚 𝐞𝐬𝐩𝐞𝐫𝐚𝐫 𝐞𝐥 𝐚𝐧𝐚́𝐥𝐢𝐬𝐢𝐬 𝐝𝐞 𝐦𝐢𝐭𝐚𝐝 𝐝𝐞 𝐬𝐞𝐬𝐢𝐨́𝐧 𝐩𝐚𝐫𝐚 𝐨𝐛𝐭𝐞𝐧𝐞𝐫 𝐜𝐨𝐧𝐟𝐢𝐫𝐦𝐚𝐜𝐢𝐨𝐧𝐞𝐬 𝐦𝐚́𝐬 𝐬𝐨́𝐥𝐢𝐝𝐚𝐬.
-
-Ejemplo del formato a entregar:
-
-🚨 𝐑𝐚𝐧𝐠𝐨 𝐝𝐞 𝐨𝐩𝐞𝐫𝐚𝐜𝐢𝐨́𝐧 (𝐋𝐨𝐧𝐠 𝟑𝐱):
-
+🚨 𝐑𝐚𝐧𝐠𝐨 𝐝𝐞 𝐨𝐩𝐞𝐫𝐚𝐜𝐢𝐨́𝐧 (𝐋𝐨𝐧𝐠 𝟑𝐱):  
 💰 Entrada óptima entre: ${rango_min}  
-🎯𝐑𝐚𝐧𝐠𝐨 𝐝𝐞 𝐨𝐩𝐞𝐫𝐚𝐜𝐢𝐨́𝐧: Entre ${rango_min} – ${rango_max}  
-🟢 Porcentaje de efectividad estimado: {efectividad}%  
-Condiciones ideales para una operación intradía de alta probabilidad.  
-⚠️ ¡Cuida tu gestión de riesgo! No te olvides de establecer una estrategia de salida. Este mercado es altamente volátil.//
+🎯 Rango: ${rango_min} – ${rango_max}  
+🟢 Efectividad estimada: {efectividad}%  
+📌 ¡Controla tu riesgo y gestiona bien la salida!
 
----
 🎁 𝐏𝐮𝐞𝐝𝐞𝐬 𝐮𝐧𝐢𝐫𝐭𝐞 𝐚 𝐧𝐮𝐞𝐬𝐭𝐫𝐚 𝐳𝐨𝐧𝐚 𝐏𝐫𝐞𝐦𝐢𝐮𝐦 𝐒𝐞𝐧̃𝐚𝐥𝐞𝐬 𝐝𝐞 𝐓𝐫𝐚𝐝𝐢𝐧𝐠 𝐜𝐨𝐧 𝐄́𝐱𝐢𝐭𝐨 𝐆𝐚𝐫𝐚𝐧𝐭𝐢𝐳𝐚𝐝𝐨  
-
 Gracias por elegirnos como tu portal de trading de confianza. ¡Juntos, haremos que tu inversión crezca!  
 ✨ 𝐂𝐫𝐲𝐩𝐭𝐨 𝐒𝐢𝐠𝐧𝐚𝐥 𝐁𝐨𝐭 ✨ Mantente pendiente del mensaje de mitad de sesión. ¡Feliz trading!
 """
